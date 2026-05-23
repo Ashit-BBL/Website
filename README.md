@@ -1,2 +1,4 @@
 # Website
-Newly designed website by Claude Design
+Website of Ashit Gandhi
+ashitgphotography 
+Under Development
