@@ -200,16 +200,16 @@
 
   /* hero photo + animated EXIF overlay */
   .hero-photo{
-    position: relative; aspect-ratio: 1/1;
-    background:
-      url('assets/bird_actual_output.jpg') center/cover no-repeat;
-    background-color: #2a3b1f;
+    position: relative;
     border-radius: 6px;
     box-shadow: var(--shadow-deep);
     overflow: hidden;
     transform: translateY(20px) scale(.98);
     opacity: 0;
     animation: photoIn 1.1s .2s cubic-bezier(.16,.84,.4,1) forwards;
+  }
+  .hero-photo img{
+    width: 100%; height: auto; display: block;
   }
   @keyframes photoIn{ to { transform: none; opacity: 1; } }
 
@@ -283,13 +283,13 @@
   .hero-caption b{ color: var(--gold-soft); font-weight: 500; }
 
   /* ============ SECTION COMMON ============ */
-  section{ padding: 110px 0; position: relative; }
+  section{ padding: 44px 0; position: relative; }
   .section-label{
     font-family:'DM Sans', sans-serif;
     font-size: 11px; letter-spacing: 0.32em;
     color: var(--gold-deep);
     text-transform: uppercase;
-    margin: 0 0 18px;
+    margin: 0 0 10px;
     display:inline-flex; align-items:center; gap: 10px;
   }
   .section-label::before{
@@ -300,14 +300,14 @@
     font-weight: 600;
     letter-spacing: -0.015em;
     line-height: 1.06;
-    margin: 0 0 24px;
+    margin: 0 0 14px;
     color: var(--forest-deep);
     max-width: 880px;
   }
   .section-title .italic{ font-style: italic; color: var(--sage); font-weight: 500; }
   .section-title .gold{ color: var(--gold-deep); }
   .section-lead{
-    font-size: 19px; color: var(--ink-soft);
+    font-size: 16px; color: var(--ink-soft);
     max-width: 720px; margin: 0;
   }
 
@@ -325,7 +325,7 @@
   .reveal.d6{ transition-delay: .48s; }
 
   /* ============ PILLARS ============ */
-  .pillars{ background: var(--cream); padding-top: 130px; }
+  .pillars{ background: var(--cream); padding-top: 44px; }
   .pillar-grid{
     display: grid; grid-template-columns: repeat(3, 1fr);
     gap: 32px; margin-top: 56px;
@@ -416,134 +416,8 @@
   .shield-vis{ width: 96px; height: 110px; }
 
   /* ============ DEMO STRIP ============ */
-  .demo{
-    background: var(--cream-light);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 120px 0;
-  }
-  .demo-grid{
-    display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 72px; align-items: center;
-  }
-  .demo-controls{ display: flex; flex-direction: column; gap: 26px; }
-  .control-block{ }
-  .control-label{
-    font-family:'DM Sans', sans-serif;
-    font-size: 11px; letter-spacing: 0.22em; color: var(--gold-deep);
-    text-transform: uppercase; margin: 0 0 12px;
-    display: flex; align-items: center; gap: 8px;
-  }
-  .control-label::after{
-    content:""; flex:1; height: 1px; background: var(--border);
-  }
-
-  .corner-buttons{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
-  .corner-buttons button{
-    background: transparent; border: 1px solid var(--border-strong);
-    color: var(--ink-soft);
-    padding: 12px 8px;
-    font-family:'DM Sans', sans-serif;
-    font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;
-    white-space: nowrap;
-    cursor: pointer; border-radius: var(--r-sm);
-    transition: all .2s ease;
-  }
-  .corner-buttons button:hover{ border-color: var(--gold-deep); color: var(--forest-deep); }
-  .corner-buttons button.active{
-    background: var(--forest); color: #f0ecd8; border-color: var(--forest);
-  }
-
-  .color-row{ display: flex; gap: 12px; }
-  .color-row button{
-    flex:1; height: 44px; border-radius: var(--r-sm);
-    cursor: pointer; display: flex; align-items: center; justify-content: center;
-    font-family:'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.18em;
-    text-transform: uppercase;
-    transition: transform .2s ease, box-shadow .2s ease, outline-color .2s ease;
-    outline: 2px solid transparent; outline-offset: 3px;
-  }
-  .color-row button.active{ outline-color: var(--gold); }
-  .color-row button.white{ background: #fff; color: #1b1b1b; border: 1px solid #d8d3bf; }
-  .color-row button.yellow{ background: #f3c33b; color: #2b2410; border: 1px solid #c89c1a; }
-  .color-row button.black{ background: #1a1a18; color: #f0ecd8; border: 1px solid #000; }
-
-  .size-row{ display: flex; gap: 10px; }
-  .size-row button{
-    flex:1; border: 1px solid var(--border-strong);
-    background: transparent; color: var(--ink-soft);
-    padding: 11px;
-    font-family:'DM Sans'; font-size: 13px; font-weight: 500;
-    border-radius: var(--r-sm);
-    cursor: pointer;
-    transition: all .2s ease;
-  }
-  .size-row button.active{ background: var(--forest); color: #f0ecd8; border-color: var(--forest); }
-  .size-row button .ss{ font-size: 11px; opacity: .55; }
-  .size-row button.active .ss{ opacity: .8; }
-
-  /* demo photo */
-  .demo-photo-wrap{
-    position: relative;
-    aspect-ratio: 1/1;
-    border-radius: 6px;
-    overflow: hidden;
-    background: #2a3b1f url('assets/bird_hero.jpg') center/cover no-repeat;
-    box-shadow: var(--shadow-deep);
-    border: 1px solid var(--border);
-  }
-  .demo-exif{
-    position: absolute;
-    font-family:'DM Sans', sans-serif;
-    line-height: 1.6;
-    text-shadow: 0 1px 3px rgba(0,0,0,.65);
-    transition: top .55s cubic-bezier(.16,.84,.4,1),
-                left .55s cubic-bezier(.16,.84,.4,1),
-                right .55s cubic-bezier(.16,.84,.4,1),
-                bottom .55s cubic-bezier(.16,.84,.4,1),
-                color .25s ease, font-size .25s ease;
-  }
-  .demo-exif .k{ opacity: 0.92; }
-  .demo-exif .v::before{ content:": "; opacity:.7; }
-  .demo-exif .row{ display: grid; grid-template-columns: 92px auto; column-gap: 8px; }
-
-  /* corner positions */
-  .demo-exif.tl{ top: 18px; left: 18px; }
-  .demo-exif.tr{ top: 18px; right: 18px; left: auto; }
-  .demo-exif.bl{ bottom: 18px; left: 18px; top: auto; }
-  .demo-exif.br{ bottom: 18px; right: 18px; left: auto; top: auto; }
-
-  /* color modifiers */
-  .demo-exif.white{ color: #fff; }
-  .demo-exif.yellow{ color: #f5d04a; text-shadow: 0 1px 3px rgba(0,0,0,.75); }
-  .demo-exif.black{ color: #111; text-shadow: 0 1px 2px rgba(255,255,255,.4); }
-
-  /* size modifiers */
-  .demo-exif.s-sm{ font-size: 10px; }
-  .demo-exif.s-md{ font-size: 12px; }
-  .demo-exif.s-lg{ font-size: 14px; }
-
-  /* live preview pill */
-  .demo-pill{
-    position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
-    background: rgba(0,0,0,.55);
-    color: #f0ecd8;
-    backdrop-filter: blur(6px);
-    border: 1px solid rgba(240,236,216,.18);
-    font-family:'DM Sans', sans-serif;
-    font-size: 10px; letter-spacing: 0.22em;
-    text-transform: uppercase;
-    padding: 7px 12px; border-radius: 999px;
-    display: inline-flex; align-items: center; gap: 8px;
-    pointer-events: none;
-  }
-  .demo-pill::before{
-    content:""; width: 7px; height: 7px; border-radius: 50%;
-    background: var(--sage-light); box-shadow: 0 0 0 3px rgba(168,181,145,.3);
-    animation: blink 1.4s infinite;
-  }
-
   /* ============ 15 EXIF PARAMETERS ============ */
-  .exif-list{ background: var(--cream); padding: 130px 0; }
+  .exif-list{ background: var(--cream); padding: 44px 0; }
   .exif-header{ display: flex; gap: 80px; align-items: end; margin-bottom: 64px; }
   .exif-header .left{ flex: 1; }
   .exif-header .right{ flex: 0 0 380px; }
@@ -594,7 +468,7 @@
   .how{
     background: var(--cream-light);
     border-top: 1px solid var(--border);
-    padding: 130px 0;
+    padding: 44px 0;
   }
   .how-steps{
     margin-top: 60px;
@@ -635,7 +509,7 @@
     color: #e6e1c5;
     position: relative;
     overflow: hidden;
-    padding: 130px 0;
+    padding: 44px 0;
   }
   .security::before{
     content:""; position:absolute; right:-200px; top:-200px;
@@ -731,13 +605,13 @@
   /* ============ DOWNLOAD CTA ============ */
   .download{
     background: var(--cream);
-    padding: 130px 0;
+    padding: 44px 0;
     text-align: center;
     position: relative;
   }
   .download .section-title{ margin-left: auto; margin-right: auto; }
   .dl-card{
-    margin: 56px auto 0;
+    margin: 28px auto 0;
     max-width: 720px;
     background: var(--cream-light);
     border: 1px solid var(--border-strong);
@@ -946,7 +820,7 @@
     .hero-cta-row{ flex-direction: column; align-items: flex-start; gap: 12px; }
     .btn{ width: 100%; justify-content: center; }
     .meta-row{ gap: 16px; font-size: 10px; }
-    .hero-photo{ aspect-ratio: 4/3; }
+    .hero-photo img{ width: 100%; height: auto; }
     .hero-caption{ font-size: 10px; }
 
     /* PILLARS */
@@ -1054,7 +928,7 @@
   .batch{
     background: var(--forest);
     color: #e6e1c5;
-    padding: 130px 0;
+    padding: 44px 0;
     position: relative;
     overflow: hidden;
   }
@@ -1121,7 +995,7 @@
   .photographer{
     background: var(--cream-light);
     border-top: 1px solid var(--border);
-    padding: 130px 0;
+    padding: 44px 0;
   }
   .photographer-grid{
     display: grid; grid-template-columns: 1fr 1fr;
@@ -1295,11 +1169,30 @@
   .v11-tag .arr{ font-size: 14px; transition: transform .25s ease; }
   .v11-tag:hover .arr{ transform: translateX(3px); }
 
+  /* ============ FEATURE LIST (compact bullets) ============ */
+  .feature-list{
+    display: grid; grid-template-columns: repeat(2,1fr); gap: 16px 48px;
+    margin-top: 44px;
+  }
+  .fl-col{ display: flex; flex-direction: column; gap: 14px; }
+  .fl-item{
+    display: flex; gap: 14px; align-items: flex-start;
+    font-size: 15px; color: var(--ink-soft); line-height: 1.55;
+  }
+  .fl-dot{
+    flex-shrink: 0; width: 7px; height: 7px; border-radius: 50%;
+    background: var(--sage); margin-top: 6px;
+  }
+  .fl-item b{ color: var(--forest-deep); font-weight: 600; }
+  @media (max-width: 768px){
+    .feature-list{ grid-template-columns: 1fr; gap: 10px; margin-top: 28px; }
+  }
+
   /* ============ NEW IN v1.1 ============ */
   .whatsnew{
     background: var(--cream-light);
     border-top: 1px solid var(--border);
-    padding: 130px 0;
+    padding: 44px 0;
     position: relative;
     overflow: hidden;
   }
@@ -1383,66 +1276,11 @@
   }
 
   /* ============ DEMO v1.1 additions ============ */
-  .layout-row{ display: grid; grid-template-columns: repeat(2,1fr); gap: 8px; }
-  .layout-row button{
-    background: transparent; border: 1px solid var(--border-strong);
-    color: var(--ink-soft); padding: 13px 10px;
-    font-family:'DM Sans', sans-serif; font-size: 12px;
-    letter-spacing: 0.05em; cursor: pointer; border-radius: var(--r-sm);
-    transition: all .2s ease; text-align: left; line-height: 1.3;
-  }
-  .layout-row button .lt{ display:block; font-weight: 600; letter-spacing: 0.04em; }
-  .layout-row button .ld{ display:block; font-size: 10.5px; color: var(--muted); margin-top: 2px; }
-  .layout-row button:hover{ border-color: var(--gold-deep); }
-  .layout-row button.active{ background: var(--forest); color: #f0ecd8; border-color: var(--forest); }
-  .layout-row button.active .ld{ color: rgba(240,236,216,.7); }
-
-  .toggle-row{ display: flex; gap: 10px; }
-  .toggle-row button{
-    flex: 1; border: 1px solid var(--border-strong); background: transparent;
-    color: var(--ink-soft); padding: 11px; font-family:'DM Sans', sans-serif;
-    font-size: 12px; letter-spacing: 0.04em; border-radius: var(--r-sm);
-    cursor: pointer; transition: all .2s ease;
-  }
-  .toggle-row button.active{ background: var(--forest); color: #f0ecd8; border-color: var(--forest); }
-
-  /* single-line overlay &mdash; centred strip, top or bottom */
-  .demo-exif.single{
-    left: 0; right: 0;
-    padding: 0 26px;
-    text-align: center;
-  }
-  .demo-exif.single.pos-top{ top: 20px; bottom: auto; }
-  .demo-exif.single.pos-bottom{ bottom: 20px; top: auto; }
-  .demo-exif.single .line{
-    white-space: normal; line-height: 1.7;
-  }
-  .demo-exif.single .note{ font-style: italic; opacity: .92; margin-top: 5px; max-width: none; width: 100%; text-align: center; }
-  /* multi-line note */
-  .demo-exif .note{ margin-top: 5px; font-style: italic; opacity: .9; max-width: 230px; }
-  .demo-exif.s-sm .note{ font-size: 9.5px; }
-  /* values-only (no field labels) */
-  .demo-exif.no-labels .row{ display: block; grid-template-columns: none; }
-  .demo-exif.no-labels .k{ display: none; }
-  .demo-exif.no-labels .v::before{ content: none; }
-
-  /* note text input */
-  .note-input{
-    width: 100%; box-sizing: border-box;
-    font-family:'DM Sans', sans-serif; font-size: 13px;
-    color: var(--ink); background: var(--cream);
-    border: 1px solid var(--border-strong); border-radius: var(--r-sm);
-    padding: 10px 12px; resize: none; outline: none; line-height: 1.4;
-    transition: border-color .2s, box-shadow .2s;
-  }
-  .note-input:focus{ border-color: var(--sage); box-shadow: 0 0 0 3px rgba(139,153,113,.12); }
-  .note-input::placeholder{ color: var(--muted); }
-
   /* ============ SUPPORT ============ */
   .support{
     background: var(--forest);
     color: #e6e1c5;
-    padding: 120px 0;
+    padding: 44px 0;
     position: relative;
     overflow: hidden;
   }
@@ -1510,6 +1348,37 @@
     .dl-coffee .btn-coffee{ width: 100%; justify-content: center; }
   }
 
+  /* Chrome download warning */
+  .chrome-warn{
+    margin-top: 16px;
+    display: flex; gap: 14px; align-items: flex-start;
+    background: #fffbec;
+    border: 1px solid #e2c84b;
+    border-radius: var(--r-sm);
+    padding: 14px 16px;
+    font-size: 13px; color: #5a4a00; line-height: 1.55;
+  }
+  .chrome-warn svg{ flex-shrink:0; width:18px; height:18px; color:#b08800; margin-top:1px; }
+  .chrome-warn b{ color: #3d3200; }
+
+  /* download + coffee side by side */
+  .dl-layout{ display: grid; grid-template-columns: 1fr 300px; gap: 28px; align-items: start; margin-top: 40px; }
+  .dl-side-coffee{
+    background: var(--forest);
+    border-radius: var(--r-md);
+    padding: 32px 28px;
+    text-align: center;
+    color: #e6e1c5;
+    display: flex; flex-direction: column; align-items: center; gap: 14px;
+    position: sticky; top: 80px;
+  }
+  .dl-side-coffee .cup-lg{ width: 48px; height: 48px; color: var(--gold-soft); }
+  .dl-side-coffee h3{ font-size: 18px; font-weight: 600; color: #f4efd9; margin: 0; letter-spacing: -0.01em; }
+  .dl-side-coffee p{ font-size: 13px; color: #c8c4a8; margin: 0; line-height: 1.55; }
+  .dl-side-coffee .btn-coffee{ width: 100%; justify-content: center; }
+  .dl-side-coffee .support-note{ font-size: 10px; color: #8f8c70; letter-spacing: 0.12em; text-transform: uppercase; }
+  @media (max-width: 900px){ .dl-layout{ grid-template-columns: 1fr; } .dl-side-coffee{ position: static; } }
+
   /* ============ KEEP ME UPDATED ============ */
   .notify-card{
     max-width: 640px; margin: 36px auto 0;
@@ -1556,7 +1425,7 @@
   .version-history{
     background: var(--cream);
     border-top: 1px solid var(--border);
-    padding: 64px 0 56px;
+    padding: 44px 0 36px;
   }
   .vh-head{
     font-family:'DM Sans', sans-serif;
@@ -1609,10 +1478,9 @@
       <span class="nav-divider"></span>
       <a href="#tool">The Tool</a>
       <a href="#features">Features</a>
-      <a href="#how">How it works</a>
       <a href="#about-tool">About</a>
       <a href="#security">Security</a>
-      <a href="/cdn-cgi/l/email-protection#6f0e1c07061b08411f07001b00081d0e1f07162f08020e0603410c0002">Contact</a>
+      <a href="/cdn-cgi/l/email-protection#2342504b4a57440d534b4c574c445142534b5a63444e424a4f0d404c4e">Contact</a>
       <a href="#download" class="nav-cta">Download</a>
     </div>
 
@@ -1635,10 +1503,9 @@
     <a href="Blog.html" class="nav-site-link" style="color:var(--gold-soft);">Blog</a>
     <a href="#tool">The Tool</a>
     <a href="#features">Features</a>
-    <a href="#how">How it works</a>
     <a href="#about-tool">About</a>
     <a href="#security">Security</a>
-    <a href="/cdn-cgi/l/email-protection#81e0f2e9e8f5e6aff1e9eef5eee6f3e0f1e9f8c1e6ece0e8edafe2eeec">Contact</a>
+    <a href="/cdn-cgi/l/email-protection#9effedf6f7eaf9b0eef6f1eaf1f9ecffeef6e7def9f3fff7f2b0fdf1f3">Contact</a>
     <a href="#download" class="cta">Download Free &rarr;</a>
   </nav>
   <div class="nav-mobile-foot">studio.ashitgphotography.com</div>
@@ -1648,20 +1515,19 @@
 <header class="hero" id="tool">
   <div class="wrap hero-grid">
     <div>
-      <p class="eyebrow">A tool for photographers &middot; v1.1</p>
+      <p class="eyebrow">A tool for photographers &middot; v1.2</p>
       <h1 class="h1">EXIF Overlay Tool</h1>
       <p class="hero-tagline">Stamp camera data, <span class="gold">your way.</span></p>
       <p class="hero-lead">
-        A lightweight Windows utility that prints the <b>EXIF data</b> from every shot &mdash;
-        camera, lens, shutter, aperture and twelve more &mdash; directly onto your photograph.
-        Pick what you want, where it sits, how it looks. Your original file stays exactly as you shot it.
+        A lightweight Windows utility that stamps <b>EXIF data</b> directly onto your photograph &mdash;
+        camera, lens, shutter, aperture and more. Pick what you want, where it sits, how it looks.
       </p>
       <div class="hero-cta-row">
         <a href="#download" class="btn btn-primary">Download for Windows <span class="arr">&rarr;</span></a>
         <a href="#features" class="btn btn-ghost">See features</a>
       </div>
 
-      <a href="#whats-new" class="v11-tag"><span class="pip"></span>New in v1.1 &middot; single-line layout, notes, labels &amp; destination folder <span class="arr">&rarr;</span></a>
+      <a href="#whats-new" class="v11-tag" style="display:none;"><span class="pip"></span>New in v1.1 &middot; single-line layout, notes, labels &amp; destination folder <span class="arr">&rarr;</span></a>
 
       <div class="meta-row">
         <span>15 EXIF fields</span>
@@ -1673,9 +1539,10 @@
 
     <div>
       <div class="hero-photo">
+        <img src="assets/kingfisher_demo.png" alt="White-throated Kingfisher &mdash; actual EXIF overlay output">
         <div class="pill">Actual Output</div>
       </div>
-      <p class="hero-caption">Actual output &middot; overlay stamped <b>top-left</b>, fully positionable</p>
+      <p class="hero-caption">Actual output &middot; <b>Single Line Caption</b> &middot; Fully Customizable</p>
     </div>
   </div>
 </header>
@@ -1683,48 +1550,22 @@
 <!-- ====== PILLARS ====== -->
 <section class="pillars" id="features">
   <div class="wrap">
-    <p class="section-label reveal">// Three things you'll feel immediately</p>
+    <p class="section-label reveal">// What it does</p>
     <h2 class="section-title reveal d1">A small tool that does <span class="italic">exactly</span> what photographers ask of it.</h2>
-    <p class="section-lead reveal d2">No subscriptions, no upload-to-cloud, no compression. Open a photo, pick your overlay, export. That's it.</p>
+    <p class="section-lead reveal d2">No subscriptions, no upload-to-cloud, no compression. Open a photo, pick your overlay, export.</p>
 
-    <div class="pillar-grid">
-      <!-- 15 EXIF -->
-      <div class="pillar reveal d1">
-        <div class="pillar-num">01 / Comprehensive</div>
-        <div class="pillar-vis">
-          <span class="big-num"><span id="bigCount">0</span><span class="unit">EXIF fields</span></span>
-        </div>
-        <h3 class="pillar-title">Stamp <span class="it">15</span> EXIF parameters.</h3>
-        <p class="pillar-body">Camera, lens, shutter, aperture, ISO, focal length, subject distance, white balance, flash, exposure compensation, metering mode, exposure program, date &amp; time, copyright &amp; GPS &mdash; <b>any combination</b>.</p>
+    <div class="feature-list reveal d3">
+      <div class="fl-col">
+        <div class="fl-item"><span class="fl-dot"></span><span><b>15 EXIF fields</b> &mdash; Camera, Lens, Shutter, Aperture, ISO, Focal Length, White Balance, Flash, Metering, Date &amp; Time, GPS, Copyright and more</span></div>
+        <div class="fl-item"><span class="fl-dot"></span><span><b>Single line or multi-line</b> &mdash; one strip at the top or bottom, or all four corners</span></div>
+        <div class="fl-item"><span class="fl-dot"></span><span><b>Field labels on or off</b> &mdash; show &ldquo;Shutter : 1/320s&rdquo; or just the values</span></div>
+        <div class="fl-item"><span class="fl-dot"></span><span><b>Notes</b> &mdash; add a custom caption (up to 2 lines) stamped alongside the data</span></div>
       </div>
-
-      <!-- Customizable -->
-      <div class="pillar reveal d2">
-        <div class="pillar-num">02 / Customisable</div>
-        <div class="pillar-vis">
-          <div class="corners-vis">
-            <div class="frame"></div>
-            <div class="ghost tl"></div><div class="ghost tr"></div>
-            <div class="ghost bl"></div><div class="ghost br"></div>
-            <div class="dot" id="cornerDot" style="top:10px;left:10px;"></div>
-          </div>
-        </div>
-        <h3 class="pillar-title">Any corner, any colour, any <span class="it">size</span>.</h3>
-        <p class="pillar-body">Place the overlay top-left, top-right, bottom-left or bottom-right. Pick white, yellow or black text. Scale from subtle to bold to suit every composition.</p>
-      </div>
-
-      <!-- Non-destructive -->
-      <div class="pillar reveal d3">
-        <div class="pillar-num">03 / Safe by design</div>
-        <div class="pillar-vis">
-          <svg class="shield-vis" viewBox="0 0 96 110" fill="none" stroke="currentColor" stroke-width="2.2" style="color: var(--gold-deep)">
-            <path d="M48 5 L88 18 L88 56 C88 78 70 96 48 105 C26 96 8 78 8 56 L8 18 Z"
-                  stroke="currentColor" stroke-linejoin="round" fill="rgba(201,163,90,.06)"/>
-            <polyline points="30,55 44,68 66,42" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <h3 class="pillar-title">Your <span class="it">original</span> is never modified.</h3>
-        <p class="pillar-body">Every export is written to a brand-new file with an <b>_exif</b> suffix, saved alongside the source. The photograph you shot stays untouched &mdash; pixel for pixel.</p>
+      <div class="fl-col">
+        <div class="fl-item"><span class="fl-dot"></span><span><b>Single Line Caption (Black Bar)</b> &mdash; a clean black-bar strip with white caption text across the image</span></div>
+        <div class="fl-item"><span class="fl-dot"></span><span><b>Text colour</b> &mdash; White, Yellow or Black to suit any background</span></div>
+        <div class="fl-item"><span class="fl-dot"></span><span><b>Destination folder</b> &mdash; choose exactly where stamped images are saved</span></div>
+        <div class="fl-item"><span class="fl-dot"></span><span><b>Batch processing</b> &mdash; stamp a whole folder in one click, with uniform or per-image settings</span></div>
       </div>
     </div>
   </div>
@@ -1732,63 +1573,19 @@
 
 
 <!-- ====== NEW IN v1.1 ====== -->
-<section class="whatsnew" id="whats-new">
+<section class="whatsnew" id="whats-new" style="display:none;">
   <div class="wrap">
-    <span class="wn-eyebrow reveal"><span class="pip" style="width:7px;height:7px;border-radius:50%;background:var(--gold-soft);"></span>Just shipped &middot; <span class="v">Version 1.1</span></span>
-    <h2 class="section-title reveal d1">Four new ways to <span class="italic">control</span> the stamp.</h2>
-    <p class="section-lead reveal d2">Version 1.1 builds on everything from the first release &mdash; with more control over how the overlay reads, a place for your own words, and where the finished files land.</p>
+    <span class="wn-eyebrow reveal"><span class="pip" style="width:7px;height:7px;border-radius:50%;background:var(--gold-soft);display:inline-block;"></span>Just shipped &middot; <span class="v">Version 1.1</span></span>
+    <h2 class="section-title reveal d1">New in <span class="italic">v1.1</span>.</h2>
 
-    <div class="wn-grid">
-      <!-- 1. Single / multi line -->
-      <div class="wn-card reveal d1">
-        <div class="wn-n"><span class="nb">01</span> Layout</div>
-        <h3>One <em>single line</em>, or all four corners.</h3>
-        <p>Keep it minimal with a single strip of data along the <b>top or bottom</b> edge &mdash; or spread the full detail across <b>multiple lines</b> in any of the four corners. Your call, shot by shot.</p>
-        <div class="wn-vis" aria-hidden="true">
-          <div class="wn-frame"></div>
-          <div class="wn-line" style="left:24px; right:24px; bottom:24px; height:5px;"></div>
-        </div>
+    <div class="feature-list reveal d2" style="margin-top: 36px;">
+      <div class="fl-col">
+        <div class="fl-item"><span class="fl-dot"></span><span><b>Single line or multi-line layout</b> &mdash; one strip at the top or bottom edge, or spread across all four corners</span></div>
+        <div class="fl-item"><span class="fl-dot"></span><span><b>Field labels on or off</b> &mdash; show "Shutter : 1/320s" or just "1/320s" with a single toggle</span></div>
       </div>
-
-      <!-- 2. Labels on/off -->
-      <div class="wn-card reveal d2">
-        <div class="wn-n"><span class="nb">02</span> Field labels</div>
-        <h3>Show the labels, or let the <em>values</em> speak.</h3>
-        <p>Display each field with its name &mdash; <b>Shutter: 1/320s</b> &mdash; or strip the labels for a clean, compact read of just the numbers. A single toggle switches the whole overlay.</p>
-        <div class="wn-vis" aria-hidden="true">
-          <div class="wn-frame"></div>
-          <div style="position:absolute; inset:14px; padding:14px; display:flex; flex-direction:column; gap:7px; justify-content:center;">
-            <span class="wn-chip">Shutter: 1/320s</span>
-            <span class="wn-chip" style="opacity:.55;">1/320s</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3. Notes -->
-      <div class="wn-card reveal d3">
-        <div class="wn-n"><span class="nb">03</span> Notes</div>
-        <h3>Add a note in <em>your</em> words.</h3>
-        <p>A new notes field lets you stamp a short caption &mdash; a location, a subject, a title &mdash; right alongside the data. Up to <b>two lines</b>, sitting neatly with the rest of the overlay.</p>
-        <div class="wn-vis" aria-hidden="true">
-          <div class="wn-frame"></div>
-          <div style="position:absolute; inset:14px; padding:14px; display:flex; align-items:center;">
-            <span class="wn-chip" style="font-style:italic; max-width:100%;">&ldquo;Kingfisher at dawn &mdash; Bharatpur&rdquo;</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4. Destination folder -->
-      <div class="wn-card reveal d4">
-        <div class="wn-n"><span class="nb">04</span> Output</div>
-        <h3>Send finished files to a <em>folder you choose</em>.</h3>
-        <p>Pick a destination folder and every stamped image is saved there &mdash; keeping your exports tidy and separate from the originals, which still stay exactly as you shot them.</p>
-        <div class="wn-vis" aria-hidden="true">
-          <div style="position:absolute; inset:14px; display:flex; align-items:center; gap:12px; padding:0 16px;">
-            <span class="wn-chip"><span class="wn-dot" style="position:static; box-shadow:none;"></span>IMG_001_exif.jpg</span>
-            <span style="color:var(--gold-deep); font-size:18px;">&rarr;</span>
-            <span class="wn-chip" style="border-color:var(--gold-deep); color:var(--gold-deep);"><span class="wn-dot" style="position:static; box-shadow:none; background:var(--gold-deep); border-radius:1px;"></span>/Stamped</span>
-          </div>
-        </div>
+      <div class="fl-col">
+        <div class="fl-item"><span class="fl-dot"></span><span><b>Notes</b> &mdash; add a custom caption (up to 2 lines) stamped alongside the EXIF data</span></div>
+        <div class="fl-item"><span class="fl-dot"></span><span><b>Destination folder</b> &mdash; choose exactly where your stamped images are saved</span></div>
       </div>
     </div>
   </div>
@@ -1798,131 +1595,18 @@
 <!-- ====== BATCH ====== -->
 <section class="batch">
   <div class="wrap">
-    <p class="section-label reveal">// The headline feature</p>
-    <h2 class="section-title reveal d1">Process a <span class="gold">whole folder</span><br>in <span class="italic">one click</span>.</h2>
-    <p class="section-lead reveal d2">Whether you're sharing a single hero shot or exporting an entire session, the batch engine handles it. One setting for everything &mdash; or custom settings per image. You're in control.</p>
+    <p class="section-label reveal">// Batch processing</p>
+    <h2 class="section-title reveal d1">Process a <span class="gold">whole folder</span> in <span class="italic">one click</span>.</h2>
+    <p class="section-lead reveal d2">Whether you're sharing a single hero shot or exporting an entire session, the batch engine handles it.</p>
 
-    <div class="batch-grid">
-      <div class="batch-card reveal d1">
-        <div class="bc-badge">Mode 1</div>
-        <h3>Apply to <em>All</em></h3>
-        <p>Configure your overlay once &mdash; position, fields, colour, size &mdash; then point it at a folder. Every photo inside gets the exact same treatment. One click. Done.</p>
-        <div class="batch-vis">
-          <div class="file-chip done"><span class="dot"></span>IMG_001.jpg</div>
-          <div class="batch-arrow">&rarr;</div>
-          <div class="file-chip done"><span class="dot"></span>IMG_001_exif.jpg</div>
-        </div>
-        <ul style="margin-top:22px;">
-          <li>Select a folder &mdash; all images processed together</li>
-          <li>One setting applied uniformly across every photo</li>
-          <li>Each image gets its own <b>_exif</b> copy written beside it</li>
-          <li>Originals remain untouched in the same location</li>
-        </ul>
+    <div class="feature-list reveal d3" style="margin-top: 40px;">
+      <div class="fl-col">
+        <div class="fl-item" style="color:#d9d4b7;"><span class="fl-dot" style="background:var(--gold-soft);"></span><span><b style="color:#f0ecd8;">Apply to all</b> &mdash; configure your overlay once and point it at a folder; every photo gets the same treatment in one click</span></div>
+        <div class="fl-item" style="color:#d9d4b7;"><span class="fl-dot" style="background:var(--gold-soft);"></span><span><b style="color:#f0ecd8;">Per-image settings</b> &mdash; step through each image and dial in exactly what each shot needs: fields, position, colour and size</span></div>
       </div>
-
-      <div class="batch-card reveal d2">
-        <div class="bc-badge">Mode 2</div>
-        <h3>Per-image <em>custom</em> settings</h3>
-        <p>Need different overlays for different shots? Step through each image individually and dial in exactly what each one needs &mdash; fields, corner, colour and size.</p>
-        <div class="batch-vis">
-          <div class="file-chip"><span class="dot"></span>Wildlife</div>
-          <div class="batch-arrow">&ne;</div>
-          <div class="file-chip" style="animation-delay:.6s"><span class="dot"></span>Landscape</div>
-          <div class="batch-arrow">&ne;</div>
-          <div class="file-chip" style="animation-delay:1.2s"><span class="dot"></span>Portrait</div>
-        </div>
-        <ul style="margin-top:22px;">
-          <li>Review and adjust each photo's overlay before export</li>
-          <li>Live preview updates as you change any setting</li>
-          <li>Mix field selections freely across shots in the same folder</li>
-          <li>Still writes clean <b>_exif</b> copies &mdash; never overwrites</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="batch-stat reveal d3">
-      <div class="bs-item">
-        <span class="bs-num">&infin;</span>
-        <span class="bs-label">photos per<br>batch run</span>
-      </div>
-      <div class="divider"></div>
-      <div class="bs-item">
-        <span class="bs-num">2</span>
-        <span class="bs-label">modes &mdash; uniform<br>or per-image</span>
-      </div>
-      <div class="divider"></div>
-      <p class="bs-note">"Configure once, stamp hundreds &mdash; or fine-tune every single frame. The choice is always yours."</p>
-    </div>
-  </div>
-</section>
-
-<!-- ====== DEMO ====== -->
-<section class="demo">
-  <div class="wrap">
-    <p class="section-label reveal">// Total creative control</p>
-    <h2 class="section-title reveal d1">Try it &mdash; <span class="italic">live</span>.</h2>
-    <p class="section-lead reveal d2">Switch between a single-line strip and multi-line corners, toggle field labels, add a note, then recolour and resize &mdash; all in real time. This is exactly what you see inside the tool's preview window.</p>
-
-    <div class="demo-grid" style="margin-top: 72px;">
-      <div class="demo-controls reveal d1">
-        <div class="control-block">
-          <p class="control-label">Layout</p>
-          <div class="layout-row" id="layoutBtns">
-            <button class="active" data-layout="multi"><span class="lt">Multiple lines</span><span class="ld">Full detail &middot; any corner</span></button>
-            <button data-layout="single"><span class="lt">Single line</span><span class="ld">One strip &middot; top or bottom</span></button>
-          </div>
-        </div>
-
-        <div class="control-block">
-          <p class="control-label">Position</p>
-          <div class="corner-buttons" id="posBtns"></div>
-        </div>
-
-        <div class="control-block">
-          <p class="control-label">Field labels</p>
-          <div class="toggle-row" id="labelBtns">
-            <button class="active" data-labels="on">With labels</button>
-            <button data-labels="off">Values only</button>
-          </div>
-        </div>
-
-        <div class="control-block">
-          <p class="control-label">Note <span style="color:var(--muted); text-transform:none; letter-spacing:0;">(type your own &middot; max 2 lines)</span></p>
-          <textarea id="noteInput" class="note-input" rows="2" maxlength="80" placeholder="Type a note &mdash; e.g. Kingfisher at dawn, Bharatpur"></textarea>
-        </div>
-
-        <div class="control-block">
-          <p class="control-label">Text colour</p>
-          <div class="color-row" id="colorBtns">
-            <button class="white active" data-color="white">White</button>
-            <button class="yellow" data-color="yellow">Yellow</button>
-            <button class="black" data-color="black">Black</button>
-          </div>
-        </div>
-
-        <div class="control-block">
-          <p class="control-label">Font size</p>
-          <div class="size-row" id="sizeBtns">
-            <button data-size="s-sm">Small <span class="ss">10pt</span></button>
-            <button class="active" data-size="s-md">Medium <span class="ss">12pt</span></button>
-            <button data-size="s-lg">Large <span class="ss">14pt</span></button>
-          </div>
-        </div>
-
-        <div class="control-block">
-          <p class="control-label">Output &mdash; saved to your folder</p>
-          <div style="font-family:'DM Sans', sans-serif; font-size: 13px; color: var(--ink-soft); padding: 12px 14px; background: var(--cream); border: 1px solid var(--border); border-radius: var(--r-sm);">
-            /Stamped/Kingfisher_032<span style="color:var(--gold-deep)">_exif</span>.jpg
-            <span style="color: var(--muted); float: right;">new file &rarr;</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="reveal d2">
-        <div class="demo-photo-wrap">
-          <div class="demo-exif multi tl white s-md" id="demoExif"></div>
-          <div class="demo-pill">Live preview</div>
-        </div>
+      <div class="fl-col">
+        <div class="fl-item" style="color:#d9d4b7;"><span class="fl-dot" style="background:var(--gold-soft);"></span><span><b style="color:#f0ecd8;">Unlimited photos</b> &mdash; no cap on folder size; the tool runs through every image without slowing down</span></div>
+        <div class="fl-item" style="color:#d9d4b7;"><span class="fl-dot" style="background:var(--gold-soft);"></span><span><b style="color:#f0ecd8;">Always non-destructive</b> &mdash; originals stay untouched; each stamped file is written as a fresh <b style="color:#f0ecd8;">_exif</b> copy</span></div>
       </div>
     </div>
   </div>
@@ -1931,62 +1615,33 @@
 <!-- ====== 15 EXIF PARAMETERS ====== -->
 <section class="exif-list">
   <div class="wrap">
-    <div class="exif-header">
-      <div class="left">
-        <p class="section-label reveal">// Everything the camera knows</p>
-        <h2 class="section-title reveal d1">Pick from <span class="gold">15</span> EXIF fields,<br>in <span class="italic">any</span> combination.</h2>
-      </div>
-      <div class="right reveal d2">
-        <p>Tick what matters for the shot, untick what doesn't. Save your favourite combinations as a default &mdash; the tool remembers across sessions.</p>
-      </div>
-    </div>
+    <p class="section-label reveal">// Everything the camera knows</p>
+    <h2 class="section-title reveal d1">Pick from <span class="gold">15</span> EXIF fields, in <span class="italic">any</span> combination.</h2>
+    <p style="color:var(--ink-soft); font-size:15px; margin:10px 0 28px; max-width:600px;">Tick what matters for the shot, untick what doesn't. The tool remembers your favourites across sessions.</p>
 
-    <div class="exif-grid" id="exifGrid">
-      <div class="exif-item reveal"><svg class="check" viewBox="0 0 16 16"><polyline points="3,8.5 6.5,12 13,4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="n">01</div><div class="lbl">Camera</div><div class="ex">OM-1</div></div>
-      <div class="exif-item reveal"><svg class="check" viewBox="0 0 16 16"><polyline points="3,8.5 6.5,12 13,4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="n">02</div><div class="lbl">Lens</div><div class="ex">LEICA DG 100-400</div></div>
-      <div class="exif-item reveal"><svg class="check" viewBox="0 0 16 16"><polyline points="3,8.5 6.5,12 13,4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="n">03</div><div class="lbl">Shutter</div><div class="ex">1/320s</div></div>
-      <div class="exif-item reveal"><svg class="check" viewBox="0 0 16 16"><polyline points="3,8.5 6.5,12 13,4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="n">04</div><div class="lbl">Aperture</div><div class="ex">f/6.3</div></div>
-      <div class="exif-item reveal"><svg class="check" viewBox="0 0 16 16"><polyline points="3,8.5 6.5,12 13,4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="n">05</div><div class="lbl">ISO</div><div class="ex">500</div></div>
-      <div class="exif-item reveal"><svg class="check" viewBox="0 0 16 16"><polyline points="3,8.5 6.5,12 13,4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="n">06</div><div class="lbl">White Balance</div><div class="ex">Auto</div></div>
-      <div class="exif-item reveal"><svg class="check" viewBox="0 0 16 16"><polyline points="3,8.5 6.5,12 13,4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="n">07</div><div class="lbl">Focal Length</div><div class="ex">400 mm</div></div>
-      <div class="exif-item reveal"><svg class="check" viewBox="0 0 16 16"><polyline points="3,8.5 6.5,12 13,4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="n">08</div><div class="lbl">Subject Dist.</div><div class="ex">14.64 m</div></div>
-      <div class="exif-item reveal"><svg class="check" viewBox="0 0 16 16"><polyline points="3,8.5 6.5,12 13,4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="n">09</div><div class="lbl">Flash</div><div class="ex">No Flash &middot; On</div></div>
-      <div class="exif-item reveal"><svg class="check" viewBox="0 0 16 16"><polyline points="3,8.5 6.5,12 13,4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="n">10</div><div class="lbl">Exp. Comp.</div><div class="ex">0 EV</div></div>
-      <div class="exif-item reveal"><svg class="check" viewBox="0 0 16 16"><polyline points="3,8.5 6.5,12 13,4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="n">11</div><div class="lbl">Metering</div><div class="ex">Matrix</div></div>
-      <div class="exif-item reveal"><svg class="check" viewBox="0 0 16 16"><polyline points="3,8.5 6.5,12 13,4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="n">12</div><div class="lbl">Exp. Program</div><div class="ex">Manual</div></div>
-      <div class="exif-item reveal"><svg class="check" viewBox="0 0 16 16"><polyline points="3,8.5 6.5,12 13,4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="n">13</div><div class="lbl">Date &amp; Time</div><div class="ex">03 May 2026</div></div>
-      <div class="exif-item reveal"><svg class="check" viewBox="0 0 16 16"><polyline points="3,8.5 6.5,12 13,4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="n">14</div><div class="lbl">Copyright</div><div class="ex">Ashit Gandhi 2026</div></div>
-      <div class="exif-item reveal"><svg class="check" viewBox="0 0 16 16"><polyline points="3,8.5 6.5,12 13,4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="n">15</div><div class="lbl">GPS</div><div class="ex">Location data</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ====== HOW IT WORKS ====== -->
-<section class="how" id="how">
-  <div class="wrap">
-    <p class="section-label reveal">// How it works</p>
-    <h2 class="section-title reveal d1">Three clicks from <span class="italic">photo</span> to <span class="gold">stamped</span>.</h2>
-
-    <div class="how-steps">
-      <div class="step reveal d1">
-        <div class="step-num">01<span class="arrow">&rarr;</span></div>
-        <h3>Select</h3>
-        <p>Open a single photo or point the tool at an entire folder. Drag-and-drop also works.</p>
+    <div class="feature-list reveal d2" style="margin-top:0;">
+      <div class="fl-col">
+        <div class="fl-item"><span class="fl-dot"></span><span>Camera</span></div>
+        <div class="fl-item"><span class="fl-dot"></span><span>Lens</span></div>
+        <div class="fl-item"><span class="fl-dot"></span><span>Shutter Speed</span></div>
+        <div class="fl-item"><span class="fl-dot"></span><span>Aperture</span></div>
+        <div class="fl-item"><span class="fl-dot"></span><span>ISO</span></div>
+        <div class="fl-item"><span class="fl-dot"></span><span>White Balance</span></div>
+        <div class="fl-item"><span class="fl-dot"></span><span>Focal Length</span></div>
+        <div class="fl-item"><span class="fl-dot"></span><span>Subject Distance</span></div>
       </div>
-      <div class="step reveal d2">
-        <div class="step-num">02<span class="arrow">&rarr;</span></div>
-        <h3>Customise</h3>
-        <p>Tick the EXIF fields you want, choose a single-line strip or multi-line corners, toggle labels, add a note &mdash; confirm it all in the live preview.</p>
-      </div>
-      <div class="step reveal d3">
-        <div class="step-num">03</div>
-        <h3>Export</h3>
-        <p>One click writes a fresh <b>_exif</b> copy to the destination folder you choose. Your source file is left exactly as it was.</p>
+      <div class="fl-col">
+        <div class="fl-item"><span class="fl-dot"></span><span>Flash</span></div>
+        <div class="fl-item"><span class="fl-dot"></span><span>Exposure Compensation</span></div>
+        <div class="fl-item"><span class="fl-dot"></span><span>Metering Mode</span></div>
+        <div class="fl-item"><span class="fl-dot"></span><span>Exposure Program</span></div>
+        <div class="fl-item"><span class="fl-dot"></span><span>Date &amp; Time</span></div>
+        <div class="fl-item"><span class="fl-dot"></span><span>Copyright</span></div>
+        <div class="fl-item"><span class="fl-dot"></span><span>GPS Location</span></div>
       </div>
     </div>
   </div>
 </section>
-
 
 <!-- ====== PHOTOGRAPHER ====== -->
 <section class="photographer" id="about-tool">
@@ -2006,9 +1661,15 @@
         <p>Every solution I found was either too complex or required paying for software that did a hundred other things I didn't need. So I built something small that does one thing well.</p>
         <p>A few photographer friends asked for it. So I'm putting it out for free &mdash; for anyone who finds it useful.</p>
 
-        <a href="https://studio.ashitgphotography.com" target="_blank" class="visit-link">
-          See my photography work <span class="arr">&rarr;</span>
-        </a>
+        <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:24px; align-items:center;">
+          <a href="https://studio.ashitgphotography.com" target="_blank" class="visit-link">
+            See my photography work <span class="arr">&rarr;</span>
+          </a>
+          <a href="#download" class="btn btn-coffee" style="font-size:13px; padding:11px 18px;">
+            <svg style="width:16px;height:16px;flex-shrink:0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9 h13 v5 a4 4 0 0 1 -4 4 H8 a4 4 0 0 1 -4 -4 Z"/><path d="M17 10 h2.5 a2.5 2.5 0 0 1 0 5 H17"/><line x1="7" y1="3.5" x2="7" y2="6"/><line x1="11" y1="3.5" x2="11" y2="6"/></svg>
+            Buy me a coffee
+          </a>
+        </div>
       </div>
 
       <div class="reveal d2">
@@ -2035,21 +1696,14 @@
   <div class="wrap">
     <p class="section-label reveal">// Safety &amp; trust</p>
     <h2 class="section-title reveal d1">A small EXE, built with <span class="italic">care</span>.</h2>
-    <p class="section-lead reveal d2">
-      Because this is a Windows executable from a one-person studio, your browser or Windows
-      may pause for a moment the first time you open it. Here is exactly what's inside the file,
-      why those warnings appear, and how to proceed safely.
-    </p>
 
     <div class="sec-panel">
       <div class="sec-card reveal d1">
         <div class="sc-num">A &middot; What's in the file</div>
         <h3>Nothing but the tool itself.</h3>
-        <p>EXIF Overlay Tool is a small standalone application. It does one job &mdash; read EXIF data, stamp it onto a copy, save the copy. Nothing more.</p>
         <ul>
-          <li>No background services, no scheduled tasks</li>
-          <li>No telemetry, no analytics, no &ldquo;phone home&rdquo;</li>
-          <li>No internet access required to run</li>
+          <li>No background services or scheduled tasks</li>
+          <li>No telemetry, analytics, or internet access required</li>
           <li>No registry changes outside its own preferences</li>
           <li>Uninstall by deleting the file &mdash; that's it</li>
         </ul>
@@ -2058,60 +1712,41 @@
       <div class="sec-card reveal d2">
         <div class="sc-num">B &middot; How you can verify</div>
         <h3>Don't take my word &mdash; check it yourself.</h3>
-        <p>Three independent ways to confirm the file you downloaded is the file I published, and that it is clean.</p>
         <ul>
           <li><b>SHA-256 hash</b> published next to the download &mdash; match it against the file you saved</li>
-          <li><b>VirusTotal report</b> linked on the download page (60+ AV engines scan it for you)</li>
-          <li><b>Block your firewall</b> &mdash; the tool will continue to work; it never needs the network</li>
+          <li><b>VirusTotal report</b> linked on the download card &mdash; 60+ AV engines scan it for you</li>
+          <li><b>Block your firewall</b> &mdash; the tool works fully offline; it never needs the network</li>
         </ul>
       </div>
     </div>
 
     <!-- Windows SmartScreen walk-through -->
     <div class="smartscreen reveal d3">
-      <h3>About the Windows warning you may see</h3>
-      <p class="sub">
-        Windows shows a blue <b>SmartScreen</b> dialog the first time it sees a new EXE
-        from a small publisher. This is reputation-based &mdash; not a virus alert. A code-signing
-        certificate is on the roadmap, but until then, here's the safe walk-through:
-      </p>
-
+      <h3>About the Windows SmartScreen warning</h3>
+      <p class="sub">Windows shows a blue <b>SmartScreen</b> dialog the first time it sees a new EXE from a small publisher. Click <b>More info</b> then <b>Run anyway</b> &mdash; you'll only need to do this once.</p>
       <div class="ss-grid">
         <div class="ss-step">
           <div class="ss-n">Step 01</div>
-          <div class="ss-mock">
-            <span class="mock-title">Windows protected your PC</span>
-            Microsoft Defender SmartScreen prevented an unrecognised app from starting.
-            <br><br>
-            App: <b>EXIFOverlayTool.exe</b><br>
-            Publisher: Unknown publisher
-          </div>
+          <div class="ss-mock"><span class="mock-title">Windows protected your PC</span>Microsoft Defender SmartScreen prevented an unrecognised app from starting.</div>
           <h4>You'll see this dialog</h4>
-          <p>It's a one-time prompt the first time Windows encounters the app on your machine.</p>
+          <p>A one-time prompt the first time Windows encounters the app.</p>
         </div>
-
         <div class="ss-step">
           <div class="ss-n">Step 02</div>
-          <div class="ss-mock">
-            <span class="mock-title"><span class="link">More info</span></span>
-            Click the small <b>More info</b> link inside the blue dialog. A <b>Run anyway</b>
-            button will appear below the publisher name.
-          </div>
+          <div class="ss-mock"><span class="mock-title"><span class="link">More info</span></span>Click the small <b>More info</b> link &mdash; a <b>Run anyway</b> button will appear.</div>
           <h4>Click &ldquo;More info&rdquo;</h4>
-          <p>The Run anyway button is hidden until you do &mdash; Microsoft does this on purpose.</p>
+          <p>The Run anyway button is hidden until you click this.</p>
         </div>
-
         <div class="ss-step">
           <div class="ss-n">Step 03</div>
-          <div class="ss-mock">
-            <span class="mock-title">Run anyway</span>
-            App: EXIFOverlayTool.exe<br>
-            Publisher: Ashit Gandhi &middot; Studio<br><br>
-            [ Run anyway ] &nbsp; [ Don't run ]
-          </div>
+          <div class="ss-mock"><span class="mock-title">Run anyway</span>[ Run anyway ] &nbsp; [ Don't run ]</div>
           <h4>Click &ldquo;Run anyway&rdquo;</h4>
-          <p>You'll only need to do this once. After that Windows recognises the file and opens it directly.</p>
+          <p>After this, Windows recognises the file and opens it directly every time.</p>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
       </div>
     </div>
   </div>
@@ -2150,86 +1785,99 @@
     <h2 class="section-title reveal d1" style="text-align:center;">Download <span class="italic">EXIF Overlay</span>.</h2>
     <p class="section-lead reveal d2" style="text-align:center; margin: 0 auto;">A small standalone executable for Windows 10 and 11. No installer, no admin rights, no account.</p>
 
-    <div class="dl-card reveal d3">
-      <div class="dl-head">
-        <div class="dl-file">
-          <div class="dl-icon">EXE</div>
-          <div class="dl-meta">
-            <div class="name">EXIFOverlayTool.exe</div>
-            <div class="size">v1.1  &middot;  ~ 15 MB  &middot;  Windows 10 / 11</div>
+    <div class="dl-layout">
+      <!-- LEFT: download card -->
+      <div class="dl-card reveal d3">
+        <div class="dl-head">
+          <div class="dl-file">
+            <div class="dl-icon">EXE</div>
+            <div class="dl-meta">
+              <div class="name">EXIFOverlayTool.exe</div>
+              <div class="size">v1.2  &middot;  ~ 15 MB  &middot;  Windows 10 / 11</div>
+            </div>
+          </div>
+          <div class="dl-stat">
+            <div class="item">
+              <div class="lbl">SHA-256</div>
+              <div class="val" style="font-size:11px; letter-spacing:0.04em; word-break:break-all;">8BE231D02420E7E22B1D832366FD08BA481477E835D68C704B13DAA1CF658A6C</div>
+            </div>
           </div>
         </div>
-        <div class="dl-stat">
-          <div class="item">
-            <div class="lbl">SHA-256</div>
-            <div class="val" style="font-size:11px; letter-spacing:0.04em; word-break:break-all;">3A9D9890AD10E4E7FBBF38311EEF4A38A27AB33B97B492EC8B9A620DEA6010C7</div>
+
+        <div class="dl-row">
+          <div class="dl-checks">
+            <span>Signed download &mdash; direct from this site only</span>
+            <span><a href="https://www.virustotal.com/gui/file/8be231d02420e7e22b1d832366fd08ba481477e835d68c704b13daa1cf658a6c/detection" target="_blank" rel="noopener" style="color:var(--forest-deep);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;">VirusTotal report</a> &mdash; 8/71 flagged (false positive)</span>
+            <span>No installer, no admin rights required</span>
           </div>
-        </div>
-      </div>
-
-      <div class="dl-row">
-        <div class="dl-checks">
-          <span>Signed download &mdash; direct from this site only</span>
-          <span><a href="https://www.virustotal.com/gui/file/3a9d9890ad10e4e7fbbf38311eef4a38a27ab33b97b492ec8b9a620dea6010c7/detection" target="_blank" rel="noopener" style="color:var(--forest-deep);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;">VirusTotal report</a> &mdash; scan results attached</span>
-          <span>No installer, no admin rights required</span>
-        </div>
-        <!-- TODO: confirm the v1.1 release asset URL once published -->
-        <a id="downloadBtn" href="https://github.com/Ashit-BBL/Website/releases/download/V1.1/EXIF.Overlay.Tool.v1.1.exe" class="btn btn-primary" style="background: var(--forest); color:#f0ecd8; box-shadow:none;" download>
-          Download v1.1 <span class="arr">&rarr;</span>
-        </a>
-      </div>
-
-      <!-- VirusTotal notice -->
-      <div class="vt-notice">
-        <svg class="vt-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M10 2.5 L17.5 16 L2.5 16 Z"/>
-          <line x1="10" y1="9" x2="10" y2="12.5"/>
-          <circle cx="10" cy="14.5" r="0.6" fill="currentColor" stroke="none"/>
-        </svg>
-        <div class="vt-body">
-          <strong>VirusTotal: <span class="vt-badge">8 / 71</span> engines flagged this file.</strong>
-          This is a known false positive common with Nuitka-compiled executables. When Python code is compiled to native machine code, some antivirus heuristics incorrectly flag the bundled runtime as suspicious &mdash; even when the code is completely clean. The remaining 63 engines, including all major vendors, report <strong>no threat</strong>.
-          <br style="margin-bottom:6px;">
-          <a href="https://www.virustotal.com/gui/file/3a9d9890ad10e4e7fbbf38311eef4a38a27ab33b97b492ec8b9a620dea6010c7/detection" target="_blank" rel="noopener">View the full VirusTotal report &rarr;</a>
-        </div>
-      </div>
-
-      <!-- Buy me a coffee (download card) -->
-      <div class="dl-coffee">
-        <div class="dl-coffee-text">
-          <strong>It's completely free &mdash; and always will be.</strong>
-          No ads, no accounts, no upsells. EXIF Overlay Tool is built and maintained by one photographer in spare evenings. If it's saved you time and you'd like to say thanks, you can buy me a coffee on Topmate &mdash; it genuinely helps me keep the tool updated and build the features you ask for.
-          <em class="dl-coffee-thanks">Thank you, truly &mdash; every coffee means a lot. And no pressure at all: downloading and enjoying the tool is more than enough.</em>
-        </div>
-        <div class="dl-coffee-action">
-          <a href="https://topmate.io/ashitg/2124128" class="btn btn-coffee" target="_blank" rel="noopener">
-            <svg class="cup-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M4 9 h13 v5 a4 4 0 0 1 -4 4 H8 a4 4 0 0 1 -4 -4 Z"/>
-              <path d="M17 10 h2.5 a2.5 2.5 0 0 1 0 5 H17"/>
-              <line x1="7" y1="3.5" x2="7" y2="6"/>
-              <line x1="11" y1="3.5" x2="11" y2="6"/>
-            </svg>
-            Buy me a coffee
+          <!-- TODO: update SHA-256 and VirusTotal link for v1.2 -->
+          <a id="downloadBtn" href="https://github.com/Ashit-BBL/Website/releases/download/V1.2/EXIF_Overlay_Tool_v1.2.exe" class="btn btn-primary" style="background: var(--forest); color:#f0ecd8; box-shadow:none;" download>
+            Download v1.2 <span class="arr">&rarr;</span>
           </a>
-          <div class="dl-coffee-note">Securely via Topmate</div>
+        </div>
+
+        <!-- Chrome download warning -->
+        <div class="chrome-warn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="17" r="0.5" fill="currentColor" stroke="none"/>
+          </svg>
+          <span><b>Chrome users:</b> If Chrome shows "Abort" or a warning, click <b>"Keep"</b> or <b>"Keep anyway"</b> to proceed. Verify using the SHA-256 hash or VirusTotal link above.</span>
+        </div>
+
+        <!-- VirusTotal notice -->
+        <div class="vt-notice">
+          <svg class="vt-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 2.5 L17.5 16 L2.5 16 Z"/>
+            <line x1="10" y1="9" x2="10" y2="12.5"/>
+            <circle cx="10" cy="14.5" r="0.6" fill="currentColor" stroke="none"/>
+          </svg>
+          <div class="vt-body">
+            <strong>VirusTotal: <span class="vt-badge">8 / 71</span> engines flagged this file.</strong>
+            Known false positive with Nuitka-compiled executables. The remaining 63 engines, including all major vendors, report <strong>no threat</strong>.
+            <br style="margin-bottom:4px;">
+            <a href="https://www.virustotal.com/gui/file/8be231d02420e7e22b1d832366fd08ba481477e835d68c704b13daa1cf658a6c/detection" target="_blank" rel="noopener">View full VirusTotal report &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Keep me updated -->
+        <div class="notify-card" style="margin-top:20px; border-radius:var(--r-sm); box-shadow:none;">
+          <h3 style="font-size:17px;">Get notified about new versions</h3>
+          <p>Just version updates, no spam.</p>
+          <form class="notify-form" id="subscribeForm" novalidate>
+            <input type="text" name="company" style="display:none;" tabindex="-1" autocomplete="off">
+            <div class="notify-inputrow">
+              <input type="email" id="subscribeEmail" placeholder="you@example.com" maxlength="200" required>
+              <button type="submit" class="btn btn-primary">Notify me <span class="arr">&rarr;</span></button>
+            </div>
+            <div class="notify-status" id="subscribeStatus"></div>
+          </form>
+          <p class="notify-priv">Stored privately &mdash; never shared, never sold.</p>
         </div>
       </div>
-    </div>
 
-    <!-- Keep me updated -->
-    <div class="notify-card reveal d4">
-      <h3>Get notified about new versions</h3>
-      <p>Leave your email and I'll let you know when a new version ships &mdash; like the upcoming v1.2. Just version updates, no spam, and you can unsubscribe anytime.</p>
-      <form class="notify-form" id="subscribeForm" novalidate>
-        <!-- honeypot &mdash; do not remove -->
-        <input type="text" name="company" style="display:none;" tabindex="-1" autocomplete="off">
-        <div class="notify-inputrow">
-          <input type="email" id="subscribeEmail" placeholder="you@example.com" maxlength="200" required>
-          <button type="submit" class="btn btn-primary">Keep me updated <span class="arr">&rarr;</span></button>
-        </div>
-        <div class="notify-status" id="subscribeStatus"></div>
-      </form>
-      <p class="notify-priv">Your email is stored privately for version announcements only &mdash; never shared, never sold.</p>
+      <!-- RIGHT: coffee panel -->
+      <div class="dl-side-coffee reveal d4">
+        <svg class="cup-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 9 h13 v5 a4 4 0 0 1 -4 4 H8 a4 4 0 0 1 -4 -4 Z"/>
+          <path d="M17 10 h2.5 a2.5 2.5 0 0 1 0 5 H17"/>
+          <line x1="7" y1="3" x2="7" y2="6"/>
+          <line x1="10.5" y1="3" x2="10.5" y2="6"/>
+          <line x1="14" y1="3" x2="14" y2="6"/>
+        </svg>
+        <h3>Buy me a coffee</h3>
+        <p>This tool is free &mdash; no ads, no accounts, always will be. Built by one photographer in spare evenings. If it's saved you time, a small tip means a lot.</p>
+        <a href="https://topmate.io/ashitg/2124128" class="btn btn-coffee" target="_blank" rel="noopener">
+          <svg class="cup-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 9 h13 v5 a4 4 0 0 1 -4 4 H8 a4 4 0 0 1 -4 -4 Z"/>
+            <path d="M17 10 h2.5 a2.5 2.5 0 0 1 0 5 H17"/>
+            <line x1="7" y1="3.5" x2="7" y2="6"/>
+            <line x1="11" y1="3.5" x2="11" y2="6"/>
+          </svg>
+          Support via Topmate
+        </a>
+        <div class="support-note">One-off &middot; Secure &middot; Optional</div>
+      </div>
     </div>
 
     <p class="reveal d4" style="color: var(--muted); font-family:'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.18em; margin-top: 28px; text-transform: uppercase;">
@@ -2245,10 +1893,11 @@
     <div class="vh-list">
       <div class="vh-entry reveal">
         <div class="vh-ver">
-          <span class="num">v1.1</span>
+          <span class="num">v1.2</span>
           <span class="tag current">Current</span>
         </div>
         <ul>
+          <li><b>Single Line Caption (Black Bar)</b> &mdash; clean black-bar strip with white caption text</li>
           <li>Data overlay in a <b>single line</b> (top or bottom) or <b>multiple lines</b> (all 4 corners)</li>
           <li>Data displayed <b>with or without</b> field labels</li>
           <li><b>Notes</b> section &mdash; add a custom note (max 2 lines) to your overlay</li>
@@ -2279,9 +1928,9 @@
       <img src="assets/logo-white.png" alt="ashitg Photography" class="logo-img">
     </div>
     <div style="display:flex; flex-direction:column; gap:8px; text-align:center;">
-      <div class="foot-meta">EXIF Overlay Tool v1.1 &middot; Created by Ashit Gandhi &middot; 2026</div>
-      <a href="/cdn-cgi/l/email-protection#6302100b0a17044d130b0c170c041102130b1a23040e020a0f4d000c0e" style="color: var(--gold-soft); font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.08em; text-decoration:none; transition: color .2s ease;">
-        <span class="__cf_email__" data-cfemail="b9d8cad1d0cdde97c9d1d6cdd6decbd8c9d1c0f9ded4d8d0d597dad6d4">[email&#160;protected]</span>
+      <div class="foot-meta">EXIF Overlay Tool v1.2 &middot; Created by Ashit Gandhi &middot; 2026</div>
+      <a href="/cdn-cgi/l/email-protection#1f7e6c77766b78316f77706b70786d7e6f77665f78727e7673317c7072" style="color: var(--gold-soft); font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.08em; text-decoration:none; transition: color .2s ease;">
+        <span class="__cf_email__" data-cfemail="b5d4c6dddcc1d29bc5dddac1dad2c7d4c5ddccf5d2d8d4dcd99bd6dad8">[email&#160;protected]</span>
       </a>
     </div>
     <div style="display:flex; flex-direction:column; gap:8px; align-items:flex-end;">
@@ -2312,140 +1961,6 @@
     });
   }, { threshold: 0.14, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(el => io.observe(el));
-
-  /* ===== Count up 0 &rarr; 15 ===== */
-  const bigCount = document.getElementById('bigCount');
-  let counted = false;
-  const countIO = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting && !counted) {
-        counted = true;
-        let n = 0;
-        const step = () => {
-          n += 1;
-          bigCount.textContent = n;
-          if (n < 15) setTimeout(step, 70);
-        };
-        step();
-      }
-    });
-  }, { threshold: 0.4 });
-  countIO.observe(bigCount);
-
-  /* ===== Corner dot loops through corners ===== */
-  const cornerDot = document.getElementById('cornerDot');
-  const cornerStops = [
-    { top: '10px', left: '10px',  right: 'auto', bottom: 'auto' },
-    { top: '10px', right: '10px', left: 'auto',  bottom: 'auto' },
-    { bottom: '10px', right: '10px', left: 'auto', top: 'auto' },
-    { bottom: '10px', left: '10px',  right: 'auto', top: 'auto' },
-  ];
-  let cIdx = 0;
-  setInterval(() => {
-    cIdx = (cIdx + 1) % cornerStops.length;
-    Object.assign(cornerDot.style, { top: '', right: '', bottom: '', left: '' });
-    Object.entries(cornerStops[cIdx]).forEach(([k,v]) => {
-      if (v !== 'auto') cornerDot.style[k] = v;
-    });
-  }, 1400);
-
-  /* ===== Demo interactive controls (v1.1) ===== */
-  const demoExif   = document.getElementById('demoExif');
-  const layoutBtns = document.getElementById('layoutBtns');
-  const posBtns    = document.getElementById('posBtns');
-  const labelBtns  = document.getElementById('labelBtns');
-  const noteInput  = document.getElementById('noteInput');
-  const colorBtns  = document.getElementById('colorBtns');
-  const sizeBtns   = document.getElementById('sizeBtns');
-
-  const exifData = [
-    ['Camera','OM-1'],['Lens','LEICA DG 100-400'],['Shutter','1/320s'],
-    ['Aperture','f/6.3'],['ISO','500'],['Focal Length','400 mm'],['Date','03 May 2026'],
-  ];
-
-  const state = { layout:'multi', pos:'tl', labels:true, note:'Kingfisher at dawn, Bharatpur', color:'white', size:'s-md' };
-
-  const POS_MULTI  = [['tl','Top-Left'],['tr','Top-Right'],['bl','Bottom-Left'],['br','Bottom-Right']];
-  const POS_SINGLE = [['top','Top strip'],['bottom','Bottom strip']];
-
-  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-
-  function setActiveByData(parent, attr, val){
-    parent.querySelectorAll('button').forEach(b => b.classList.toggle('active', b.dataset[attr] === val));
-  }
-
-  function renderPosButtons(){
-    const single = state.layout === 'single';
-    const opts = single ? POS_SINGLE : POS_MULTI;
-    posBtns.className = single ? 'toggle-row' : 'corner-buttons';
-    posBtns.innerHTML = opts.map(([v,t]) => '<button data-pos="'+v+'">'+t+'</button>').join('');
-    setActiveByData(posBtns, 'pos', state.pos);
-  }
-
-  function renderOverlay(){
-    demoExif.className = 'demo-exif ' + state.layout + ' ' + state.color + ' ' + state.size + (state.labels ? '' : ' no-labels');
-    demoExif.classList.add(state.layout === 'single' ? ('pos-' + state.pos) : state.pos);
-
-    const noteText = (state.note || '').trim();
-    let html = '';
-    if (state.layout === 'single') {
-      const parts = exifData.map(([k,v]) => state.labels ? (k + ' : ' + v) : v);
-      html = '<div class="line">' + parts.join('  |  ') + '</div>';
-      if (noteText) html += '<div class="line note">' + esc(noteText) + '</div>';
-    } else {
-      html = exifData.map(([k,v]) => '<div class="row"><span class="k">'+k+'</span><span class="v">'+v+'</span></div>').join('');
-      if (noteText) html += '<div class="note">' + esc(noteText) + '</div>';
-    }
-    demoExif.innerHTML = html;
-  }
-
-  function syncButtons(){
-    setActiveByData(layoutBtns,'layout',state.layout);
-    setActiveByData(labelBtns,'labels', state.labels?'on':'off');
-    setActiveByData(colorBtns,'color',state.color);
-    setActiveByData(sizeBtns,'size',state.size);
-  }
-
-  function renderAll(){
-    renderPosButtons();
-    syncButtons();
-    if (noteInput && noteInput.value !== state.note) noteInput.value = state.note;
-    renderOverlay();
-  }
-
-  // init
-  renderAll();
-
-  let userTouched = false;
-  function userSet(p){
-    userTouched = true;
-    Object.assign(state, p);
-    if (p.layout) state.pos = (p.layout === 'single' ? 'top' : 'tl');
-    renderAll();
-  }
-
-  layoutBtns.addEventListener('click', e => { const b=e.target.closest('button'); if(b) userSet({layout:b.dataset.layout}); });
-  posBtns.addEventListener('click',    e => { const b=e.target.closest('button'); if(b){ userTouched=true; state.pos=b.dataset.pos; setActiveByData(posBtns,'pos',state.pos); renderOverlay(); } });
-  labelBtns.addEventListener('click',  e => { const b=e.target.closest('button'); if(b) userSet({labels:b.dataset.labels==='on'}); });
-  colorBtns.addEventListener('click',  e => { const b=e.target.closest('button'); if(b) userSet({color:b.dataset.color}); });
-  sizeBtns.addEventListener('click',   e => { const b=e.target.closest('button'); if(b) userSet({size:b.dataset.size}); });
-  if (noteInput) noteInput.addEventListener('input', () => { userTouched = true; state.note = noteInput.value; renderOverlay(); });
-
-  /* ===== Auto-showcase until user interacts ===== */
-  const showcase = [
-    { layout:'multi',  pos:'tl',     labels:true,  note:'Kingfisher at dawn, Bharatpur', color:'white',  size:'s-md' },
-    { layout:'multi',  pos:'br',     labels:false, note:'',                                color:'yellow', size:'s-md' },
-    { layout:'single', pos:'bottom', labels:true,  note:'',                                color:'white',  size:'s-md' },
-    { layout:'single', pos:'top',    labels:false, note:'White-throated Kingfisher',       color:'white',  size:'s-lg' },
-    { layout:'multi',  pos:'tr',     labels:true,  note:'Bharatpur, 03 May 2026',         color:'black',  size:'s-md' },
-  ];
-  let si = 0;
-  setInterval(() => {
-    if (userTouched) return;
-    si = (si + 1) % showcase.length;
-    Object.assign(state, showcase[si]);
-    renderAll();
-  }, 3400);
 
   /* ===== Stagger EXIF items reveal ===== */
   const exifItems = document.querySelectorAll('.exif-item');
