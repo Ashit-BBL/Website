@@ -138,9 +138,18 @@ function Nav({
 function HeroCinematic() {
   const picks = useLiveSlotImages(PHOTO_SLOTS.hero);
   const [i, setI] = useState(0);
+  const [loaded, setLoaded] = useState(() => new Set([0]));
   useEffect(() => {
     if (picks.length > 0 && i >= picks.length) setI(0);
   }, [picks.length]);
+  useEffect(() => {
+    setLoaded(prev => {
+      const n = new Set(prev);
+      n.add(i);
+      if (picks.length) n.add((i + 1) % picks.length);
+      return n;
+    });
+  }, [i, picks.length]);
   useEffect(() => {
     if (picks.length < 2) return;
     const t = setInterval(() => setI(x => (x + 1) % picks.length), 5000);
@@ -154,7 +163,7 @@ function HeroCinematic() {
     className: "hero-img",
     "data-on": idx === i ? "1" : "0",
     style: {
-      backgroundImage: `url(${p.src})`
+      backgroundImage: loaded.has(idx) ? `url(${p.src})` : "none"
     }
   }))), React.createElement("div", {
     className: "hero-grade"
