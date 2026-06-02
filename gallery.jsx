@@ -95,6 +95,7 @@ function FeaturedGallery({ initialFilter = "all", onFilterChange }) {
                 src={p.src}
                 alt={p.title}
                 loading="lazy"
+                onError={e => { const f = e.target.closest('.frame'); if (f) f.style.display = 'none'; }}
               />
               <figcaption className="caption">
                 {p.title} · <span style={{ opacity: .7 }}>{p.loc}</span>

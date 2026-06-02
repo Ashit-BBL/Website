@@ -23,48 +23,18 @@ function useSlots() {
   return v;
 }
 
-/* ─── Hook: load + verify a list of slot images ────────────────────── *
-   Populates immediately (optimistic) then silently removes 404s.       */
+/* ─── Hook: derive slot images synchronously ───────────────────────── *
+   Returns all slots that have a src path immediately — no async probe.
+   Broken images are hidden by onError in the rendering component.      */
 function useLiveSlotImages(slots) {
   const sv = useSlots();
-
-  /* build initial list synchronously so first render is never empty */
-  const getInitial = useCallback(() => {
+  return useMemo(() => {
     if (!slots) return [];
     return slots.map(s => {
       const src = getSlotSrc(s.id);
       return src ? { ...s, src } : null;
     }).filter(Boolean);
   }, [slots, sv]);
-
-  const [images, setImages] = useState(getInitial);
-
-  /* refresh when slots/sv change */
-  useEffect(() => { setImages(getInitial()); }, [getInitial]);
-
-  /* probe in background — drop any that 404 */
-  useEffect(() => {
-    if (!slots || slots.length === 0) return;
-    let live = true;
-
-    Promise.all(slots.map(s => {
-      const src = getSlotSrc(s.id);
-      if (!src) return Promise.resolve(null);
-      if (src.startsWith("data:")) return Promise.resolve({ ...s, src });
-      return new Promise(resolve => {
-        const img = new Image();
-        img.onload  = () => resolve({ ...s, src });
-        img.onerror = () => resolve(null);
-        img.src = src;
-      });
-    })).then(results => {
-      if (live) setImages(results.filter(Boolean));
-    });
-
-    return () => { live = false; };
-  }, [slots, sv]);
-
-  return images;
 }
 
 /* ─── Hook: single slot image with Wix fallback ────────────────────── */
