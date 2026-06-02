@@ -7,6 +7,10 @@ const GEAR_CURRENT = [{
   spec: "f/4–6.3 · the workhorse for everything with wings",
   badge: "Lens"
 }, {
+  body: "Panasonic-Leica DG Summilux 9mm",
+  spec: "f/1.7 ASPH · ultra-wide prime",
+  badge: "Lens"
+}, {
   body: "Raynox DCR-150",
   spec: "Conversion lens · macro mode",
   badge: "Macro"
@@ -33,17 +37,12 @@ const GEAR_PAST = [{
   badge: "Lens"
 }];
 const AWARDS = [{
-  year: "2024",
-  title: "BBC Wildlife Magazine — Photo of the Day",
-  body: "Selected on the BBC Wildlife Magazine Instagram feed.",
-  tag: "Feature"
-}, {
-  year: "2024",
+  year: "2026",
   title: "35 Awards · Winner — Sequence: Phases of Motion",
-  body: "Recognized in the 12th edition of the international 35AWARDS competition.",
+  body: "Recognized in the international 35AWARDS competition.",
   tag: "Award"
 }, {
-  year: "2024",
+  year: "2026",
   title: "BNHS-EIACP · Winner — Birds in Habitat",
   body: "International Day of Forests photography competition.",
   tag: "Award"
@@ -54,11 +53,40 @@ const AWARDS = [{
   tag: "Press"
 }, {
   year: "2022",
+  title: "BBC Wildlife Magazine — Photo of the Day",
+  body: "Selected on the BBC Wildlife Magazine Instagram feed.",
+  tag: "Feature"
+}, {
+  year: "2022",
   title: "Polo Forest — Coffee Table Book",
   body: "Photography for the official coffee table book by The Fern Sattva Resort.",
   tag: "Book"
 }];
-const CALENDARS = ["2026", "2025", "2024", "2023", "2022", "2021"];
+const CALENDARS = [{
+  year: "2026",
+  theme: "Landscapes of India",
+  img: "8da357_29cdcab5763449b0a625019de663c0f1"
+}, {
+  year: "2025",
+  theme: "Ducks & Geese of India",
+  img: "8da357_b5a70d6e1a714d1cb2af9d37d194429b"
+}, {
+  year: "2024",
+  theme: "Raptors of India",
+  img: "8da357_f0536f96cb114e4cab8f236a5cbb5fd8"
+}, {
+  year: "2023",
+  theme: "Birds of India",
+  img: "8da357_994fdf6226cf4824a6d7b3557986dd17"
+}, {
+  year: "2022",
+  theme: "Birds in Flight",
+  img: "8da357_e4acfdcb86824685919e1e9158b9b34c"
+}, {
+  year: "2021",
+  theme: "Birds of India",
+  img: "8da357_c2c158ceaf004af2bf8b698d58406048"
+}];
 function AboutPage() {
   useReveal();
   const portrait = "https://static.wixstatic.com/media/8da357_ea0f95355287499a814de81c540c5359~mv2.jpg/v1/crop/x_394,y_0,w_1773,h_1920/fill/w_900,h_1100,q_85,enc_avif,quality_auto/portrait.jpg";
@@ -242,23 +270,33 @@ function AboutPage() {
   }, "Each year I assemble a calendar and a yearbook. Some are still around \u2014 drop a line if you'd like one.")), React.createElement("div", {
     style: {
       display: "grid",
-      gridTemplateColumns: "repeat(6, 1fr)",
+      gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
       gap: "12px"
     }
-  }, CALENDARS.map((y, i) => React.createElement("div", {
-    key: y,
+  }, CALENDARS.map((c, i) => React.createElement("a", {
+    key: c.year,
+    href: "https://www.ashitgphotography.com/calendars",
+    target: "_blank",
+    rel: "noopener",
     "data-reveal": true,
     style: {
       transitionDelay: `${i * 0.05}s`,
+      position: "relative",
       aspectRatio: "3/4",
-      background: "linear-gradient(180deg, var(--bg-soft), var(--bg-card))",
-      border: "1px solid var(--line)",
       borderRadius: "var(--rad)",
-      padding: "18px",
+      overflow: "hidden",
+      border: "1px solid var(--line)",
+      backgroundColor: "var(--bg-card)",
+      backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0) 38%, rgba(0,0,0,.4) 66%, rgba(0,0,0,.82) 100%), url(${IMG(c.img, 600, 800, "fill")})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
       display: "flex",
       flexDirection: "column",
-      justifyContent: "space-between",
+      justifyContent: "flex-end",
+      padding: "14px",
       cursor: "pointer",
+      textDecoration: "none",
+      color: "#fff",
       transition: "transform .35s, border-color .35s"
     },
     onMouseEnter: e => {
@@ -272,64 +310,27 @@ function AboutPage() {
   }, React.createElement("span", {
     style: {
       fontFamily: "var(--mono)",
-      fontSize: 11,
-      color: "var(--text-mute)",
-      letterSpacing: ".12em"
+      fontSize: 10,
+      letterSpacing: ".18em",
+      textTransform: "uppercase",
+      color: "var(--accent)"
     }
-  }, "Calendar"), React.createElement("div", null, React.createElement("div", {
+  }, "Calendar"), React.createElement("div", {
     style: {
-      fontSize: 38,
+      fontSize: 30,
       fontWeight: 300,
       letterSpacing: "-0.03em",
-      color: "var(--text)"
+      lineHeight: 1,
+      marginTop: 2
     }
-  }, y), React.createElement("div", {
+  }, c.year), React.createElement("div", {
     style: {
-      fontSize: 11,
-      letterSpacing: ".2em",
-      textTransform: "uppercase",
-      color: "var(--accent)",
-      marginTop: 4
+      fontSize: 12,
+      color: "rgba(255,255,255,.85)",
+      marginTop: 4,
+      textWrap: "pretty"
     }
-  }, "Desktop \xB7 Wall"))))), React.createElement("div", {
-    style: {
-      marginTop: 28,
-      padding: "28px",
-      border: "1px solid var(--line)",
-      borderRadius: "var(--rad)",
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      flexWrap: "wrap",
-      gap: 16
-    },
-    "data-reveal": true
-  }, React.createElement("div", null, React.createElement("div", {
-    style: {
-      fontSize: 10,
-      letterSpacing: ".25em",
-      textTransform: "uppercase",
-      color: "var(--accent)",
-      marginBottom: 8
-    }
-  }, "Coffee Table Book \xB7 2022"), React.createElement("h3", {
-    style: {
-      margin: 0,
-      fontWeight: 400,
-      fontSize: 22,
-      letterSpacing: "-0.01em"
-    }
-  }, "Polo Forest"), React.createElement("p", {
-    style: {
-      margin: "8px 0 0",
-      color: "var(--text-soft)",
-      fontSize: 14
-    }
-  }, "Photography for The Fern Sattva Resort's official coffee table book.")), React.createElement("span", {
-    className: "post-link"
-  }, "View edition ", React.createElement("span", {
-    className: "arrow"
-  }, "\u2192")))), React.createElement("section", {
+  }, c.theme))))), React.createElement("section", {
     className: "contact",
     id: "contact"
   }, React.createElement("div", {
