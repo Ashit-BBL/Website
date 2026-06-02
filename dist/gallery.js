@@ -322,8 +322,11 @@ function CtaStrip() {
     }
   }, React.createElement("h2", null, "Want a piece of the wild on your ", React.createElement("em", null, "wall?")), React.createElement("p", null, "I print a small, hand-picked set each year \u2014 limited-edition archival prints, photo walls, and the annual yearbook. Drop a line, and I'll send the current catalog."), React.createElement("div", {
     className: "hero-actions"
-  }, React.createElement("button", {
-    className: "btn btn-ghost"
+  }, React.createElement("a", {
+    className: "btn btn-ghost",
+    href: "https://www.ashitgphotography.com/copy-of-calendars",
+    target: "_blank",
+    rel: "noopener"
   }, "See the yearbooks")));
 }
 function Footer() {
