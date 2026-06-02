@@ -246,18 +246,21 @@ const POSTS = [{
   date: "Dec 2025",
   loc: "Jaisalmer, Rajasthan",
   title: "Six safaris in the Desert National Park",
+  url: "https://www.ashitgphotography.com/post/desert-national-park-jaisalmer",
   body: "Laggar falcons, chinkara at dawn, and a Great Indian Bustard that finally let me near. Field notes from the dunes."
 }, {
   img: "8da357_26f780ce931941f5a57eb1949f768d16",
   date: "Jan 2025",
   loc: "Ranthambore",
   title: "Five mornings with Riddhi's cub",
+  url: "https://www.ashitgphotography.com/post/ranthambore-national-park-january-2025",
   body: "What I learned about light, patience, and how loud a tiger can be when it's choosing whether to look at you."
 }, {
   img: "8da357_1023b14b09a946fe9348659c93336ae8",
   date: "Dec 2024",
   loc: "Latpanchar, West Bengal",
   title: "Avian wonders, part three",
+  url: "https://www.ashitgphotography.com/post/birding-at-latpanchar-west-bengal",
   body: "Red-headed Trogons, Sultan Tits, and a fog so thick it felt like the forest was hiding the birds on purpose."
 }];
 function Posts() {
@@ -305,8 +308,11 @@ function Posts() {
     className: "dot"
   }), React.createElement("span", {
     className: "loc"
-  }, p.loc)), React.createElement("h3", null, p.title), React.createElement("p", null, p.body), React.createElement("span", {
-    className: "post-link"
+  }, p.loc)), React.createElement("h3", null, p.title), React.createElement("p", null, p.body), React.createElement("a", {
+    className: "post-link",
+    href: p.url,
+    target: "_blank",
+    rel: "noopener"
   }, "Read entry ", React.createElement("span", {
     className: "arrow"
   }, "\u2192"))))));
