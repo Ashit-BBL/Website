@@ -17,7 +17,21 @@ function FeaturedGallery({ initialFilter = "all", onFilterChange }) {
 
   useEffectG(() => { setFilter(initialFilter); }, [initialFilter]);
 
-  const allSlots  = useMemoG(() => getAllPhotoSlots(), []);
+  const allSlots  = useMemoG(() => {
+    /* Shuffle so categories aren't bunched in the "All" view.
+       Seeded so the order stays stable across re-renders. */
+    const arr = getAllPhotoSlots();
+    let seed = 20260602;
+    const rand = () => {
+      seed = (seed * 1103515245 + 12345) & 0x7fffffff;
+      return seed / 0x7fffffff;
+    };
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(rand() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }, []);
   const allPhotos = useLiveSlotImages(allSlots);
 
   const list = useMemoG(
