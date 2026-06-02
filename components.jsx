@@ -240,8 +240,14 @@ function Hero({ variant }) {
           telling small, patient stories about the wild that lives next door.
         </p>
         <div className="hero-actions" data-reveal style={{ transitionDelay: "0.65s" }}>
-          <button className="btn btn-primary">See the work <span className="arrow">→</span></button>
-          <button className="btn btn-ghost">Field journal</button>
+          <button className="btn btn-primary" onClick={() => {
+            const el = document.getElementById('work');
+            if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+          }}>See the work <span className="arrow">→</span></button>
+          <button className="btn btn-ghost" onClick={() => {
+            const el = document.getElementById('journal');
+            if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+          }}>Field journal</button>
         </div>
       </div>
       <div className="scroll-cue">Scroll <span className="bar" /></div>

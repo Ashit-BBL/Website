@@ -25,25 +25,34 @@ function FeaturedGallery({ initialFilter = "all", onFilterChange }) {
     [filter, allPhotos]
   );
 
-  /* ── JS masonry: set grid-row-end span after each image loads ─── */
+  /* ── JS masonry: set grid-row-end span ───────────────────────────
+     Uses naturalWidth/Height when available, estimates frame width
+     × a portrait ratio before the image loads so frames never
+     collapse to the 4 px grid-auto-rows default.                  */
   const resizeItem = useCallbackG((frame) => {
     if (!frame) return;
-    const h = frame.getBoundingClientRect().height;
-    if (h > 0) frame.style.gridRowEnd = `span ${Math.ceil(h / 4)}`;
+    const img = frame.querySelector('img');
+    const fw  = frame.getBoundingClientRect().width || 300;
+    let h;
+    if (img && img.naturalWidth > 0) {
+      h = (img.naturalHeight / img.naturalWidth) * fw;
+    } else {
+      h = frame.getBoundingClientRect().height;
+      if (h < 8) h = fw * 1.3; /* pre-load estimate */
+    }
+    frame.style.gridRowEnd = `span ${Math.ceil((h + 12) / 4)}`;
   }, []);
 
   const resizeAll = useCallbackG(() => {
     if (!masonryRef.current) return;
-    masonryRef.current.querySelectorAll('.frame').forEach(f => {
-      f.style.gridRowEnd = '';
-      resizeItem(f);
-    });
+    masonryRef.current.querySelectorAll('.frame').forEach(resizeItem);
   }, [resizeItem]);
 
   useEffectG(() => {
     resizeAll();
-    const t = setTimeout(resizeAll, 300);
-    return () => clearTimeout(t);
+    const t1 = setTimeout(resizeAll, 400);
+    const t2 = setTimeout(resizeAll, 1200);
+    return () => { clearTimeout(t1); clearTimeout(t2); };
   }, [list, resizeAll]);
 
   /* keyboard nav for lightbox */

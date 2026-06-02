@@ -438,6 +438,8 @@ a { color: inherit; text-decoration: none; }
   column-gap: 12px;
   row-gap: 0;
 }
+@media (max-width: 900px) { .masonry { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .masonry { grid-template-columns: 1fr; } }
 .masonry > .frame {
   margin-bottom: 12px;
   position: relative;
