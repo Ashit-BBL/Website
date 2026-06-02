@@ -2,21 +2,21 @@
 const { useState: useStateG, useEffect: useEffectG, useMemo: useMemoG, useCallback: useCallbackG, useRef: useRefG } = React;
 
 const FILTERS = [
-  { id: "all",       label: "All" },
-  { id: "birds",     label: "Birds" },
-  { id: "macro",     label: "Macro" },
+  { id: "all",        label: "All" },
+  { id: "birds",      label: "Birds" },
+  { id: "macro",      label: "Macro" },
   { id: "composites", label: "Composites" },
-  { id: "landscape", label: "Landscape" },
+  { id: "landscape",  label: "Landscape" },
 ];
 
-/* ─── Featured Frames (masonry + filters + lightbox) ──────────────── */
+/* ─── Featured Frames ──────────────────────────────────────────────── */
 function FeaturedGallery({ initialFilter = "all", onFilterChange }) {
   const [filter,  setFilter]  = useStateG(initialFilter);
   const [openIdx, setOpenIdx] = useStateG(-1);
+  const masonryRef = useRefG(null);
 
   useEffectG(() => { setFilter(initialFilter); }, [initialFilter]);
 
-  /* all non-hero slots — useLiveSlotImages verifies each path loads */
   const allSlots  = useMemoG(() => getAllPhotoSlots(), []);
   const allPhotos = useLiveSlotImages(allSlots);
 
@@ -25,22 +25,43 @@ function FeaturedGallery({ initialFilter = "all", onFilterChange }) {
     [filter, allPhotos]
   );
 
-  const pick = useCallbackG((id) => {
-    setFilter(id);
-    onFilterChange && onFilterChange(id);
-  }, [onFilterChange]);
+  /* ── JS masonry: set grid-row-end span after each image loads ─── */
+  const resizeItem = useCallbackG((frame) => {
+    if (!frame) return;
+    const h = frame.getBoundingClientRect().height;
+    if (h > 0) frame.style.gridRowEnd = `span ${Math.ceil(h / 4)}`;
+  }, []);
+
+  const resizeAll = useCallbackG(() => {
+    if (!masonryRef.current) return;
+    masonryRef.current.querySelectorAll('.frame').forEach(f => {
+      f.style.gridRowEnd = '';
+      resizeItem(f);
+    });
+  }, [resizeItem]);
+
+  useEffectG(() => {
+    resizeAll();
+    const t = setTimeout(resizeAll, 300);
+    return () => clearTimeout(t);
+  }, [list, resizeAll]);
 
   /* keyboard nav for lightbox */
   useEffectG(() => {
     if (openIdx < 0) return;
     const onKey = (e) => {
-      if (e.key === "Escape")      setOpenIdx(-1);
-      if (e.key === "ArrowRight")  setOpenIdx(i => (i + 1) % list.length);
-      if (e.key === "ArrowLeft")   setOpenIdx(i => (i - 1 + list.length) % list.length);
+      if (e.key === "Escape")     setOpenIdx(-1);
+      if (e.key === "ArrowRight") setOpenIdx(i => (i + 1) % list.length);
+      if (e.key === "ArrowLeft")  setOpenIdx(i => (i - 1 + list.length) % list.length);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [openIdx, list.length]);
+
+  const pick = useCallbackG((id) => {
+    setFilter(id);
+    onFilterChange && onFilterChange(id);
+  }, [onFilterChange]);
 
   return (
     <section className="section" id="gallery">
@@ -82,7 +103,7 @@ function FeaturedGallery({ initialFilter = "all", onFilterChange }) {
           <p>Photos will appear here once images are uploaded to the <strong>assets</strong> folders on GitHub.</p>
         </div>
       ) : (
-        <div className="masonry">
+        <div className="masonry" ref={masonryRef}>
           {list.map((p, idx) => (
             <figure
               key={p.id}
@@ -95,11 +116,17 @@ function FeaturedGallery({ initialFilter = "all", onFilterChange }) {
                 src={p.src}
                 alt={p.title}
                 loading="lazy"
-                onError={e => { const f = e.target.closest('.frame'); if (f) f.style.display = 'none'; }}
+                onLoad={e => resizeItem(e.target.closest('.frame'))}
+                onError={e => {
+                  const f = e.target.closest('.frame');
+                  if (f) f.style.display = 'none';
+                }}
               />
-              <figcaption className="caption">
-                {p.title} · <span style={{ opacity: .7 }}>{p.loc}</span>
-              </figcaption>
+              {(p.title || p.loc) && (
+                <figcaption className="caption">
+                  {p.title}{p.title && p.loc ? ' · ' : ''}<span style={{ opacity: .7 }}>{p.loc}</span>
+                </figcaption>
+              )}
             </figure>
           ))}
         </div>
@@ -116,7 +143,7 @@ function FeaturedGallery({ initialFilter = "all", onFilterChange }) {
   );
 }
 
-/* ─── Lightbox ────────────────────────────────────────────────────── */
+/* ─── Lightbox ─────────────────────────────────────────────────────── */
 function Lightbox({ list, idx, onClose, onPrev, onNext }) {
   const open = idx >= 0;
   const p = open ? list[idx] : null;
@@ -136,19 +163,15 @@ function Lightbox({ list, idx, onClose, onPrev, onNext }) {
           <button className="lb-nav next" onClick={e => { e.stopPropagation(); onNext(); }} aria-label="Next">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" strokeWidth="1.6" stroke="currentColor"><path d="M9 6l6 6-6 6"/></svg>
           </button>
-          <img
-            src={p.src}
-            alt={p.title}
-            onClick={e => e.stopPropagation()}
-          />
-          <div className="lb-cap">{p.title} · {p.loc}</div>
+          <img src={p.src} alt={p.title} onClick={e => e.stopPropagation()} />
+          <div className="lb-cap">{p.title}{p.title && p.loc ? ' · ' : ''}{p.loc}</div>
         </>
       )}
     </div>
   );
 }
 
-/* ─── Latest posts ────────────────────────────────────────────────── */
+/* ─── Latest posts ─────────────────────────────────────────────────── */
 const POSTS = [
   {
     img: "8da357_5ac52a1d875c4dbdb09d4262057d1fa5",
@@ -208,19 +231,15 @@ function Posts() {
   );
 }
 
-/* ─── CTA strip ───────────────────────────────────────────────────── */
+/* ─── CTA strip ────────────────────────────────────────────────────── */
 function CtaStrip() {
   const sv = window.useSlots ? window.useSlots() : 0;
   const bgSrc = React.useMemo(() =>
-    getSlotSrc("sunrise-01") || IMG("8da357_4d78fde2ed5e4060a6fbcb57ab1da1b2", 2200, 900),
+    getSlotSrc("composites-01") || getSlotSrc("sunrise-01") || IMG("8da357_4d78fde2ed5e4060a6fbcb57ab1da1b2", 2200, 900),
     [sv]
   );
   return (
-    <div
-      className="cta-strip"
-      data-reveal
-      style={{ "--cta-img": `url(${bgSrc})` }}
-    >
+    <div className="cta-strip" data-reveal style={{ "--cta-img": `url(${bgSrc})` }}>
       <h2>Want a piece of the wild on your <em>wall?</em></h2>
       <p>
         I print a small, hand-picked set each year — limited-edition archival prints,
@@ -234,15 +253,13 @@ function CtaStrip() {
   );
 }
 
-/* ─── Footer ──────────────────────────────────────────────────────── */
-function Footer({ onManagePhotos }) {
+/* ─── Footer ───────────────────────────────────────────────────────── */
+function Footer() {
   return (
     <footer className="footer" id="about">
       <div className="footer-grid">
         <div>
-          <h2 className="foot-brand" data-reveal>
-            Ashit <em>Gandhi.</em>
-          </h2>
+          <h2 className="foot-brand" data-reveal>Ashit <em>Gandhi.</em></h2>
           <p className="foot-loc" data-reveal style={{ transitionDelay: ".1s" }}>
             <span className="ln" /> Vadodara, Gujarat — India
           </p>
@@ -276,7 +293,7 @@ function Footer({ onManagePhotos }) {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
           </a>
           <a href="#" aria-label="Facebook">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8a0 0 0 0 1 0 0z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8z"/></svg>
           </a>
           <a href="#" aria-label="Twitter">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M4 4l7.5 10L4.5 20H7l5.5-5L17 20h3l-7.7-10.4L19 4h-2.5l-5 5L8 4H4z"/></svg>

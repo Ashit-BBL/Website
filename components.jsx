@@ -37,30 +37,15 @@ function useLiveSlotImages(slots) {
   }, [slots, sv]);
 }
 
-/* ─── Hook: single slot image with Wix fallback ────────────────────── */
+/* ─── Hook: single slot image with Wix fallback — synchronous ──────── */
 function useSlotOrWix(slotId, wixId, w, h) {
   const sv = useSlots();
-  const [src, setSrc] = useState(null);
-
-  useEffect(() => {
-    let live = true;
-    const raw = getSlotSrc(slotId);
-
-    const tryWix = () => {
-      if (wixId) setSrc(IMG(wixId, w || 1000, h || 1400));
-    };
-
-    if (!raw) { tryWix(); return; }
-    if (raw.startsWith("data:")) { setSrc(raw); return; }
-
-    const img = new Image();
-    img.onload  = () => { if (live) setSrc(raw); };
-    img.onerror = () => { if (live) tryWix(); };
-    img.src = raw;
-    return () => { live = false; };
+  return useMemo(() => {
+    const src = getSlotSrc(slotId);
+    if (src) return src;
+    if (wixId) return IMG(wixId, w || 1000, h || 1400);
+    return null;
   }, [slotId, wixId, sv]);
-
-  return src;
 }
 
 /* ─── Scroll reveal ─────────────────────────────────────────────────── */
