@@ -242,19 +242,19 @@ function Lightbox({
   }, p.title, p.title && p.loc ? ' · ' : '', p.loc)));
 }
 const POSTS = [{
-  img: "8da357_5ac52a1d875c4dbdb09d4262057d1fa5",
+  img: "8da357_9c65b71f04384452b9f371a91d4b01e9",
   date: "Dec 2025",
   loc: "Jaisalmer, Rajasthan",
   title: "Six safaris in the Desert National Park",
   body: "Laggar falcons, chinkara at dawn, and a Great Indian Bustard that finally let me near. Field notes from the dunes."
 }, {
-  img: "8da357_117fc1df67ce40d58658f7d693b37a26",
+  img: "8da357_26f780ce931941f5a57eb1949f768d16",
   date: "Jan 2025",
   loc: "Ranthambore",
   title: "Five mornings with Riddhi's cub",
   body: "What I learned about light, patience, and how loud a tiger can be when it's choosing whether to look at you."
 }, {
-  img: "8da357_8d2b9270b6de4cc6a13dee8220320069",
+  img: "8da357_1023b14b09a946fe9348659c93336ae8",
   date: "Dec 2024",
   loc: "Latpanchar, West Bengal",
   title: "Avian wonders, part three",
@@ -347,41 +347,65 @@ function Footer() {
     className: "foot-col",
     "data-reveal": true
   }, React.createElement("h4", null, "Portfolio"), React.createElement("a", {
-    href: "#work"
+    href: "https://www.ashitgphotography.com/portfolio-birds",
+    target: "_blank",
+    rel: "noopener"
   }, "Birds"), React.createElement("a", {
-    href: "#work"
+    href: "https://www.ashitgphotography.com/portfolio-macro",
+    target: "_blank",
+    rel: "noopener"
   }, "Macro"), React.createElement("a", {
-    href: "#work"
+    href: "https://www.ashitgphotography.com/composite-images",
+    target: "_blank",
+    rel: "noopener"
   }, "Composites"), React.createElement("a", {
-    href: "#work"
+    href: "https://www.ashitgphotography.com/portfolio-landscape",
+    target: "_blank",
+    rel: "noopener"
   }, "Landscape")), React.createElement("div", {
     className: "foot-col",
     "data-reveal": true
   }, React.createElement("h4", null, "Editions"), React.createElement("a", {
-    href: "#journal"
+    href: "https://www.ashitgphotography.com/yearbook-2024",
+    target: "_blank",
+    rel: "noopener"
   }, "Yearbook 2024"), React.createElement("a", {
-    href: "#journal"
+    href: "https://www.ashitgphotography.com/yearbook-2023",
+    target: "_blank",
+    rel: "noopener"
   }, "Yearbook 2023"), React.createElement("a", {
-    href: "#journal"
+    href: "https://www.ashitgphotography.com/calendars",
+    target: "_blank",
+    rel: "noopener"
   }, "Calendars"), React.createElement("a", {
-    href: "#journal"
+    href: "https://www.ashitgphotography.com/photowalls",
+    target: "_blank",
+    rel: "noopener"
   }, "Photo walls")), React.createElement("div", {
     className: "foot-col",
     "data-reveal": true
   }, React.createElement("h4", null, "Elsewhere"), React.createElement("a", {
-    href: "#"
+    href: "https://instagram.com/ashitgandhi_",
+    target: "_blank",
+    rel: "noopener"
   }, "Instagram"), React.createElement("a", {
-    href: "#"
+    href: "https://www.facebook.com/ashitgphotography",
+    target: "_blank",
+    rel: "noopener"
   }, "Facebook"), React.createElement("a", {
-    href: "#"
+    href: "https://www.twitter.com/GandhiAshit",
+    target: "_blank",
+    rel: "noopener"
   }, "X / Twitter"), React.createElement("a", {
-    href: "#"
+    href: "mailto:ashitg.photography@gmail.com"
   }, "Email"))), React.createElement("div", {
     className: "foot-bottom"
   }, React.createElement("span", null, "\xA9 2018\u20132026 Ashit Gandhi. All frames are mine."), React.createElement("div", {
     className: "socials"
   }, React.createElement("a", {
-    href: "#",
+    href: "https://instagram.com/ashitgandhi_",
+    target: "_blank",
+    rel: "noopener",
     "aria-label": "Instagram"
   }, React.createElement("svg", {
     width: "14",
@@ -406,7 +430,9 @@ function Footer() {
     r: "1",
     fill: "currentColor"
   }))), React.createElement("a", {
-    href: "#",
+    href: "https://www.facebook.com/ashitgphotography",
+    target: "_blank",
+    rel: "noopener",
     "aria-label": "Facebook"
   }, React.createElement("svg", {
     width: "14",
@@ -418,7 +444,9 @@ function Footer() {
   }, React.createElement("path", {
     d: "M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8z"
   }))), React.createElement("a", {
-    href: "#",
+    href: "https://www.twitter.com/GandhiAshit",
+    target: "_blank",
+    rel: "noopener",
     "aria-label": "Twitter"
   }, React.createElement("svg", {
     width: "14",
