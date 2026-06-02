@@ -24,20 +24,32 @@ function useSlots() {
 }
 
 /* ─── Hook: load + verify a list of slot images ────────────────────── *
-   Returns only slots whose image actually loads (handles 404s for
-   GitHub paths and uses data-URLs from localStorage instantly).        */
+   Populates immediately (optimistic) then silently removes 404s.       */
 function useLiveSlotImages(slots) {
   const sv = useSlots();
-  const [images, setImages] = useState([]);
 
+  /* build initial list synchronously so first render is never empty */
+  const getInitial = useCallback(() => {
+    if (!slots) return [];
+    return slots.map(s => {
+      const src = getSlotSrc(s.id);
+      return src ? { ...s, src } : null;
+    }).filter(Boolean);
+  }, [slots, sv]);
+
+  const [images, setImages] = useState(getInitial);
+
+  /* refresh when slots/sv change */
+  useEffect(() => { setImages(getInitial()); }, [getInitial]);
+
+  /* probe in background — drop any that 404 */
   useEffect(() => {
-    if (!slots || slots.length === 0) { setImages([]); return; }
+    if (!slots || slots.length === 0) return;
     let live = true;
 
     Promise.all(slots.map(s => {
       const src = getSlotSrc(s.id);
       if (!src) return Promise.resolve(null);
-      // data-URLs are always valid — no need to probe
       if (src.startsWith("data:")) return Promise.resolve({ ...s, src });
       return new Promise(resolve => {
         const img = new Image();
