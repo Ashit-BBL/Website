@@ -377,12 +377,12 @@ function Stats() {
     label: "Years in the field",
     desc: "Since the first Bulbul in 2018."
   }), React.createElement(StatNum, {
-    to: 280,
+    to: 450,
     suffix: "+",
     label: "Species photographed",
     desc: "From garden Sunbirds to Imperial Eagles."
   }), React.createElement(StatNum, {
-    to: 45,
+    to: 30,
     suffix: "",
     label: "Locations across India",
     desc: "Tal Chhapar, Manas, Ranthambore, the Rann."
