@@ -1184,6 +1184,13 @@
     background: var(--sage); margin-top: 6px;
   }
   .fl-item b{ color: var(--forest-deep); font-weight: 600; }
+  /* compact 3-col variant for the 15 EXIF fields */
+  .feature-list.exif-fields{ grid-template-columns: repeat(3,1fr); gap: 0 40px; margin-top: 4px; }
+  .feature-list.exif-fields .fl-col{ gap: 7px; }
+  .feature-list.exif-fields .fl-item{ font-size: 14.5px; }
+  @media (max-width: 768px){
+    .feature-list.exif-fields{ grid-template-columns: repeat(2,1fr); gap: 0 20px; }
+  }
   @media (max-width: 768px){
     .feature-list{ grid-template-columns: 1fr; gap: 10px; margin-top: 28px; }
   }
@@ -1421,6 +1428,53 @@
     .notify-form .btn{ width: 100%; justify-content: center; }
   }
 
+  /* ============ LIGHTROOM PLUGIN ============ */
+  .lrplugin{ background: var(--forest); color:#e6e1c5; padding: 56px 0; position:relative; overflow:hidden; }
+  .lrplugin::before{ content:""; position:absolute; right:-180px; top:-160px; width:520px; height:520px; background: radial-gradient(circle, rgba(201,163,90,.10), transparent 70%); pointer-events:none; }
+  .lrplugin .section-label{ color: var(--gold-soft); }
+  .lrplugin .section-label::before{ background: var(--gold-soft); }
+  .lrplugin .section-title{ color:#f4efd9; }
+  .lrplugin .section-title .italic{ color: var(--sage-light); }
+  .lrplugin .section-lead{ color:#c8c4a8; max-width: 640px; }
+  .lr-grid{ display:grid; grid-template-columns: 1fr 320px; gap: 36px; margin-top: 36px; align-items:start; }
+  .lr-steps{ counter-reset: lrstep; list-style:none; padding:0; margin:0; display:grid; grid-template-columns: 1fr 1fr; gap: 4px 28px; }
+  .lr-steps li{ position:relative; padding: 7px 0 7px 38px; color:#d9d4b7; font-size:13.5px; line-height:1.5; }
+  .lr-steps li::before{ counter-increment: lrstep; content: counter(lrstep); position:absolute; left:0; top:5px; width:24px; height:24px; border-radius:50%; background: rgba(201,163,90,.15); border:1px solid rgba(201,163,90,.4); color: var(--gold-soft); font-size:11px; font-weight:600; display:flex; align-items:center; justify-content:center; }
+  .lr-steps b{ color:#f4efd9; font-weight:600; }
+  .lr-steps code{ font-family:'DM Sans',sans-serif; background: rgba(0,0,0,.25); border:1px solid rgba(201,163,90,.18); border-radius:4px; padding:1px 6px; font-size:12.5px; color: var(--gold-soft); white-space:nowrap; }
+  .lr-card{ background: var(--forest-deep); border:1px solid rgba(201,163,90,.25); border-radius: var(--r-md); padding: 28px 26px; text-align:center; position:sticky; top:80px; }
+  .lr-card .lr-badge{ display:inline-block; background: rgba(201,163,90,.15); border:1px solid rgba(201,163,90,.3); color: var(--gold-soft); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; padding:5px 11px; border-radius:999px; margin-bottom:16px; }
+  .lr-card h3{ font-size:19px; font-weight:600; color:#f4efd9; margin:0 0 8px; letter-spacing:-0.01em; }
+  .lr-card > p{ font-size:13px; color:#c8c4a8; margin:0 0 20px; line-height:1.55; }
+  .lr-card .btn{ width:100%; justify-content:center; background: var(--gold); color: var(--forest-deep); box-shadow: 0 0 0 1px var(--gold-deep) inset; }
+  .lr-card .btn:hover{ background: var(--gold-soft); transform: translateY(-2px); }
+  .lr-card .lr-meta{ margin-top:14px; font-family:'DM Sans',sans-serif; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#8f8c70; }
+  .lr-note{ font-size:12px; color:#b9b69a; margin:16px 0 0; line-height:1.5; padding-top:14px; border-top:1px solid rgba(201,163,90,.15); text-align:left; }
+  .lr-note b{ color: var(--gold-soft); }
+  @media (max-width: 900px){ .lr-grid{ grid-template-columns:1fr; gap:20px; } .lr-card{ position:static; } }
+  @media (max-width: 768px){
+    .lrplugin{ padding: 44px 0; }
+    .lr-steps{ grid-template-columns:1fr; gap:0; }
+    .lr-steps li{ font-size:13px; }
+    .lr-card{ padding: 22px 18px; }
+  }
+
+  /* Windows Defender note (download card) */
+  .defender-warn{
+    margin-top: 12px;
+    display:flex; gap:14px; align-items:flex-start;
+    background: var(--cream-light);
+    border:1px solid var(--border-strong);
+    border-left:3px solid var(--sage);
+    border-radius: var(--r-sm);
+    padding:14px 16px;
+    font-size:13px; color: var(--ink-soft); line-height:1.55;
+  }
+  .defender-warn svg{ flex-shrink:0; width:18px; height:18px; color: var(--forest); margin-top:1px; }
+  .defender-warn b{ color: var(--forest-deep); }
+  .defender-warn .df-path{ display:inline-block; margin-top:7px; font-family:'DM Sans',sans-serif; font-size:12px; background: var(--cream-card); border:1px solid var(--border); border-radius:4px; padding:6px 10px; color: var(--forest-deep); line-height:1.6; }
+  .defender-warn .df-path b{ color: var(--gold-deep); }
+
   /* ============ VERSION HISTORY ============ */
   .version-history{
     background: var(--cream);
@@ -1478,9 +1532,10 @@
       <span class="nav-divider"></span>
       <a href="#tool">The Tool</a>
       <a href="#features">Features</a>
+      <a href="#lightroom">Plugin</a>
       <a href="#about-tool">About</a>
       <a href="#security">Security</a>
-      <a href="/cdn-cgi/l/email-protection#2342504b4a57440d534b4c574c445142534b5a63444e424a4f0d404c4e">Contact</a>
+      <a href="/cdn-cgi/l/email-protection#a6c7d5cecfd2c188d6cec9d2c9c1d4c7d6cedfe6c1cbc7cfca88c5c9cb">Contact</a>
       <a href="#download" class="nav-cta">Download</a>
     </div>
 
@@ -1503,9 +1558,10 @@
     <a href="Blog.html" class="nav-site-link" style="color:var(--gold-soft);">Blog</a>
     <a href="#tool">The Tool</a>
     <a href="#features">Features</a>
+    <a href="#lightroom">Lightroom Plugin</a>
     <a href="#about-tool">About</a>
     <a href="#security">Security</a>
-    <a href="/cdn-cgi/l/email-protection#9effedf6f7eaf9b0eef6f1eaf1f9ecffeef6e7def9f3fff7f2b0fdf1f3">Contact</a>
+    <a href="/cdn-cgi/l/email-protection#ceafbda6a7baa9e0bea6a1baa1a9bcafbea6b78ea9a3afa7a2e0ada1a3">Contact</a>
     <a href="#download" class="cta">Download Free &rarr;</a>
   </nav>
   <div class="nav-mobile-foot">studio.ashitgphotography.com</div>
@@ -1515,7 +1571,7 @@
 <header class="hero" id="tool">
   <div class="wrap hero-grid">
     <div>
-      <p class="eyebrow">A tool for photographers &middot; v1.2</p>
+      <p class="eyebrow">A tool for photographers &middot; v1.3</p>
       <h1 class="h1">EXIF Overlay Tool</h1>
       <p class="hero-tagline">Stamp camera data, <span class="gold">your way.</span></p>
       <p class="hero-lead">
@@ -1619,20 +1675,22 @@
     <h2 class="section-title reveal d1">Pick from <span class="gold">15</span> EXIF fields, in <span class="italic">any</span> combination.</h2>
     <p style="color:var(--ink-soft); font-size:15px; margin:10px 0 28px; max-width:600px;">Tick what matters for the shot, untick what doesn't. The tool remembers your favourites across sessions.</p>
 
-    <div class="feature-list reveal d2" style="margin-top:0;">
+    <div class="feature-list exif-fields reveal d2" style="margin-top:0;">
       <div class="fl-col">
         <div class="fl-item"><span class="fl-dot"></span><span>Camera</span></div>
         <div class="fl-item"><span class="fl-dot"></span><span>Lens</span></div>
         <div class="fl-item"><span class="fl-dot"></span><span>Shutter Speed</span></div>
         <div class="fl-item"><span class="fl-dot"></span><span>Aperture</span></div>
         <div class="fl-item"><span class="fl-dot"></span><span>ISO</span></div>
+      </div>
+      <div class="fl-col">
         <div class="fl-item"><span class="fl-dot"></span><span>White Balance</span></div>
         <div class="fl-item"><span class="fl-dot"></span><span>Focal Length</span></div>
         <div class="fl-item"><span class="fl-dot"></span><span>Subject Distance</span></div>
-      </div>
-      <div class="fl-col">
         <div class="fl-item"><span class="fl-dot"></span><span>Flash</span></div>
         <div class="fl-item"><span class="fl-dot"></span><span>Exposure Compensation</span></div>
+      </div>
+      <div class="fl-col">
         <div class="fl-item"><span class="fl-dot"></span><span>Metering Mode</span></div>
         <div class="fl-item"><span class="fl-dot"></span><span>Exposure Program</span></div>
         <div class="fl-item"><span class="fl-dot"></span><span>Date &amp; Time</span></div>
@@ -1793,13 +1851,13 @@
             <div class="dl-icon">EXE</div>
             <div class="dl-meta">
               <div class="name">EXIFOverlayTool.exe</div>
-              <div class="size">v1.2  &middot;  ~ 15 MB  &middot;  Windows 10 / 11</div>
+              <div class="size">v1.3  &middot;  ~ 15 MB  &middot;  Windows 10 / 11</div>
             </div>
           </div>
           <div class="dl-stat">
             <div class="item">
               <div class="lbl">SHA-256</div>
-              <div class="val" style="font-size:11px; letter-spacing:0.04em; word-break:break-all;">8BE231D02420E7E22B1D832366FD08BA481477E835D68C704B13DAA1CF658A6C</div>
+              <div class="val" style="font-size:11px; letter-spacing:0.04em; word-break:break-all;">4D24D1104B8455C74A2533ACFB3CC332600FDDD2C5C9BD32788833A20B9375C1</div>
             </div>
           </div>
         </div>
@@ -1807,12 +1865,11 @@
         <div class="dl-row">
           <div class="dl-checks">
             <span>Signed download &mdash; direct from this site only</span>
-            <span><a href="https://www.virustotal.com/gui/file/8be231d02420e7e22b1d832366fd08ba481477e835d68c704b13daa1cf658a6c/detection" target="_blank" rel="noopener" style="color:var(--forest-deep);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;">VirusTotal report</a> &mdash; 8/71 flagged (false positive)</span>
+            <span><a href="https://www.virustotal.com/gui/file/4d24d1104b8455c74a2533acfb3cc332600fddd2c5c9bd32788833a20b9375c1/detection" target="_blank" rel="noopener" style="color:var(--forest-deep);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;">VirusTotal report</a> &mdash; 7/71 flagged (false positive)</span>
             <span>No installer, no admin rights required</span>
           </div>
-          <!-- TODO: update SHA-256 and VirusTotal link for v1.2 -->
-          <a id="downloadBtn" href="https://github.com/Ashit-BBL/Website/releases/download/V1.2/EXIF_Overlay_Tool_v1.2.exe" class="btn btn-primary" style="background: var(--forest); color:#f0ecd8; box-shadow:none;" download>
-            Download v1.2 <span class="arr">&rarr;</span>
+          <a id="downloadBtn" href="https://github.com/Ashit-BBL/Website/releases/download/V1.3/EXIF.Overlay.Tool.v1.3.exe" class="btn btn-primary" style="background: var(--forest); color:#f0ecd8; box-shadow:none;" download>
+            Download v1.3 <span class="arr">&rarr;</span>
           </a>
         </div>
 
@@ -1825,6 +1882,17 @@
           <span><b>Chrome users:</b> If Chrome shows "Abort" or a warning, click <b>"Keep"</b> or <b>"Keep anyway"</b> to proceed. Verify using the SHA-256 hash or VirusTotal link above.</span>
         </div>
 
+        <!-- Windows instructions -->
+        <div class="defender-warn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2 L20 5 V11 C20 16 16.5 19.5 12 21 C7.5 19.5 4 16 4 11 V5 Z"/>
+            <polyline points="8.5,12 11,14.5 15.5,9"/>
+          </svg>
+          <span><b>Windows users:</b> If the blue &ldquo;Windows protected your PC&rdquo; screen appears, click <b>More info &rarr; Run anyway</b> &mdash; once only. If Defender blocks it, go to
+            <span class="df-path">Windows Security &rarr; <b>Virus &amp; threat protection</b> &rarr; <b>Protection history</b> &rarr; <b>Allow</b></span>
+          </span>
+        </div>
+
         <!-- VirusTotal notice -->
         <div class="vt-notice">
           <svg class="vt-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -1833,10 +1901,10 @@
             <circle cx="10" cy="14.5" r="0.6" fill="currentColor" stroke="none"/>
           </svg>
           <div class="vt-body">
-            <strong>VirusTotal: <span class="vt-badge">8 / 71</span> engines flagged this file.</strong>
-            Known false positive with Nuitka-compiled executables. The remaining 63 engines, including all major vendors, report <strong>no threat</strong>.
+            <strong>VirusTotal: <span class="vt-badge">7 / 71</span> engines flagged this file.</strong>
+            Known false positive with Nuitka-compiled executables. The remaining 64 engines, including all major vendors, report <strong>no threat</strong>.
             <br style="margin-bottom:4px;">
-            <a href="https://www.virustotal.com/gui/file/8be231d02420e7e22b1d832366fd08ba481477e835d68c704b13daa1cf658a6c/detection" target="_blank" rel="noopener">View full VirusTotal report &rarr;</a>
+            <a href="https://www.virustotal.com/gui/file/4d24d1104b8455c74a2533acfb3cc332600fddd2c5c9bd32788833a20b9375c1/detection" target="_blank" rel="noopener">View full VirusTotal report &rarr;</a>
           </div>
         </div>
 
@@ -1886,6 +1954,36 @@
   </div>
 </section>
 
+<!-- ====== LIGHTROOM PLUGIN ====== -->
+<section class="lrplugin" id="lightroom">
+  <div class="wrap">
+    <p class="section-label reveal">// New in v1.3 &middot; Lightroom</p>
+    <h2 class="section-title reveal d1">Now inside <span class="italic">Lightroom</span> Classic.</h2>
+    <p class="section-lead reveal d2">Stamp EXIF overlays without leaving Lightroom Classic &mdash; straight from the Plug-in Extras menu.</p>
+
+    <div class="lr-grid">
+      <ol class="lr-steps reveal d2">
+        <li>Download the <b>.lrplugin</b> zip and extract it.</li>
+        <li>Open <b>Lightroom Classic</b>.</li>
+        <li>Go to <code>File &rarr; Plug-in Manager</code>.</li>
+        <li>Click <b>Add</b> (bottom-left).</li>
+        <li>Select the extracted <b>.lrplugin</b> folder.</li>
+        <li>Click <b>Done</b>.</li>
+        <li>Find it under <code>File &rarr; Plug-in Extras</code>.</li>
+      </ol>
+
+      <div class="lr-card reveal d3">
+        <span class="lr-badge">Lightroom Classic</span>
+        <h3>Get the plugin</h3>
+        <p>Same engine, same non-destructive exports.</p>
+        <a href="https://github.com/Ashit-BBL/Website/releases/download/LR_V_1.0/EXIF.Overlay.Tool.lrplugin.zip" class="btn" download>Download plugin (.zip) <span class="arr">&rarr;</span></a>
+        <div class="lr-meta">Plugin v1.0 &middot; ZIP archive</div>
+        <p class="lr-note"><b>Note:</b> Keep the EXE in the same folder as the LRPlugin folder. Lightroom Classic only.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ====== VERSION HISTORY ====== -->
 <section class="version-history">
   <div class="wrap">
@@ -1893,8 +1991,19 @@
     <div class="vh-list">
       <div class="vh-entry reveal">
         <div class="vh-ver">
-          <span class="num">v1.2</span>
+          <span class="num">v1.3</span>
           <span class="tag current">Current</span>
+        </div>
+        <ul>
+          <li><b>Universal Windows build</b> &mdash; installs on any Windows 10 / 11 PC, Intel or AMD Ryzen</li>
+          <li><b>Refreshed layout</b> &mdash; redesigned interface for a clearer, faster workflow</li>
+          <li><b>Lightroom Classic plugin</b> &mdash; stamp overlays without leaving Lightroom</li>
+        </ul>
+      </div>
+      <div class="vh-entry reveal d1">
+        <div class="vh-ver">
+          <span class="num">v1.2</span>
+          <span class="tag old">Previous</span>
         </div>
         <ul>
           <li><b>Single Line Caption (Black Bar)</b> &mdash; clean black-bar strip with white caption text</li>
@@ -1928,9 +2037,9 @@
       <img src="assets/logo-white.png" alt="ashitg Photography" class="logo-img">
     </div>
     <div style="display:flex; flex-direction:column; gap:8px; text-align:center;">
-      <div class="foot-meta">EXIF Overlay Tool v1.2 &middot; Created by Ashit Gandhi &middot; 2026</div>
-      <a href="/cdn-cgi/l/email-protection#1f7e6c77766b78316f77706b70786d7e6f77665f78727e7673317c7072" style="color: var(--gold-soft); font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.08em; text-decoration:none; transition: color .2s ease;">
-        <span class="__cf_email__" data-cfemail="b5d4c6dddcc1d29bc5dddac1dad2c7d4c5ddccf5d2d8d4dcd99bd6dad8">[email&#160;protected]</span>
+      <div class="foot-meta">EXIF Overlay Tool v1.3 &middot; Created by Ashit Gandhi &middot; 2026</div>
+      <a href="/cdn-cgi/l/email-protection#7b1a0813120f1c550b13140f141c091a0b13023b1c161a121755181416" style="color: var(--gold-soft); font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.08em; text-decoration:none; transition: color .2s ease;">
+        <span class="__cf_email__" data-cfemail="b1d0c2d9d8c5d69fc1d9dec5ded6c3d0c1d9c8f1d6dcd0d8dd9fd2dedc">[email&#160;protected]</span>
       </a>
     </div>
     <div style="display:flex; flex-direction:column; gap:8px; align-items:flex-end;">
