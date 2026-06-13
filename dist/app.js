@@ -30,7 +30,7 @@ function App() {
   };
   return React.createElement(React.Fragment, null, React.createElement(Nav, null), React.createElement(Hero, {
     variant: t.heroStyle
-  }), React.createElement(FieldNotes, null), React.createElement(Stats, null), React.createElement(Categories, {
+  }), React.createElement(FieldNotes, null), React.createElement(Stats, null), React.createElement(ExifToolBanner, null), React.createElement(Categories, {
     onPickCategory: scrollToGallery
   }), React.createElement(FeaturedGallery, {
     initialFilter: filter,
