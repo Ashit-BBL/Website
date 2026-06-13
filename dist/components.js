@@ -393,6 +393,44 @@ function Stats() {
     desc: "Carefully kept. Quietly culled."
   }));
 }
+function ExifToolBanner() {
+  return React.createElement("div", {
+    className: "exif-banner",
+    "data-reveal": true
+  }, React.createElement("div", {
+    className: "exif-preview"
+  }, React.createElement("img", {
+    src: "assets/kingfisher-exif.jpg",
+    alt: "White-throated Kingfisher \u2014 actual EXIF overlay output",
+    className: "exif-preview-img",
+    loading: "lazy"
+  }), React.createElement("div", {
+    className: "exif-preview-badge"
+  }, "Actual Output")), React.createElement("div", {
+    className: "exif-banner-right"
+  }, React.createElement("div", {
+    className: "exif-banner-kicker"
+  }, React.createElement("span", {
+    className: "dot"
+  }), "Studio Tool"), React.createElement("h3", {
+    className: "exif-banner-heading"
+  }, "EXIF ", React.createElement("em", null, "Overlay Tool")), React.createElement("p", {
+    className: "exif-banner-body"
+  }, "A Windows utility that stamps camera data directly onto your photograph. Choose from ", React.createElement("strong", null, "15 EXIF fields"), " \u2014 camera, lens, shutter, aperture, ISO and more. Pick what shows, where it sits, how it looks."), React.createElement("div", {
+    className: "exif-features"
+  }, React.createElement("span", {
+    className: "exif-feat"
+  }, "15 EXIF fields"), React.createElement("span", {
+    className: "exif-feat"
+  }, "Batch processing"), React.createElement("span", {
+    className: "exif-feat"
+  }, "Originals untouched")), React.createElement("a", {
+    className: "btn btn-ghost",
+    href: "exif-tool.html"
+  }, "Try the tool ", React.createElement("span", {
+    className: "arrow"
+  }, "\u2192"))));
+}
 const CAT_DEFS = [{
   id: "birds",
   title: "Birds",
@@ -503,5 +541,6 @@ Object.assign(window, {
   FieldNotes,
   Stats,
   StatNum,
+  ExifToolBanner,
   Categories
 });
