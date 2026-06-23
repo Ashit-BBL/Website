@@ -1,4 +1,14 @@
 const BLOG_POSTS = [{
+  id: "8da357_cc4805d0dd0f497b9afc6d1c1cc6971c",
+  title: "Tiger Cubs at Tadoba — Collarwala, Veera & Jaanvi",
+  date: "Jun 18, 2026",
+  cat: "Wildlife",
+  loc: "Maharashtra",
+  excerpt: "Four safaris, three tigers — Collarwala at Moharli, a fleeting Veera, and 45 uninterrupted minutes with Jaanvi's four cubs at Shedegaon. A May to remember.",
+  url: "https://www.ashitgphotography.com/post/tadoba-may-2026",
+  read: "4 min",
+  year: "2026"
+}, {
   id: "8da357_9c65b71f04384452b9f371a91d4b01e9",
   title: "Desert National Park, Jaisalmer",
   date: "Dec 31, 2025",
@@ -201,7 +211,7 @@ const BLOG_POSTS = [{
   read: "5 min",
   year: "2021"
 }];
-const BLOG_CATS = ["All", "Bird Watching", "Bird Photography", "Travel", "Landscapes", "Yearbook"];
+const BLOG_CATS = ["All", "Bird Watching", "Bird Photography", "Wildlife", "Travel", "Landscapes", "Yearbook"];
 function BlogPage() {
   const [cat, setCat] = React.useState("All");
   useReveal();
@@ -242,7 +252,7 @@ function BlogPage() {
     className: "col"
   }, "Latest entry", React.createElement("span", {
     className: "v"
-  }, "Dec ", React.createElement("em", null, "2025"))), React.createElement("div", {
+  }, "Jun ", React.createElement("em", null, "2026"))), React.createElement("div", {
     className: "col"
   }, "Categories", React.createElement("span", {
     className: "v"

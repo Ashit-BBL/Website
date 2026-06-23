@@ -242,6 +242,13 @@ function Lightbox({
   }, p.title, p.title && p.loc ? ' · ' : '', p.loc)));
 }
 const POSTS = [{
+  img: "8da357_cc4805d0dd0f497b9afc6d1c1cc6971c",
+  date: "May 2026",
+  loc: "Tadoba, Maharashtra",
+  title: "Tiger cubs at Tadoba — Collarwala, Veera & Jaanvi",
+  url: "https://www.ashitgphotography.com/post/tadoba-may-2026",
+  body: "Four safaris, three tigers. Collarwala in the Moharli core, a fleeting Veera, and 45 uninterrupted minutes with Jaanvi's four cubs at Shedegaon."
+}, {
   img: "8da357_9c65b71f04384452b9f371a91d4b01e9",
   date: "Dec 2025",
   loc: "Jaisalmer, Rajasthan",
@@ -255,13 +262,6 @@ const POSTS = [{
   title: "Five mornings with Riddhi's cub",
   url: "https://www.ashitgphotography.com/post/ranthambore-national-park-january-2025",
   body: "What I learned about light, patience, and how loud a tiger can be when it's choosing whether to look at you."
-}, {
-  img: "8da357_1023b14b09a946fe9348659c93336ae8",
-  date: "Dec 2024",
-  loc: "Latpanchar, West Bengal",
-  title: "Avian wonders, part three",
-  url: "https://www.ashitgphotography.com/post/birding-at-latpanchar-west-bengal",
-  body: "Red-headed Trogons, Sultan Tits, and a fog so thick it felt like the forest was hiding the birds on purpose."
 }];
 function Posts() {
   return React.createElement("section", {
