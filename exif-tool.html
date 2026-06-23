@@ -1642,7 +1642,7 @@
       <a href="#lightroom">Plugin</a>
       <a href="#about-tool">About</a>
       <a href="#security">Security</a>
-      <a href="/cdn-cgi/l/email-protection#e382908b8a9784cd938b8c978c849182938b9aa3848e828a8fcd808c8e">Contact</a>
+      <a href="#" class="nav-contact-email">Contact</a>
       <a href="#download" class="nav-cta">Download</a>
     </div>
 
@@ -1668,7 +1668,7 @@
     <a href="#lightroom">Lightroom Plugin</a>
     <a href="#about-tool">About</a>
     <a href="#security">Security</a>
-    <a href="/cdn-cgi/l/email-protection#dabba9b2b3aebdf4aab2b5aeb5bda8bbaab2a39abdb7bbb3b6f4b9b5b7">Contact</a>
+    <a href="#" class="nav-contact-email">Contact</a>
     <a href="#download" class="cta">Download Free &rarr;</a>
   </nav>
   <div class="nav-mobile-foot">studio.ashitgphotography.com</div>
@@ -2256,9 +2256,7 @@
     </div>
     <div style="display:flex; flex-direction:column; gap:8px; text-align:center;">
       <div class="foot-meta">EXIF Overlay Tool v1.4 &middot; Created by Ashit Gandhi &middot; 2026</div>
-      <a href="/cdn-cgi/l/email-protection#83e2f0ebeaf7e4adf3ebecf7ece4f1e2f3ebfac3e4eee2eaefade0ecee" style="color: var(--gold-soft); font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.08em; text-decoration:none; transition: color .2s ease;">
-        <span class="__cf_email__" data-cfemail="0d6c7e6564796a237d656279626a7f6c7d65744d6a606c6461236e6260">[email&#160;protected]</span>
-      </a>
+      <a href="#" class="foot-contact-email" style="color: var(--gold-soft); font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.08em; text-decoration:none; transition: color .2s ease;"></a>
     </div>
     <div style="display:flex; flex-direction:column; gap:8px; align-items:flex-end;">
       <a href="https://studio.ashitgphotography.com" target="_blank" style="color:#c8c4a8; font-size:13px; text-decoration:none; letter-spacing:0.06em; border-bottom:1px solid rgba(201,163,90,.3); padding-bottom:2px; transition: color .2s ease, border-color .2s ease;">studio.ashitgphotography.com &rarr;</a>
@@ -2266,7 +2264,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   /* ===== Mobile menu ===== */
   const mobileMenu = document.getElementById('mobileMenu');
   const navOpen = document.getElementById('navOpen');
@@ -2497,6 +2495,21 @@
     .then(() => loadScript('https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js'))
     .then(() => initFirebase())
     .catch(() => showOffline());
+})();
+</script>
+<script>
+(function(){
+  var u = 'ashitg.photography';
+  var d = 'gmail.com';
+  var e = u + '@' + d;
+  var h = 'mailto:' + e;
+  document.querySelectorAll('.nav-contact-email').forEach(function(a){
+    a.href = h;
+  });
+  document.querySelectorAll('.foot-contact-email').forEach(function(a){
+    a.href = h;
+    a.textContent = e;
+  });
 })();
 </script>
 </body>
