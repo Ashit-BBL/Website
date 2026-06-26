@@ -2478,7 +2478,7 @@
           try {
             await db.collection('exif-tool-subscribers').add({
               email: email,
-              version: 'v1.1',
+              version: 'v1.4',
               userAgent: navigator.userAgent,
               referrer: document.referrer || '',
               timestamp: firebase.firestore.FieldValue.serverTimestamp()
@@ -2500,7 +2500,7 @@
         dlBtn.addEventListener('click', () => {
           try {
             db.collection('exif-tool-downloads').add({
-              version: 'v1.1',
+              version: 'v1.4',
               userAgent: navigator.userAgent,
               referrer: document.referrer || '',
               timestamp: firebase.firestore.FieldValue.serverTimestamp()
