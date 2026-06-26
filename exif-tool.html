@@ -47,7 +47,11 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<!-- Load fonts async — non-render-blocking -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet"></noscript>
+<!-- Preload LCP hero image -->
+<link rel="preload" as="image" href="assets/kingfisher_demo.png">
 <style>
   :root{
     --forest:        #2d3a25;
@@ -1697,7 +1701,7 @@
 <!-- mobile menu -->
 <div class="nav-mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
   <div class="nav-mobile-header">
-    <img src="assets/logo-white.png" alt="ashitg Photography" style="height:30px; width:auto;">
+    <img src="assets/logo-white.png" alt="ashitg Photography" style="height:30px; width:auto;" loading="lazy">
     <button class="nav-mobile-close" id="navClose" aria-label="Close menu">&#x2715;</button>
   </div>
   <nav class="nav-mobile-links">
@@ -1745,7 +1749,7 @@
 
     <div>
       <div class="hero-photo">
-        <img src="assets/kingfisher_demo.png" alt="White-throated Kingfisher &mdash; actual EXIF overlay output">
+        <img src="assets/kingfisher_demo.png" alt="White-throated Kingfisher &mdash; actual EXIF overlay output" fetchpriority="high">
         <div class="pill">Actual Output</div>
       </div>
       <p class="hero-caption">Actual output &middot; <b>Single Line Caption</b> &middot; Fully Customizable</p>
@@ -1886,7 +1890,7 @@
             "I'm not a software developer. I just needed a tool that didn't exist the way I wanted it &mdash; so I made one. If it helps other photographers too, that's reason enough to share it."
           </blockquote>
           <div class="attr">
-            <img src="assets/logo-white.png" alt="ashitg Photography">
+            <img src="assets/logo-white.png" alt="ashitg Photography" loading="lazy">
             <div>
               <div class="name">Ashit Gandhi</div>
               <div class="role">Photographer &middot; studio.ashitgphotography.com</div>
@@ -2293,7 +2297,7 @@
 <footer>
   <div class="foot-inner">
     <div class="foot-brand">
-      <img src="assets/logo-white.png" alt="ashitg Photography" class="logo-img">
+      <img src="assets/logo-white.png" alt="ashitg Photography" class="logo-img" loading="lazy">
     </div>
     <div style="display:flex; flex-direction:column; gap:8px; text-align:center;">
       <div class="foot-meta">EXIF Overlay Tool v1.4 &middot; Created by Ashit Gandhi &middot; 2026</div>
