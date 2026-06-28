@@ -5,7 +5,7 @@ const BLOG_POSTS = [{
   cat: "Wildlife",
   loc: "Maharashtra",
   excerpt: "Four safaris, three tigers — Collarwala at Moharli, a fleeting Veera, and 45 uninterrupted minutes with Jaanvi's four cubs at Shedegaon. A May to remember.",
-  url: "https://www.ashitgphotography.com/post/tadoba-may-2026",
+  url: "https://ashitgphotography.com/post/tadoba-may-2026",
   read: "4 min",
   year: "2026"
 }, {
@@ -15,7 +15,7 @@ const BLOG_POSTS = [{
   cat: "Bird Watching",
   loc: "Rajasthan",
   excerpt: "Six safaris through the dunes. Laggar falcons taking off in low light, chinkara at dawn, and the Great Indian Bustard that finally let me close.",
-  url: "https://www.ashitgphotography.com/post/desert-national-park-jaisalmer",
+  url: "https://ashitgphotography.com/post/desert-national-park-jaisalmer",
   read: "8 min",
   year: "2025"
 }, {
@@ -26,7 +26,7 @@ const BLOG_POSTS = [{
   cat: "Yearbook",
   loc: "India",
   excerpt: "A small, opinionated edit of the frames that held up to a second look. Mostly birds. A few mornings I won't forget.",
-  url: "https://www.ashitgphotography.com/post/yearbook-2024",
+  url: "https://ashitgphotography.com/post/yearbook-2024",
   read: "6 min",
   year: "2025"
 }, {
@@ -36,7 +36,7 @@ const BLOG_POSTS = [{
   cat: "Travel",
   loc: "Ranthambore",
   excerpt: "Five mornings with Riddhi's cub. What I learned about light, patience, and how loud a tiger can be when it's deciding whether to look at you.",
-  url: "https://www.ashitgphotography.com/post/ranthambore-national-park-january-2025",
+  url: "https://ashitgphotography.com/post/ranthambore-national-park-january-2025",
   read: "9 min",
   year: "2025"
 }, {
@@ -46,7 +46,7 @@ const BLOG_POSTS = [{
   cat: "Bird Watching",
   loc: "West Bengal",
   excerpt: "Red-headed Trogons, Sultan Tits, fog so thick the forest seemed to be hiding the birds on purpose. The third stop of a Northeast trip.",
-  url: "https://www.ashitgphotography.com/post/birding-at-latpanchar-west-bengal",
+  url: "https://ashitgphotography.com/post/birding-at-latpanchar-west-bengal",
   read: "7 min",
   year: "2024"
 }, {
@@ -56,7 +56,7 @@ const BLOG_POSTS = [{
   cat: "Bird Watching",
   loc: "West Bengal",
   excerpt: "A morning at Samrat Saha's hide in Buxa. New species, slow light, and a quiet lesson in how a good hide is half the work.",
-  url: "https://www.ashitgphotography.com/post/birding-at-buxa-hide-west-bengal",
+  url: "https://ashitgphotography.com/post/birding-at-buxa-hide-west-bengal",
   read: "6 min",
   year: "2024"
 }, {
@@ -66,7 +66,7 @@ const BLOG_POSTS = [{
   cat: "Bird Watching",
   loc: "Assam",
   excerpt: "First stop of the Northeast leg. Bengal florican grasslands, river terns, and being thoroughly outclassed by every birder in the group.",
-  url: "https://www.ashitgphotography.com/post/birding-at-manas-national-park",
+  url: "https://ashitgphotography.com/post/birding-at-manas-national-park",
   read: "8 min",
   year: "2024"
 }, {
@@ -76,7 +76,7 @@ const BLOG_POSTS = [{
   cat: "Bird Watching",
   loc: "Gujarat",
   excerpt: "Three wetlands, three different moods. The September migrants were starting to land — pintails, garganey, the first painted storks.",
-  url: "https://www.ashitgphotography.com/post/monthly-highlights-september-2024",
+  url: "https://ashitgphotography.com/post/monthly-highlights-september-2024",
   read: "5 min",
   year: "2024"
 }, {
@@ -86,7 +86,7 @@ const BLOG_POSTS = [{
   cat: "Bird Watching",
   loc: "Vadodara",
   excerpt: "A monsoon month spent close to home. Mostly Timbi, a few back-garden surprises, and the wagtails I always say I'll stop photographing.",
-  url: "https://www.ashitgphotography.com/post/monthly-highlights-august-2024",
+  url: "https://ashitgphotography.com/post/monthly-highlights-august-2024",
   read: "4 min",
   year: "2024"
 }, {
@@ -96,7 +96,7 @@ const BLOG_POSTS = [{
   cat: "Bird Watching",
   loc: "Gujarat",
   excerpt: "Half the month at Nal Sarovar, the other half nose-to-nose with whatever insect would let me. The Robber Fly cooperated.",
-  url: "https://www.ashitgphotography.com/post/monthly-highlights-july-2024-nal-sarovar-macros",
+  url: "https://ashitgphotography.com/post/monthly-highlights-july-2024-nal-sarovar-macros",
   read: "5 min",
   year: "2024"
 }, {
@@ -106,7 +106,7 @@ const BLOG_POSTS = [{
   cat: "Bird Watching",
   loc: "Gujarat",
   excerpt: "A summer weekend at Orsang and the usual Timbi morning. Fewer birds, slower light, more of the breathing-in-the-quiet kind of photography.",
-  url: "https://www.ashitgphotography.com/post/monthly-highlights-june-2024-orsang-camp-timbi",
+  url: "https://ashitgphotography.com/post/monthly-highlights-june-2024-orsang-camp-timbi",
   read: "4 min",
   year: "2024"
 }, {
@@ -116,7 +116,7 @@ const BLOG_POSTS = [{
   cat: "Bird Watching",
   loc: "Gujarat",
   excerpt: "Pre-monsoon Kutch. Flamingos painting the wetlands pink, lesser sand plovers, and a Greylag Goose at golden hour I won't shut up about.",
-  url: "https://www.ashitgphotography.com/post/monthly-highlights-may-2024-bherai-wetlands-and-jamnagar",
+  url: "https://ashitgphotography.com/post/monthly-highlights-may-2024-bherai-wetlands-and-jamnagar",
   read: "6 min",
   year: "2024"
 }, {
@@ -126,7 +126,7 @@ const BLOG_POSTS = [{
   cat: "Bird Watching",
   loc: "Gujarat",
   excerpt: "Shoolpaneshwar in summer is mostly dry hills and patient waiting. Worth it for the four-horned antelope and a Crested Bunting on a brittle perch.",
-  url: "https://www.ashitgphotography.com/post/april-2024-shoolpaneshwar-wildlife-sanctuary",
+  url: "https://ashitgphotography.com/post/april-2024-shoolpaneshwar-wildlife-sanctuary",
   read: "5 min",
   year: "2024"
 }, {
@@ -136,7 +136,7 @@ const BLOG_POSTS = [{
   cat: "Landscapes",
   loc: "Uttarakhand",
   excerpt: "A short trip up to Mussoorie. Pine ridges, fog rolling in below the road, and the kind of long blue light you only get in the hills.",
-  url: "https://www.ashitgphotography.com/post/enchanting-landscapes-of-mussoorie",
+  url: "https://ashitgphotography.com/post/enchanting-landscapes-of-mussoorie",
   read: "4 min",
   year: "2024"
 }, {
@@ -146,7 +146,7 @@ const BLOG_POSTS = [{
   cat: "Landscapes",
   loc: "Uttarakhand",
   excerpt: "A handful of landscapes from the December trip — Sattal, Manila and the foothills. The Himalayan sunrise on the homepage is from this set.",
-  url: "https://www.ashitgphotography.com/post/capturing-the-magnificent-beauty-of-uttarakhand-through-landscape-photography",
+  url: "https://ashitgphotography.com/post/capturing-the-magnificent-beauty-of-uttarakhand-through-landscape-photography",
   read: "4 min",
   year: "2024"
 }, {
@@ -156,7 +156,7 @@ const BLOG_POSTS = [{
   cat: "Bird Photography",
   loc: "Uttarakhand",
   excerpt: "Birds and wildlife from Sattal and Manila — an Asian Barred Owlet at dusk, kingfishers in fog, and a Brown Wood Owl I almost missed in the foliage.",
-  url: "https://www.ashitgphotography.com/post/discovering-the-bird-and-wildlife-in-uttarakhand-a-birder-s-paradise",
+  url: "https://ashitgphotography.com/post/discovering-the-bird-and-wildlife-in-uttarakhand-a-birder-s-paradise",
   read: "8 min",
   year: "2024"
 }, {
@@ -166,7 +166,7 @@ const BLOG_POSTS = [{
   cat: "Bird Photography",
   loc: "Vadodara",
   excerpt: "A guide to the lakes, wetlands and rough patches around Vadodara that have given me the most species per kilometre. Timbi tops the list.",
-  url: "https://www.ashitgphotography.com/post/locations-for-bird-photography-bird-watching-in-around-vadodara",
+  url: "https://ashitgphotography.com/post/locations-for-bird-photography-bird-watching-in-around-vadodara",
   read: "10 min",
   year: "2022"
 }, {
@@ -176,7 +176,7 @@ const BLOG_POSTS = [{
   cat: "Bird Photography",
   loc: "Rajasthan",
   excerpt: "My first proper bird-photography trip. Bharatpur in December was generous — sarus cranes, painted storks, and the day my D850's shutter started feeling well-used.",
-  url: "https://www.ashitgphotography.com/post/bharatpur-bird-photography-dec-2021",
+  url: "https://ashitgphotography.com/post/bharatpur-bird-photography-dec-2021",
   read: "8 min",
   year: "2021"
 }, {
@@ -187,7 +187,7 @@ const BLOG_POSTS = [{
   cat: "Bird Photography",
   loc: "Sherkhi, Vadodara",
   excerpt: "One morning at a hide in Sherkhi. Mostly common visitors, but everything looked different through that small window.",
-  url: "https://www.ashitgphotography.com/post/birders-hideout",
+  url: "https://ashitgphotography.com/post/birders-hideout",
   read: "3 min",
   year: "2021"
 }, {
@@ -197,7 +197,7 @@ const BLOG_POSTS = [{
   cat: "Travel",
   loc: "Uttarakhand",
   excerpt: "A bucket-list trek finally ticked. Memorable in the way only tiring, rainy, cold-feet, what-am-I-doing-here trips ever are.",
-  url: "https://www.ashitgphotography.com/post/valley-of-flowers",
+  url: "https://ashitgphotography.com/post/valley-of-flowers",
   read: "9 min",
   year: "2021"
 }, {
@@ -207,7 +207,7 @@ const BLOG_POSTS = [{
   cat: "Bird Photography",
   loc: "Gujarat",
   excerpt: "Independence Day morning at Pariyej with Pinak. The wetland was full, the light short, and we found ourselves three lifer birds before lunch.",
-  url: "https://www.ashitgphotography.com/post/birding-at-pariyej-wetlands-gujarat",
+  url: "https://ashitgphotography.com/post/birding-at-pariyej-wetlands-gujarat",
   read: "5 min",
   year: "2021"
 }];
