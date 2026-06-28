@@ -246,21 +246,21 @@ const POSTS = [{
   date: "May 2026",
   loc: "Tadoba, Maharashtra",
   title: "Tiger cubs at Tadoba — Collarwala, Veera & Jaanvi",
-  url: "https://ashitgphotography.com/post/tadoba-may-2026",
+  url: "https://blog.ashitgphotography.com/post/tadoba-may-2026",
   body: "Four safaris, three tigers. Collarwala in the Moharli core, a fleeting Veera, and 45 uninterrupted minutes with Jaanvi's four cubs at Shedegaon."
 }, {
   img: "8da357_9c65b71f04384452b9f371a91d4b01e9",
   date: "Dec 2025",
   loc: "Jaisalmer, Rajasthan",
   title: "Six safaris in the Desert National Park",
-  url: "https://ashitgphotography.com/post/desert-national-park-jaisalmer",
+  url: "https://blog.ashitgphotography.com/post/desert-national-park-jaisalmer",
   body: "Laggar falcons, chinkara at dawn, and a Great Indian Bustard that finally let me near. Field notes from the dunes."
 }, {
   img: "8da357_26f780ce931941f5a57eb1949f768d16",
   date: "Jan 2025",
   loc: "Ranthambore",
   title: "Five mornings with Riddhi's cub",
-  url: "https://ashitgphotography.com/post/ranthambore-national-park-january-2025",
+  url: "https://blog.ashitgphotography.com/post/ranthambore-national-park-january-2025",
   body: "What I learned about light, patience, and how loud a tiger can be when it's choosing whether to look at you."
 }];
 function Posts() {
@@ -330,7 +330,7 @@ function CtaStrip() {
     className: "hero-actions"
   }, React.createElement("a", {
     className: "btn btn-ghost",
-    href: "https://ashitgphotography.com/copy-of-calendars",
+    href: "https://blog.ashitgphotography.com/copy-of-calendars",
     target: "_blank",
     rel: "noopener"
   }, "See the yearbooks")));
@@ -356,38 +356,38 @@ function Footer() {
     className: "foot-col",
     "data-reveal": true
   }, React.createElement("h4", null, "Portfolio"), React.createElement("a", {
-    href: "https://ashitgphotography.com/portfolio-birds",
+    href: "https://blog.ashitgphotography.com/portfolio-birds",
     target: "_blank",
     rel: "noopener"
   }, "Birds"), React.createElement("a", {
-    href: "https://ashitgphotography.com/portfolio-macro",
+    href: "https://blog.ashitgphotography.com/portfolio-macro",
     target: "_blank",
     rel: "noopener"
   }, "Macro"), React.createElement("a", {
-    href: "https://ashitgphotography.com/composite-images",
+    href: "https://blog.ashitgphotography.com/composite-images",
     target: "_blank",
     rel: "noopener"
   }, "Composites"), React.createElement("a", {
-    href: "https://ashitgphotography.com/portfolio-landscape",
+    href: "https://blog.ashitgphotography.com/portfolio-landscape",
     target: "_blank",
     rel: "noopener"
   }, "Landscape")), React.createElement("div", {
     className: "foot-col",
     "data-reveal": true
   }, React.createElement("h4", null, "Editions"), React.createElement("a", {
-    href: "https://ashitgphotography.com/yearbook-2024",
+    href: "https://blog.ashitgphotography.com/yearbook-2024",
     target: "_blank",
     rel: "noopener"
   }, "Yearbook 2024"), React.createElement("a", {
-    href: "https://ashitgphotography.com/yearbook-2023",
+    href: "https://blog.ashitgphotography.com/yearbook-2023",
     target: "_blank",
     rel: "noopener"
   }, "Yearbook 2023"), React.createElement("a", {
-    href: "https://ashitgphotography.com/calendars",
+    href: "https://blog.ashitgphotography.com/calendars",
     target: "_blank",
     rel: "noopener"
   }, "Calendars"), React.createElement("a", {
-    href: "https://ashitgphotography.com/photowalls",
+    href: "https://blog.ashitgphotography.com/photowalls",
     target: "_blank",
     rel: "noopener"
   }, "Photo walls")), React.createElement("div", {

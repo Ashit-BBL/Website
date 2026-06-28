@@ -275,7 +275,7 @@ function AboutPage() {
     }
   }, CALENDARS.map((c, i) => React.createElement("a", {
     key: c.year,
-    href: "https://ashitgphotography.com/calendars",
+    href: "https://blog.ashitgphotography.com/calendars",
     target: "_blank",
     rel: "noopener",
     "data-reveal": true,
