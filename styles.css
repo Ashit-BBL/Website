@@ -573,6 +573,7 @@ a { color: inherit; text-decoration: none; }
 .posts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 @media (max-width: 980px) { .posts { grid-template-columns: 1fr; } }
 .post { cursor: pointer; }
+.post-card-link { display: block; text-decoration: none; color: inherit; }
 .post-img {
   aspect-ratio: 5/4; background-size: cover; background-position: center;
   border-radius: var(--rad); overflow: hidden;
