@@ -130,7 +130,9 @@ function Nav({
     href: "About.html"
   }, "About"), React.createElement("a", {
     href: "exif-tool.html"
-  }, "EXIF Tool")), React.createElement("a", {
+  }, "EXIF Tool"), React.createElement("a", {
+    href: "Gujarat Birding Locations.html"
+  }, "Gujarat Birding")), React.createElement("a", {
     className: "nav-cta",
     href: "About.html#contact"
   }, "Say hello \u2192"));
