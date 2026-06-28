@@ -295,6 +295,11 @@ function Posts() {
     style: {
       transitionDelay: `${i * 0.1}s`
     }
+  }, React.createElement("a", {
+    href: p.url,
+    target: "_blank",
+    rel: "noopener",
+    className: "post-card-link"
   }, React.createElement("div", {
     className: "post-img"
   }, React.createElement("div", {
@@ -308,14 +313,11 @@ function Posts() {
     className: "dot"
   }), React.createElement("span", {
     className: "loc"
-  }, p.loc)), React.createElement("h3", null, p.title), React.createElement("p", null, p.body), React.createElement("a", {
-    className: "post-link",
-    href: p.url,
-    target: "_blank",
-    rel: "noopener"
+  }, p.loc)), React.createElement("h3", null, p.title), React.createElement("p", null, p.body), React.createElement("span", {
+    className: "post-link"
   }, "Read entry ", React.createElement("span", {
     className: "arrow"
-  }, "\u2192"))))));
+  }, "\u2192")))))));
 }
 function CtaStrip() {
   const sv = window.useSlots ? window.useSlots() : 0;
