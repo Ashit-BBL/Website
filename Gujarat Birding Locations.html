@@ -1,0 +1,1072 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Gujarat Birding Locations — Ashit Gandhi Photography</title>
+<meta name="description" content="A complete field guide to 15 major birding destinations in Gujarat — from flamingo colonies and harrier roosts to lion forests and arid grasslands." />
+<link rel="canonical" href="https://www.ashitgphotography.com/Gujarat%20Birding%20Locations.html" />
+<meta property="og:title" content="Gujarat Birding Locations — Ashit Gandhi Photography" />
+<meta property="og:description" content="A complete field guide to 15 major birding destinations in Gujarat." />
+<meta property="og:url" content="https://www.ashitgphotography.com/Gujarat%20Birding%20Locations.html" />
+<meta property="og:type" content="article" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* ── Tokens (match studio theme) ── */
+:root {
+  --bg:        oklch(0.16 0.006 70);
+  --bg-soft:   oklch(0.19 0.008 70);
+  --bg-card:   oklch(0.26 0.010 70);
+  --line:      oklch(0.30 0.008 70);
+  --text:      oklch(0.96 0.005 80);
+  --text-soft: oklch(0.78 0.006 80);
+  --text-mute: oklch(0.55 0.008 70);
+  --accent:    #d4a35a;
+  --accent-soft: color-mix(in oklab, #d4a35a 20%, transparent);
+  --serif:     ui-serif, "Iowan Old Style", "Apple Garamond", Georgia, serif;
+  --sans:      "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --page-x:    clamp(20px, 5vw, 96px);
+  --rad:       4px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+::selection { background: var(--accent); color: #1a1610; }
+
+/* ── Nav ── */
+.nav {
+  position: fixed; inset: 0 0 auto 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px var(--page-x);
+  background: linear-gradient(to bottom, rgba(0,0,0,.5), transparent);
+  transition: background .35s, padding .35s, backdrop-filter .35s;
+}
+.nav.scrolled {
+  background: color-mix(in oklab, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(140%) blur(12px);
+  -webkit-backdrop-filter: saturate(140%) blur(12px);
+  padding-top: 12px; padding-bottom: 12px;
+  border-bottom: 1px solid color-mix(in oklab, var(--line) 50%, transparent);
+}
+.nav-brand { display: flex; align-items: center; gap: 10px; letter-spacing: .22em; font-size: 11px; font-weight: 600; text-transform: uppercase; }
+.nav-brand-mark {
+  width: 28px; height: 28px; border: 1px solid var(--accent);
+  display: grid; place-items: center; border-radius: 50%;
+  font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 14px;
+  color: var(--accent); letter-spacing: 0;
+}
+.nav-links { display: flex; gap: 28px; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; color: var(--text-soft); }
+.nav-links a { position: relative; padding: 4px 0; transition: color .25s; }
+.nav-links a:hover, .nav-links a.active { color: var(--text); }
+.nav-links a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -2px; height: 1px; background: var(--accent); transition: right .35s cubic-bezier(.2,.7,.2,1); }
+.nav-links a:hover::after, .nav-links a.active::after { right: 0; }
+.nav-cta { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; padding: 8px 14px; border: 1px solid color-mix(in oklab, var(--text) 22%, transparent); border-radius: 999px; cursor: pointer; background: transparent; color: var(--text); white-space: nowrap; transition: border-color .25s, color .25s; }
+.nav-cta:hover { border-color: var(--accent); color: var(--accent); }
+@media (max-width: 860px) { .nav-links { display: none; } }
+
+/* ── Hero ── */
+.hero {
+  position: relative;
+  height: 90vh; min-height: 540px;
+  display: flex; align-items: flex-end;
+  /* ↓ Replace with your photo */
+  background: var(--bg-soft);
+  background-image: url('assets/gujarat-birding-hero.jpg');
+  background-size: cover;
+  background-position: center center;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.82) 0%, rgba(0,0,0,.3) 55%, rgba(0,0,0,.15) 100%);
+}
+.hero-img-placeholder {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--text-mute); pointer-events: none;
+}
+.hero-content {
+  position: relative; z-index: 1;
+  padding: 0 var(--page-x) 72px;
+  max-width: 900px;
+}
+.hero-kicker {
+  font-size: 11px; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--accent); font-weight: 600; margin-bottom: 16px;
+}
+.hero-content h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  font-weight: 400; line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 18px;
+}
+.hero-content h1 em { font-style: italic; color: var(--accent); }
+.hero-sub {
+  font-size: 1.05rem; color: var(--text-soft);
+  max-width: 600px; line-height: 1.7; margin-bottom: 36px;
+}
+.hero-stats {
+  display: flex; gap: 36px; flex-wrap: wrap;
+  padding-top: 24px; border-top: 1px solid color-mix(in oklab, var(--line) 60%, transparent);
+}
+.hstat-num {
+  display: block;
+  font-family: var(--serif); font-style: italic;
+  font-size: 2rem; color: var(--accent); line-height: 1;
+  margin-bottom: 4px;
+}
+.hstat-label { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--text-mute); }
+
+/* ── Intro ── */
+.intro {
+  padding: 56px var(--page-x);
+  border-bottom: 1px solid var(--line);
+  max-width: 860px;
+  margin: 0 auto;
+}
+.intro p { font-size: 1.05rem; color: var(--text-soft); line-height: 1.85; }
+.intro strong { color: var(--text); font-weight: 600; }
+
+/* ── TOC ── */
+.toc {
+  padding: 48px var(--page-x);
+  border-bottom: 1px solid var(--line);
+}
+.toc-label { font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--text-mute); margin-bottom: 20px; }
+.toc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 6px 24px;
+}
+.toc-item {
+  display: flex; align-items: baseline; gap: 12px;
+  padding: 8px 0; border-bottom: 1px solid color-mix(in oklab, var(--line) 40%, transparent);
+  font-size: 0.88rem; color: var(--text-soft);
+  transition: color .2s;
+}
+.toc-item:hover { color: var(--accent); }
+.toc-num {
+  font-family: var(--serif); font-style: italic;
+  font-size: 0.8rem; color: var(--accent); min-width: 22px;
+}
+
+/* ── Cards container ── */
+.cards { padding: 0 var(--page-x) 80px; }
+
+/* ── Location card ── */
+.loc-card {
+  background: oklch(0.30 0.014 70);
+  border: 1px solid oklch(0.38 0.012 70);
+  border-left: 3px solid var(--accent);
+  margin: 32px 0;
+  overflow: hidden;
+  border-radius: var(--rad);
+  opacity: 0; transform: translateY(24px);
+  transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1);
+}
+.loc-card.ramsar {
+  background: oklch(0.26 0.032 58);
+  border: 1px solid oklch(0.44 0.038 58);
+  border-left: 4px solid oklch(0.65 0.15 25);
+  box-shadow: inset 0 0 60px color-mix(in oklab, oklch(0.65 0.15 25) 7%, transparent);
+}
+.loc-card:nth-child(odd):not(.ramsar)  { background: oklch(0.30 0.014 70);  border-color: oklch(0.38 0.012 70); }
+.loc-card:nth-child(even):not(.ramsar) { background: oklch(0.28 0.010 220); border-color: oklch(0.36 0.010 220); }
+.loc-card.visible { opacity: 1; transform: none; }
+
+.card-head {
+  padding: 28px 32px 22px;
+  display: flex; align-items: flex-start; gap: 20px;
+  border-bottom: 1px solid var(--line);
+}
+.card-num {
+  font-family: var(--serif); font-style: italic;
+  font-size: 2.8rem; color: var(--accent); line-height: 1;
+  min-width: 48px; opacity: .7;
+}
+.card-title { font-size: 1.2rem; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.card-district { font-size: 0.8rem; letter-spacing: .1em; color: var(--text-mute); text-transform: uppercase; }
+
+.card-body { padding: 24px 32px 28px; }
+
+.meta-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+.pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 10px; border-radius: 999px;
+  font-size: 0.75rem; font-weight: 500; letter-spacing: .04em;
+  white-space: nowrap;
+}
+.pill-maps { background: color-mix(in oklab, #d4a35a 12%, transparent); color: var(--accent); border: 1px solid color-mix(in oklab, var(--accent) 25%, transparent); }
+.pill-maps:hover { background: color-mix(in oklab, #d4a35a 22%, transparent); }
+.pill-ebird { background: color-mix(in oklab, oklch(0.65 0.15 145) 12%, transparent); color: oklch(0.75 0.12 145); border: 1px solid color-mix(in oklab, oklch(0.65 0.15 145) 25%, transparent); }
+.pill-ebird:hover { background: color-mix(in oklab, oklch(0.65 0.15 145) 22%, transparent); }
+.pill-ramsar-yes { background: color-mix(in oklab, oklch(0.65 0.15 25) 12%, transparent); color: oklch(0.75 0.12 25); border: 1px solid color-mix(in oklab, oklch(0.65 0.15 25) 25%, transparent); }
+.pill-ramsar-no { background: color-mix(in oklab, var(--text-mute) 10%, transparent); color: var(--text-mute); border: 1px solid color-mix(in oklab, var(--line) 80%, transparent); }
+
+.ramsar-note {
+  background: color-mix(in oklab, oklch(0.65 0.15 25) 8%, transparent);
+  border-left: 2px solid oklch(0.65 0.15 25);
+  padding: 10px 14px; border-radius: 0 var(--rad) var(--rad) 0;
+  font-size: 0.82rem; color: var(--text-soft); line-height: 1.6;
+  margin-bottom: 16px;
+}
+.ramsar-note strong { color: oklch(0.75 0.12 25); }
+
+.card-desc { font-size: 0.95rem; color: var(--text-soft); line-height: 1.75; margin-bottom: 22px; }
+.card-desc strong { color: var(--text); }
+
+.species-label {
+  display: block; font-size: 10px; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--accent);
+  margin-bottom: 10px; font-weight: 600;
+}
+
+/* Species table */
+.sp-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; margin-bottom: 20px; }
+.sp-table thead th {
+  background: color-mix(in oklab, var(--accent) 12%, var(--bg-soft));
+  color: var(--accent); padding: 10px 14px;
+  text-align: left; font-size: 0.75rem; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase;
+  border-bottom: 1px solid var(--line);
+}
+.sp-table tbody tr { border-bottom: 1px solid color-mix(in oklab, var(--line) 60%, transparent); transition: background .15s; }
+.sp-table tbody tr:hover { background: color-mix(in oklab, var(--accent) 5%, transparent); }
+.sp-table td { padding: 9px 14px; color: var(--text-soft); vertical-align: top; }
+.sp-table td:first-child { color: var(--text); }
+.sp-table em { color: var(--text-mute); font-style: italic; }
+
+/* Status badges */
+.badge {
+  display: inline-block; font-size: 9px; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase;
+  padding: 2px 5px; border-radius: 3px; vertical-align: middle;
+  margin-left: 4px;
+}
+.badge-cr { background: color-mix(in oklab, oklch(0.5 0.2 25) 20%, transparent); color: oklch(0.75 0.15 25); border: 1px solid color-mix(in oklab, oklch(0.5 0.2 25) 35%, transparent); }
+.badge-en { background: color-mix(in oklab, oklch(0.55 0.18 55) 20%, transparent); color: oklch(0.78 0.14 55); border: 1px solid color-mix(in oklab, oklch(0.55 0.18 55) 35%, transparent); }
+.badge-vu { background: color-mix(in oklab, oklch(0.6 0.15 80) 20%, transparent); color: oklch(0.8 0.12 80); border: 1px solid color-mix(in oklab, oklch(0.6 0.15 80) 35%, transparent); }
+
+/* Tip box */
+.tip-box {
+  background: color-mix(in oklab, var(--accent) 7%, var(--bg-soft));
+  border-left: 2px solid var(--accent);
+  padding: 12px 16px; border-radius: 0 var(--rad) var(--rad) 0;
+  font-size: 0.85rem; color: var(--text-soft); line-height: 1.65;
+}
+.tip-box strong { color: var(--accent); }
+
+/* ── Summary sections ── */
+.summary {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--line);
+  padding: 56px var(--page-x);
+}
+.summary h2 {
+  font-family: var(--serif); font-weight: 400;
+  font-size: 1.6rem; margin-bottom: 28px; color: var(--text);
+}
+.summary h2 em { font-style: italic; color: var(--accent); }
+
+.sum-table { width: 100%; max-width: 760px; border-collapse: collapse; font-size: 0.9rem; }
+.sum-table thead th {
+  background: color-mix(in oklab, var(--accent) 12%, var(--bg));
+  color: var(--accent); padding: 10px 16px;
+  text-align: left; font-size: 0.75rem; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase;
+  border-bottom: 1px solid var(--line);
+}
+.sum-table tbody tr { border-bottom: 1px solid color-mix(in oklab, var(--line) 60%, transparent); }
+.sum-table tbody tr:hover { background: color-mix(in oklab, var(--accent) 4%, transparent); }
+.sum-table td { padding: 10px 16px; color: var(--text-soft); }
+.sum-table td:first-child { color: var(--text); font-weight: 500; }
+
+/* ── Footer ── */
+.footer {
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+  padding: 64px var(--page-x) 40px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 28px;
+}
+@media (max-width: 780px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+.foot-brand {
+  font-family: var(--serif); font-size: 2rem; font-weight: 400;
+  color: var(--text); margin-bottom: 8px;
+}
+.foot-brand em { font-style: italic; color: var(--accent); }
+.foot-loc { font-size: 0.82rem; color: var(--text-mute); letter-spacing: .05em; }
+.foot-col h4 { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--text-mute); margin-bottom: 14px; }
+.foot-col a { display: block; font-size: 0.88rem; color: var(--text-soft); margin-bottom: 8px; transition: color .2s; }
+.foot-col a:hover { color: var(--accent); }
+.foot-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: var(--text-mute); }
+.socials { display: flex; gap: 14px; }
+.socials a { color: var(--text-mute); transition: color .2s; }
+.socials a:hover { color: var(--accent); }
+
+/* ── Scroll-to-top ── */
+.back-top {
+  position: fixed; bottom: 28px; right: 28px; z-index: 40;
+  width: 40px; height: 40px;
+  background: color-mix(in oklab, var(--bg-card) 90%, transparent);
+  border: 1px solid var(--line);
+  border-radius: 50%; display: grid; place-items: center;
+  cursor: pointer; color: var(--text-soft);
+  opacity: 0; pointer-events: none;
+  transition: opacity .3s, color .2s, border-color .2s;
+  backdrop-filter: blur(8px);
+}
+.back-top.show { opacity: 1; pointer-events: auto; }
+.back-top:hover { color: var(--accent); border-color: var(--accent); }
+
+@media (max-width: 640px) {
+  .card-head { flex-direction: column; gap: 8px; padding: 20px 20px 16px; }
+  .card-body { padding: 18px 20px 22px; }
+  .toc-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Nav ── -->
+<nav class="nav" id="main-nav">
+  <a class="nav-brand" href="index.html">
+    <span class="nav-brand-mark">A</span>
+    <span>Ashit Gandhi</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html#work">Portfolio</a>
+    <a href="index.html#gallery">Gallery</a>
+    <a href="Blog.html">Journal</a>
+    <a href="About.html">About</a>
+    <a href="exif-tool.html">EXIF Tool</a>
+    <a href="Gujarat Birding Locations.html" class="active">Gujarat Birding</a>
+  </div>
+  <a class="nav-cta" href="About.html#contact">Say hello →</a>
+</nav>
+
+<!-- ── Hero ── -->
+<!-- To add your photo: place it in assets/ folder and update background-image below -->
+<section class="hero" id="hero" style="background-image: url('assets/gujarat-birding-hero.jpg')">
+  <div class="hero-img-placeholder" id="hero-placeholder">Add hero photo → assets/gujarat-birding-hero.jpg</div>
+  <div class="hero-content">
+    <p class="hero-kicker">Gujarat Bird Watching Guide</p>
+    <h1>Birding Locations<br>in <em>Gujarat</em></h1>
+    <p class="hero-sub">A complete field guide to 15 major birding destinations — from flamingo colonies and harrier roosts to lion forests and arid grasslands.</p>
+    <div class="hero-stats">
+      <div>
+        <span class="hstat-num">600+</span>
+        <span class="hstat-label">Bird Species</span>
+      </div>
+      <div>
+        <span class="hstat-num">15</span>
+        <span class="hstat-label">Key Locations</span>
+      </div>
+      <div>
+        <span class="hstat-num">5</span>
+        <span class="hstat-label">Ramsar Sites</span>
+      </div>
+      <div>
+        <span class="hstat-num">Oct–Mar</span>
+        <span class="hstat-label">Peak Season</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Intro ── -->
+<div class="intro">
+  <p>Gujarat is arguably India's most rewarding birding state. Its extraordinary ecological range — salt deserts, grasslands, coastal wetlands, dry deciduous forests, and mangroves — makes it home to over <strong>600 recorded bird species</strong>. It sits on the <strong>Central Asian Flyway</strong>, pulling in migrants from Siberia, Central Asia, and the Himalayas every winter.</p>
+</div>
+
+<!-- ── TOC ── -->
+<div class="toc">
+  <p class="toc-label">Locations in this guide</p>
+  <div class="toc-grid">
+    <a href="#loc1"  class="toc-item"><span class="toc-num">01</span> Nal Sarovar Bird Sanctuary</a>
+    <a href="#loc2"  class="toc-item"><span class="toc-num">02</span> Velavadar National Park</a>
+    <a href="#loc3"  class="toc-item"><span class="toc-num">03</span> Little Rann of Kutch</a>
+    <a href="#loc4"  class="toc-item"><span class="toc-num">04</span> Great Rann / Flamingo City</a>
+    <a href="#loc5"  class="toc-item"><span class="toc-num">05</span> Thol Lake Wildlife Sanctuary</a>
+    <a href="#loc6"  class="toc-item"><span class="toc-num">06</span> Khijadiya Wildlife Sanctuary</a>
+    <a href="#loc7"  class="toc-item"><span class="toc-num">07</span> Wadhvana Wetland</a>
+    <a href="#loc8"  class="toc-item"><span class="toc-num">08</span> Gir National Park</a>
+    <a href="#loc9"  class="toc-item"><span class="toc-num">09</span> Porbandar Bird Sanctuary</a>
+    <a href="#loc10" class="toc-item"><span class="toc-num">10</span> Banni Grasslands</a>
+    <a href="#loc11" class="toc-item"><span class="toc-num">11</span> Marine National Park, Jamnagar</a>
+    <a href="#loc12" class="toc-item"><span class="toc-num">12</span> Narayan Sarovar Sanctuary</a>
+    <a href="#loc13" class="toc-item"><span class="toc-num">13</span> Pariej Wetland</a>
+    <a href="#loc14" class="toc-item"><span class="toc-num">14</span> Shoolpaneshwar Sanctuary</a>
+    <a href="#loc15" class="toc-item"><span class="toc-num">15</span> Jambughoda Sanctuary</a>
+  </div>
+</div>
+
+<!-- ── Cards ── -->
+<div class="cards">
+
+  <!-- LOC 1 -->
+  <div class="loc-card ramsar" id="loc1">
+    <div class="card-head">
+      <div class="card-num">01</div>
+      <div>
+        <div class="card-title">Nal Sarovar Bird Sanctuary</div>
+        <div class="card-district">Ahmedabad / Surendranagar &nbsp;·&nbsp; Area: 120.82 km²</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="meta-row">
+        <a href="https://maps.google.com/?q=Nal+Sarovar+Bird+Sanctuary,+Gujarat" target="_blank" class="pill pill-maps">🗺 Google Maps</a>
+        <span class="pill pill-ramsar-yes">🌿 Ramsar Site ✅</span>
+        <a href="https://ebird.org/hotspot/L2372505" target="_blank" class="pill pill-ebird">🐦 eBird Hotspot</a>
+      </div>
+      <div class="ramsar-note"><strong>Ramsar Designation:</strong> 24 September 2012 (Ref. No. 2078, Area: 12,000 ha). Gujarat's first and largest Ramsar wetland. A critical stopover on the Central Asian Flyway, hosting over 20,000 waterbirds annually.</div>
+      <p class="card-desc">The largest wetland bird sanctuary in Gujarat and one of the largest in India. The shallow lake, 360 islets, muddy lagoons, and reed beds create ideal habitat. Over 250 species recorded; a skilled birder can log 100+ species in a single day.</p>
+      <span class="species-label">Key Species &amp; Best Months</span>
+      <table class="sp-table">
+        <thead><tr><th>Species</th><th>Best Months</th></tr></thead>
+        <tbody>
+          <tr><td>Greater Flamingo &amp; Lesser Flamingo</td><td>Oct – Mar</td></tr>
+          <tr><td>Rosy Pelican <em>(Pelecanus onocrotalus)</em></td><td>Nov – Feb</td></tr>
+          <tr><td>Dalmatian Pelican <span class="badge badge-vu">VU</span></td><td>Nov – Feb</td></tr>
+          <tr><td>Sarus Crane <span class="badge badge-vu">VU</span></td><td>Year-round</td></tr>
+          <tr><td>Indian Skimmer <span class="badge badge-vu">VU</span></td><td>Nov – Feb</td></tr>
+          <tr><td>Painted Stork, White-necked Stork</td><td>Oct – Mar</td></tr>
+          <tr><td>Ruddy Shelduck / Brahminy Duck</td><td>Nov – Feb</td></tr>
+          <tr><td>Bar-headed Goose</td><td>Nov – Mar</td></tr>
+          <tr><td>Purple Moorhen, Grey-headed Swamphen</td><td>Oct – Mar</td></tr>
+          <tr><td>Eurasian Spoonbill, Black-headed Ibis</td><td>Oct – Mar</td></tr>
+          <tr><td>Osprey, Pallas's Fish Eagle</td><td>Nov – Feb</td></tr>
+          <tr><td>Pied Avocet, waders &amp; shorebirds</td><td>Oct – Mar</td></tr>
+        </tbody>
+      </table>
+      <div class="tip-box"><strong>⏱ Best Time to Visit</strong> — October to March. Arrive before sunrise for the best light. Country boats can be hired on the lake for close-up viewing. An information centre at the sanctuary provides details on migratory species.</div>
+    </div>
+  </div>
+
+  <!-- LOC 2 -->
+  <div class="loc-card" id="loc2">
+    <div class="card-head">
+      <div class="card-num">02</div>
+      <div>
+        <div class="card-title">Velavadar (Blackbuck) National Park</div>
+        <div class="card-district">Bhavnagar &nbsp;·&nbsp; Area: 34 km²</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="meta-row">
+        <a href="https://maps.google.com/?q=Velavadar+Blackbuck+National+Park,+Bhavnagar,+Gujarat" target="_blank" class="pill pill-maps">🗺 Google Maps</a>
+        <span class="pill pill-ramsar-no">🌿 Not a Ramsar Site</span>
+        <a href="https://ebird.org/hotspot/L2517486" target="_blank" class="pill pill-ebird">🐦 eBird Hotspot</a>
+      </div>
+      <p class="card-desc">Famous for its savannah-like grasslands, spectacular evening harrier roost, and the rare Stoliczka's Bushchat. Over 300 bird species recorded. The harrier roost — Pallid, Montagu's, and Marsh Harriers dropping into the grass at dusk — is one of India's great wildlife spectacles.</p>
+      <span class="species-label">Key Species &amp; Best Months</span>
+      <table class="sp-table">
+        <thead><tr><th>Species</th><th>Best Months</th></tr></thead>
+        <tbody>
+          <tr><td>Pallid Harrier, Montagu's Harrier, Marsh Harrier <em>(evening roost)</em></td><td>Nov – Feb</td></tr>
+          <tr><td>Stoliczka's Bushchat <span class="badge badge-vu">VU</span></td><td>Nov – Feb</td></tr>
+          <tr><td>Lesser Florican <span class="badge badge-en">EN</span> <em>(monsoon breeding)</em></td><td>Jul – Sep</td></tr>
+          <tr><td>Common Crane, Demoiselle Crane</td><td>Nov – Feb</td></tr>
+          <tr><td>Eastern Imperial Eagle <span class="badge badge-vu">VU</span></td><td>Nov – Feb</td></tr>
+          <tr><td>Greater Spotted Eagle <span class="badge badge-vu">VU</span></td><td>Nov – Feb</td></tr>
+          <tr><td>Dalmatian Pelican</td><td>Nov – Feb</td></tr>
+          <tr><td>Laggar Falcon, Red-necked Falcon</td><td>Oct – Mar</td></tr>
+          <tr><td>Painted Francolin, Grey Francolin</td><td>Year-round</td></tr>
+          <tr><td>Greater Short-toed Lark, Bimaculated Lark</td><td>Nov – Feb</td></tr>
+          <tr><td>Desert Wheatear, Variable Wheatear</td><td>Nov – Feb</td></tr>
+        </tbody>
+      </table>
+      <div class="tip-box"><strong>⏱ Best Time to Visit</strong> — October to March. Park is CLOSED during monsoon (mid-June to mid-October). Time your afternoon safari to catch the harrier roost — arrive at the grassland edge at least 30 minutes before sunset.</div>
+    </div>
+  </div>
+
+  <!-- LOC 3 -->
+  <div class="loc-card" id="loc3">
+    <div class="card-head">
+      <div class="card-num">03</div>
+      <div>
+        <div class="card-title">Little Rann of Kutch — Wild Ass Wildlife Sanctuary</div>
+        <div class="card-district">Surendranagar / Kutch &nbsp;·&nbsp; Area: ~4,953 km²</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="meta-row">
+        <a href="https://maps.google.com/?q=Little+Rann+of+Kutch,+Gujarat" target="_blank" class="pill pill-maps">🗺 Google Maps</a>
+        <span class="pill pill-ramsar-no">🌿 Not a Ramsar Site (proposed)</span>
+        <a href="https://ebird.org/hotspot/L3231433" target="_blank" class="pill pill-ebird">🐦 eBird Hotspot</a>
+      </div>
+      <p class="card-desc">The world's last refuge for the Indian Wild Ass and one of India's most important winter birding grounds. Also the largest breeding ground of the Lesser Flamingo in India. The stark salt-flat landscape transforms dramatically in winter as thousands of birds descend.</p>
+      <span class="species-label">Key Species &amp; Best Months</span>
+      <table class="sp-table">
+        <thead><tr><th>Species</th><th>Best Months</th></tr></thead>
+        <tbody>
+          <tr><td>Lesser Flamingo &amp; Greater Flamingo <em>(breeding colony)</em></td><td>Feb–May; Oct–Mar</td></tr>
+          <tr><td>Demoiselle Crane, Common Crane</td><td>Nov – Feb</td></tr>
+          <tr><td>MacQueen's Bustard <span class="badge badge-vu">VU</span></td><td>Nov – Feb</td></tr>
+          <tr><td>Dalmatian Pelican, Spot-billed Pelican</td><td>Nov – Feb</td></tr>
+          <tr><td>Indian Courser, Sociable Lapwing, Yellow-wattled Lapwing</td><td>Nov – Feb</td></tr>
+          <tr><td>Chestnut-bellied Sandgrouse, Painted Sandgrouse</td><td>Oct – Mar</td></tr>
+          <tr><td>Steppe Eagle, Booted Eagle</td><td>Nov – Feb</td></tr>
+          <tr><td>Greater &amp; Lesser Sand Plover, Pied Avocet</td><td>Nov – Mar</td></tr>
+          <tr><td>Desert Wheatear, Isabelline Wheatear</td><td>Nov – Feb</td></tr>
+        </tbody>
+      </table>
+      <div class="tip-box"><strong>⏱ Best Time to Visit</strong> — November to February. Base yourself in Dasada or Zainabad. Local jeep safaris with guides are essential — the terrain is disorienting. Camp Zainabad is a well-regarded stay with knowledgeable naturalists.</div>
+    </div>
+  </div>
+
+  <!-- LOC 4 -->
+  <div class="loc-card ramsar" id="loc4">
+    <div class="card-head">
+      <div class="card-num">04</div>
+      <div>
+        <div class="card-title">Great Rann of Kutch — "Flamingo City"</div>
+        <div class="card-district">Kutch &nbsp;·&nbsp; Area: &gt;7,500 km²</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="meta-row">
+        <a href="https://maps.google.com/?q=Flamingo+City,+Rann+of+Kutch,+Gujarat" target="_blank" class="pill pill-maps">🗺 Google Maps</a>
+        <span class="pill pill-ramsar-yes">🌿 Ramsar Site ✅</span>
+        <a href="https://ebird.org/hotspot/L1909762" target="_blank" class="pill pill-ebird">🐦 eBird Hotspot</a>
+      </div>
+      <div class="ramsar-note"><strong>Ramsar Designation (adjacent Chhari-Dhand):</strong> January 2026 — India's 98th Ramsar Site. Gujarat's 5th, Kutch's first. Area: 80–227 km². Over 370 bird species; 30,000+ Common Cranes winter here.</div>
+      <p class="card-desc">"Flamingo City" in the mudflats of the Great Rann is the <strong>only regular flamingo breeding colony in India</strong>. Hundreds of Greater Flamingos nest, lay eggs, and rear young here annually.</p>
+      <span class="species-label">Key Species &amp; Best Months</span>
+      <table class="sp-table">
+        <thead><tr><th>Species</th><th>Best Months</th></tr></thead>
+        <tbody>
+          <tr><td>Greater Flamingo <em>(Flamingo City breeding colony)</em></td><td>Feb – May</td></tr>
+          <tr><td>Lesser Flamingo</td><td>Oct – Mar</td></tr>
+          <tr><td>Common Crane <em>(30,000+ at Chhari-Dhand)</em></td><td>Nov – Feb</td></tr>
+          <tr><td>Rosy Pelican, Dalmatian Pelican</td><td>Nov – Feb</td></tr>
+          <tr><td>MacQueen's Bustard</td><td>Nov – Feb</td></tr>
+          <tr><td>Sociable Lapwing <span class="badge badge-cr">CR</span></td><td>Nov – Feb</td></tr>
+          <tr><td>Grey Hypocolius <em>(near Moti Virani, Bhuj)</em></td><td>Nov – Feb</td></tr>
+          <tr><td>Bar-headed Goose, Ruddy Shelduck</td><td>Nov – Mar</td></tr>
+          <tr><td>Indian Courser, Cream-coloured Courser</td><td>Nov – Feb</td></tr>
+        </tbody>
+      </table>
+      <div class="tip-box"><strong>⏱ Best Time to Visit</strong> — November to March. Base in Bhuj. Flamingo City is best visited February–April (breeding season). Requires 4WD and a forest department permit.</div>
+    </div>
+  </div>
+
+  <!-- LOC 5 -->
+  <div class="loc-card ramsar" id="loc5">
+    <div class="card-head">
+      <div class="card-num">05</div>
+      <div>
+        <div class="card-title">Thol Lake Wildlife Sanctuary</div>
+        <div class="card-district">Mehsana &nbsp;·&nbsp; Area: 699 ha</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="meta-row">
+        <a href="https://maps.google.com/?q=Thol+Lake+Wildlife+Sanctuary,+Mehsana,+Gujarat" target="_blank" class="pill pill-maps">🗺 Google Maps</a>
+        <span class="pill pill-ramsar-yes">🌿 Ramsar Site ✅</span>
+        <a href="https://ebird.org/hotspot/L3231417" target="_blank" class="pill pill-ebird">🐦 eBird Hotspot</a>
+      </div>
+      <div class="ramsar-note"><strong>Ramsar Designation:</strong> 5 April 2021 (Area: 699 ha). Lies on the Central Asian Flyway. Supports over 320 bird species including 30+ threatened waterbird species.</div>
+      <p class="card-desc">A man-made irrigation reservoir built in 1912, declared a sanctuary in 1988. Just 25 km northwest of Ahmedabad — Gujarat's most accessible top-tier birding site. In winter the shallow lake turns pink with thousands of flamingos.</p>
+      <span class="species-label">Key Species &amp; Best Months</span>
+      <table class="sp-table">
+        <thead><tr><th>Species</th><th>Best Months</th></tr></thead>
+        <tbody>
+          <tr><td>Sarus Crane <em>(resident)</em></td><td>Year-round</td></tr>
+          <tr><td>Dalmatian Pelican <span class="badge badge-vu">VU</span></td><td>Nov – Feb</td></tr>
+          <tr><td>Greater Spotted Eagle <span class="badge badge-vu">VU</span></td><td>Nov – Feb</td></tr>
+          <tr><td>Sociable Lapwing <span class="badge badge-cr">CR</span></td><td>Nov – Feb</td></tr>
+          <tr><td>White-rumped Vulture <span class="badge badge-cr">CR</span></td><td>Nov – Feb</td></tr>
+          <tr><td>Greater &amp; Lesser Flamingo</td><td>Oct – Mar</td></tr>
+          <tr><td>Lesser White-fronted Goose <span class="badge badge-vu">VU</span></td><td>Nov – Feb</td></tr>
+          <tr><td>Greylag Goose, Bar-headed Goose</td><td>Nov – Feb</td></tr>
+          <tr><td>Eurasian Spoonbill, Painted Stork</td><td>Oct – Mar</td></tr>
+          <tr><td>Pied Avocet, Black-winged Stilt</td><td>Nov – Mar</td></tr>
+          <tr><td>Red-breasted Goose <em>(rare, from Arctic Siberia)</em></td><td>Nov – Feb</td></tr>
+        </tbody>
+      </table>
+      <div class="tip-box"><strong>⏱ Best Time to Visit</strong> — October to March. Walk or cycle the perimeter trail at dawn. Viewing huts available. Ideal for a half-day trip from Ahmedabad.</div>
+    </div>
+  </div>
+
+  <!-- LOC 6 -->
+  <div class="loc-card ramsar" id="loc6">
+    <div class="card-head">
+      <div class="card-num">06</div>
+      <div>
+        <div class="card-title">Khijadiya Wildlife Sanctuary</div>
+        <div class="card-district">Jamnagar &nbsp;·&nbsp; Area: 512 ha</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="meta-row">
+        <a href="https://maps.google.com/?q=Khijadiya+Wildlife+Sanctuary,+Jamnagar,+Gujarat" target="_blank" class="pill pill-maps">🗺 Google Maps</a>
+        <span class="pill pill-ramsar-yes">🌿 Ramsar Site ✅</span>
+        <a href="https://ebird.org/hotspot/L2136331" target="_blank" class="pill pill-ebird">🐦 eBird Hotspot</a>
+      </div>
+      <div class="ramsar-note"><strong>Ramsar Designation:</strong> 13 April 2021 (Area: 512 ha). Unique: freshwater lakes on one side of the road, saltwater marshes on the other. One of the few sanctuaries in peninsular India where the Great Crested Grebe breeds.</div>
+      <p class="card-desc">Located along the Ruparel and Kalindi rivers, 14 km from Jamnagar city. The freshwater + saline combination is exceptional — coastal waders and freshwater waterfowl share the same small area. Over 250 species recorded.</p>
+      <span class="species-label">Key Species &amp; Best Months</span>
+      <table class="sp-table">
+        <thead><tr><th>Species</th><th>Best Months</th></tr></thead>
+        <tbody>
+          <tr><td>Black-necked Stork <em>(nesting)</em></td><td>Year-round</td></tr>
+          <tr><td>Great Crested Grebe <em>(breeding)</em></td><td>Feb – May</td></tr>
+          <tr><td>Indian Skimmer <span class="badge badge-vu">VU</span></td><td>Nov – Feb</td></tr>
+          <tr><td>Dalmatian Pelican</td><td>Nov – Feb</td></tr>
+          <tr><td>Caspian Tern, River Tern</td><td>Oct – Mar</td></tr>
+          <tr><td>Greater &amp; Lesser Flamingo</td><td>Oct – Mar</td></tr>
+          <tr><td>Baer's Pochard <span class="badge badge-cr">CR</span></td><td>Nov – Feb</td></tr>
+          <tr><td>Comb Duck / Knob-billed Duck</td><td>Year-round</td></tr>
+          <tr><td>Blue-cheeked Bee-eater</td><td>Oct – Mar</td></tr>
+          <tr><td>Grey Hypocolius <em>(rare)</em></td><td>Nov – Feb</td></tr>
+          <tr><td>European Roller <em>(rare winter visitor)</em></td><td>Nov – Feb</td></tr>
+        </tbody>
+      </table>
+      <div class="tip-box"><strong>⏱ Best Time to Visit</strong> — October to March. Walk the road dividing the two wetland zones — simultaneous views of coastal waders and freshwater ducks within metres of each other. Interpretation Centre, nature trails, boating, and watchtowers available.</div>
+    </div>
+  </div>
+
+  <!-- LOC 7 -->
+  <div class="loc-card ramsar" id="loc7">
+    <div class="card-head">
+      <div class="card-num">07</div>
+      <div>
+        <div class="card-title">Wadhvana Wetland</div>
+        <div class="card-district">Vadodara &nbsp;·&nbsp; Area: 630 ha</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="meta-row">
+        <a href="https://maps.google.com/?q=Wadhvana+Wetland,+Vadodara,+Gujarat" target="_blank" class="pill pill-maps">🗺 Google Maps</a>
+        <span class="pill pill-ramsar-yes">🌿 Ramsar Site ✅</span>
+        <a href="https://ebird.org/hotspot/L1979634" target="_blank" class="pill pill-ebird">🐦 eBird Hotspot</a>
+      </div>
+      <div class="ramsar-note"><strong>Ramsar Designation:</strong> 5 April 2021 (Area: 630 ha). An irrigation reservoir internationally important as a wintering ground for migratory waterbirds on the Central Asian Flyway.</div>
+      <p class="card-desc">Built in 1910. A productive winter birding stop ideally positioned for birders based in Vadodara. Less famous than Nal Sarovar, it consistently records 190+ species in winter — and is often overlooked, meaning quieter conditions.</p>
+      <span class="species-label">Key Species &amp; Best Months</span>
+      <table class="sp-table">
+        <thead><tr><th>Species</th><th>Best Months</th></tr></thead>
+        <tbody>
+          <tr><td>Common Crane, Demoiselle Crane</td><td>Nov – Feb</td></tr>
+          <tr><td>Greater &amp; Lesser Flamingo</td><td>Oct – Mar</td></tr>
+          <tr><td>Dalmatian Pelican <span class="badge badge-vu">VU</span></td><td>Nov – Feb</td></tr>
+          <tr><td>Ferruginous Duck <span class="badge badge-vu">VU</span></td><td>Nov – Feb</td></tr>
+          <tr><td>Bar-headed Goose, Ruddy Shelduck</td><td>Nov – Feb</td></tr>
+          <tr><td>Eurasian Spoonbill, Painted Stork</td><td>Oct – Mar</td></tr>
+          <tr><td>Pied Avocet, Marsh Sandpiper</td><td>Nov – Feb</td></tr>
+          <tr><td>Osprey</td><td>Nov – Feb</td></tr>
+          <tr><td>Ruff, Little Stint, Dunlin</td><td>Oct – Mar</td></tr>
+        </tbody>
+      </table>
+      <div class="tip-box"><strong>⏱ Best Time to Visit</strong> — November to February. Short drive from Vadodara city — ideal for an early morning visit. Best combined with nearby Ankodiya Lake and Timbi Lake for a full Vadodara birding day.</div>
+    </div>
+  </div>
+
+  <!-- LOC 8 -->
+  <div class="loc-card" id="loc8">
+    <div class="card-head">
+      <div class="card-num">08</div>
+      <div>
+        <div class="card-title">Gir National Park &amp; Wildlife Sanctuary</div>
+        <div class="card-district">Junagadh / Gir Somnath / Amreli &nbsp;·&nbsp; Area: 1,412 km²</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="meta-row">
+        <a href="https://maps.google.com/?q=Gir+National+Park,+Sasan,+Gujarat" target="_blank" class="pill pill-maps">🗺 Google Maps</a>
+        <span class="pill pill-ramsar-no">🌿 Not a Ramsar Site</span>
+        <a href="https://ebird.org/hotspot/L7523326" target="_blank" class="pill pill-ebird">🐦 eBird (Sasan)</a>
+        <a href="https://ebird.org/hotspot/L4454585" target="_blank" class="pill pill-ebird">🐦 eBird (Kamleshwar Dam)</a>
+      </div>
+      <p class="card-desc">The only remaining home of the Asiatic Lion in the world — and a deeply underrated birding site. Almost 300 bird species recorded. As ornithologist Salim Ali noted: had Gir not been the lion sanctuary, it would have been one of Gujarat's finest bird sanctuaries.</p>
+      <span class="species-label">Key Species &amp; Best Months</span>
+      <table class="sp-table">
+        <thead><tr><th>Species</th><th>Best Months</th></tr></thead>
+        <tbody>
+          <tr><td>Brown Fish Owl <em>(Ketupa zeylonensis)</em></td><td>Year-round</td></tr>
+          <tr><td>Mottled Wood Owl <em>(Strix ocellata)</em></td><td>Year-round</td></tr>
+          <tr><td>Indian Eagle Owl</td><td>Year-round</td></tr>
+          <tr><td>Crested Serpent Eagle</td><td>Year-round</td></tr>
+          <tr><td>Bonelli's Eagle <span class="badge badge-vu">VU</span></td><td>Year-round</td></tr>
+          <tr><td>Red-headed Vulture <span class="badge badge-cr">CR</span></td><td>Year-round</td></tr>
+          <tr><td>Indian Pitta</td><td>Jul – Oct</td></tr>
+          <tr><td>Indian Paradise Flycatcher</td><td>Mar – Sep</td></tr>
+          <tr><td>Painted Sandgrouse</td><td>Year-round</td></tr>
+          <tr><td>Sirkeer Malkoha, Crested Treeswift</td><td>Year-round / Apr–Sep</td></tr>
+          <tr><td>Greater Racket-tailed Drongo</td><td>Year-round</td></tr>
+          <tr><td>Tawny-bellied Babbler</td><td>Year-round</td></tr>
+        </tbody>
+      </table>
+      <div class="tip-box"><strong>⏱ Best Time to Visit</strong> — November to March. Park CLOSED June to October (monsoon). Book safaris online in advance at girnationalpark.in. Early morning and late afternoon safaris yield the best bird sightings.</div>
+    </div>
+  </div>
+
+  <!-- LOC 9 -->
+  <div class="loc-card" id="loc9">
+    <div class="card-head">
+      <div class="card-num">09</div>
+      <div>
+        <div class="card-title">Porbandar Bird Sanctuary &amp; Mokarsagar Wetlands</div>
+        <div class="card-district">Porbandar &nbsp;·&nbsp; Area: ~1 km² (urban lake)</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="meta-row">
+        <a href="https://maps.google.com/?q=Porbandar+Bird+Sanctuary,+Gujarat" target="_blank" class="pill pill-maps">🗺 Google Maps</a>
+        <span class="pill pill-ramsar-no">🌿 Not a Ramsar Site</span>
+        <a href="https://ebird.org/hotspot/L14963783" target="_blank" class="pill pill-ebird">🐦 eBird Hotspot</a>
+      </div>
+      <p class="card-desc">A compact urban lake sanctuary that punches above its weight. The nearby Mokarsagar Wetlands and Porbandar coastline add excellent coastal species — gulls and terns rarely found elsewhere in Gujarat.</p>
+      <span class="species-label">Key Species &amp; Best Months</span>
+      <table class="sp-table">
+        <thead><tr><th>Species</th><th>Best Months</th></tr></thead>
+        <tbody>
+          <tr><td>Greater &amp; Lesser Flamingo</td><td>Oct – Mar</td></tr>
+          <tr><td>Heuglin's Gull, Slender-billed Gull</td><td>Nov – Feb</td></tr>
+          <tr><td>Caspian Tern, Greater Crested Tern, Common Tern</td><td>Oct – Mar</td></tr>
+          <tr><td>Osprey, Brahminy Kite</td><td>Oct – Mar</td></tr>
+          <tr><td>Painted Stork, Asian Openbill</td><td>Oct – Mar</td></tr>
+          <tr><td>Pied Avocet, Dunlin, Ruff</td><td>Nov – Feb</td></tr>
+        </tbody>
+      </table>
+      <div class="tip-box"><strong>⏱ Best Time to Visit</strong> — October to March. Sanctuary can be covered in 1–2 hours — combine with a 3 km drive to Mokarsagar Wetlands for coastal waders and gulls. Good stopover between Dwarka and Gir.</div>
+    </div>
+  </div>
+
+  <!-- LOC 10 -->
+  <div class="loc-card" id="loc10">
+    <div class="card-head">
+      <div class="card-num">10</div>
+      <div>
+        <div class="card-title">Banni Grasslands (Kutch)</div>
+        <div class="card-district">Kutch &nbsp;·&nbsp; Area: ~2,500 km²</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="meta-row">
+        <a href="https://maps.google.com/?q=Banni+Grasslands,+Kutch,+Gujarat" target="_blank" class="pill pill-maps">🗺 Google Maps</a>
+        <span class="pill pill-ramsar-no">🌿 Not a Ramsar Site</span>
+        <a href="https://ebird.org/hotspot/L4277454" target="_blank" class="pill pill-ebird">🐦 eBird Hotspot</a>
+      </div>
+      <p class="card-desc">One of the largest grassland ecosystems in South Asia — and one of the last places in Gujarat to see the Critically Endangered Great Indian Bustard. The Naliya / Lala Bustard Sanctuary area is the key spot. Banni transitions from dry grassland to seasonal wetland, creating dynamic birding conditions.</p>
+      <span class="species-label">Key Species &amp; Best Months</span>
+      <table class="sp-table">
+        <thead><tr><th>Species</th><th>Best Months</th></tr></thead>
+        <tbody>
+          <tr><td>Great Indian Bustard <span class="badge badge-cr">CR</span> <em>(Naliya/Lala area)</em></td><td>Oct – Mar</td></tr>
+          <tr><td>MacQueen's Bustard</td><td>Nov – Feb</td></tr>
+          <tr><td>Lesser Florican</td><td>Jul – Sep</td></tr>
+          <tr><td>Common Crane, Demoiselle Crane</td><td>Nov – Feb</td></tr>
+          <tr><td>Stoliczka's Bushchat</td><td>Nov – Feb</td></tr>
+          <tr><td>Greater Hoopoe Lark, Sykes's Lark</td><td>Oct – Mar</td></tr>
+          <tr><td>Cream-coloured Courser</td><td>Oct – Mar</td></tr>
+          <tr><td>Grey Hypocolius</td><td>Nov – Feb</td></tr>
+          <tr><td>Steppe Eagle, Booted Eagle</td><td>Nov – Feb</td></tr>
+        </tbody>
+      </table>
+      <div class="tip-box"><strong>⏱ Best Time to Visit</strong> — November to February. Base in Bhuj or Hodka village. Ask local guides about GIB sightings at Naliya before visiting — numbers are critically low. The Rann of Kutch Festival (Nov–Feb) at Dhordo makes the region highly accessible.</div>
+    </div>
+  </div>
+
+  <!-- LOC 11 -->
+  <div class="loc-card" id="loc11">
+    <div class="card-head">
+      <div class="card-num">11</div>
+      <div>
+        <div class="card-title">Marine National Park &amp; Sanctuary, Gulf of Kutch</div>
+        <div class="card-district">Jamnagar &nbsp;·&nbsp; Area: 458 km²</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="meta-row">
+        <a href="https://maps.google.com/?q=Marine+National+Park,+Jamnagar,+Gujarat" target="_blank" class="pill pill-maps">🗺 Google Maps</a>
+        <span class="pill pill-ramsar-no">🌿 Not a Ramsar Site</span>
+        <a href="https://ebird.org/hotspot/L3619179" target="_blank" class="pill pill-ebird">🐦 eBird Hotspot</a>
+      </div>
+      <p class="card-desc">India's first Marine National Park. The intertidal mudflats, creeks, and coral patches attract coastal waders and seabirds. The Gulf of Kutch coastline is the <strong>best site in India for Crab Plover</strong> — a striking and unmistakable shorebird.</p>
+      <span class="species-label">Key Species &amp; Best Months</span>
+      <table class="sp-table">
+        <thead><tr><th>Species</th><th>Best Months</th></tr></thead>
+        <tbody>
+          <tr><td>Crab Plover <em>(Dromas ardeola)</em></td><td>Nov – Mar</td></tr>
+          <tr><td>Eurasian Oystercatcher</td><td>Nov – Mar</td></tr>
+          <tr><td>Great Knot, Red Knot</td><td>Oct – Mar</td></tr>
+          <tr><td>Ruddy Turnstone</td><td>Oct – Mar</td></tr>
+          <tr><td>Reef Egret <em>(both morphs)</em></td><td>Year-round</td></tr>
+          <tr><td>Lesser Crested Tern, Caspian Tern</td><td>Oct – Mar</td></tr>
+          <tr><td>Brahminy Kite, White-bellied Sea Eagle</td><td>Year-round</td></tr>
+        </tbody>
+      </table>
+      <div class="tip-box"><strong>⏱ Best Time to Visit</strong> — November to March. Boat trips through the creeks required. Contact the Forest Department in Jamnagar for permits. Lakhota Lake in Jamnagar city also attracts large gull flocks in winter.</div>
+    </div>
+  </div>
+
+  <!-- LOC 12 -->
+  <div class="loc-card" id="loc12">
+    <div class="card-head">
+      <div class="card-num">12</div>
+      <div>
+        <div class="card-title">Narayan Sarovar Sanctuary</div>
+        <div class="card-district">Kutch &nbsp;·&nbsp; Area: 444 km²</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="meta-row">
+        <a href="https://maps.google.com/?q=Narayan+Sarovar+Sanctuary,+Lakhpat,+Kutch,+Gujarat" target="_blank" class="pill pill-maps">🗺 Google Maps</a>
+        <span class="pill pill-ramsar-no">🌿 Not a Ramsar Site</span>
+        <a href="https://ebird.org/hotspot/L4198302" target="_blank" class="pill pill-ebird">🐦 eBird Hotspot</a>
+      </div>
+      <p class="card-desc">A remote, arid sanctuary in far-western Kutch near the Pakistan border. Over 184 bird species recorded. The sacred Narayan Sarovar Lake and the nearby Lakhpat Fort ruins are both excellent for birds. Rarely visited — rewards those who make the effort.</p>
+      <span class="species-label">Key Species &amp; Best Months</span>
+      <table class="sp-table">
+        <thead><tr><th>Species</th><th>Best Months</th></tr></thead>
+        <tbody>
+          <tr><td>MacQueen's / Houbara Bustard</td><td>Nov – Feb</td></tr>
+          <tr><td>Greater Flamingo</td><td>Oct – Mar</td></tr>
+          <tr><td>Desert Lark, Bar-tailed Lark</td><td>Nov – Feb</td></tr>
+          <tr><td>Isabelline Wheatear, Desert Wheatear</td><td>Nov – Feb</td></tr>
+          <tr><td>Indian Courser, Cream-coloured Courser</td><td>Oct – Mar</td></tr>
+          <tr><td>Rosy Pelican</td><td>Nov – Feb</td></tr>
+          <tr><td>Avocets, waders on the lake</td><td>Oct – Mar</td></tr>
+        </tbody>
+      </table>
+      <div class="tip-box"><strong>⏱ Best Time to Visit</strong> — November to February. Remote location — requires advance planning and ideally a 4WD. Combine with Lakhpat Fort for raptors and scrub species.</div>
+    </div>
+  </div>
+
+  <!-- LOC 13 -->
+  <div class="loc-card" id="loc13">
+    <div class="card-head">
+      <div class="card-num">13</div>
+      <div>
+        <div class="card-title">Pariej Wetland (Community Reserve)</div>
+        <div class="card-district">Kheda &nbsp;·&nbsp; Area: ~3 km²</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="meta-row">
+        <a href="https://maps.google.com/?q=Pariej+Wetland,+Kheda,+Gujarat" target="_blank" class="pill pill-maps">🗺 Google Maps</a>
+        <span class="pill pill-ramsar-no">🌿 Not a Ramsar Site</span>
+        <a href="https://ebird.org/hotspot/L4288962" target="_blank" class="pill pill-ebird">🐦 eBird Hotspot</a>
+      </div>
+      <p class="card-desc">A small but extraordinarily productive freshwater wetland managed jointly by the local community and BNHS. Highly regarded among Gujarati birders for its accessibility and species density — especially for threatened ducks. Compact enough to bird thoroughly on foot in a morning.</p>
+      <span class="species-label">Key Species &amp; Best Months</span>
+      <table class="sp-table">
+        <thead><tr><th>Species</th><th>Best Months</th></tr></thead>
+        <tbody>
+          <tr><td>Dalmatian Pelican <span class="badge badge-vu">VU</span></td><td>Nov – Feb</td></tr>
+          <tr><td>Ferruginous Duck <span class="badge badge-vu">VU</span></td><td>Nov – Feb</td></tr>
+          <tr><td>Baer's Pochard <span class="badge badge-cr">CR</span> <em>(rare)</em></td><td>Nov – Feb</td></tr>
+          <tr><td>Eurasian Spoonbill, Black-headed Ibis</td><td>Oct – Mar</td></tr>
+          <tr><td>Painted Stork, Asian Openbill</td><td>Oct – Mar</td></tr>
+          <tr><td>Comb Duck / Knob-billed Duck</td><td>Year-round</td></tr>
+          <tr><td>Cotton Pygmy Goose</td><td>Oct – Mar</td></tr>
+        </tbody>
+      </table>
+      <div class="tip-box"><strong>⏱ Best Time to Visit</strong> — November to February. Easy access from Anand and Ahmedabad. A top choice for local birders on weekends.</div>
+    </div>
+  </div>
+
+  <!-- LOC 14 -->
+  <div class="loc-card" id="loc14">
+    <div class="card-head">
+      <div class="card-num">14</div>
+      <div>
+        <div class="card-title">Shoolpaneshwar Wildlife Sanctuary</div>
+        <div class="card-district">Narmada / Bharuch &nbsp;·&nbsp; Area: 607 km²</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="meta-row">
+        <a href="https://maps.google.com/?q=Shoolpaneshwar+Wildlife+Sanctuary,+Gujarat" target="_blank" class="pill pill-maps">🗺 Google Maps</a>
+        <span class="pill pill-ramsar-no">🌿 Not a Ramsar Site</span>
+        <a href="https://ebird.org/hotspot/L7177307" target="_blank" class="pill pill-ebird">🐦 eBird Hotspot</a>
+      </div>
+      <p class="card-desc">Gujarat's most forested sanctuary — transitional habitat between the Satpura hills and the Narmada riverine corridor. A completely different birding experience from the rest of Gujarat, offering forest species rarely found elsewhere in the state.</p>
+      <span class="species-label">Key Species &amp; Best Months</span>
+      <table class="sp-table">
+        <thead><tr><th>Species</th><th>Best Months</th></tr></thead>
+        <tbody>
+          <tr><td>Indian Pitta</td><td>Jul – Oct</td></tr>
+          <tr><td>Malabar Pied Hornbill</td><td>Year-round</td></tr>
+          <tr><td>Changeable Hawk Eagle</td><td>Year-round</td></tr>
+          <tr><td>Crested Serpent Eagle</td><td>Year-round</td></tr>
+          <tr><td>Brown Fish Owl</td><td>Year-round</td></tr>
+          <tr><td>Plum-headed Parakeet</td><td>Year-round</td></tr>
+          <tr><td>Black-naped Monarch</td><td>Mar – Oct</td></tr>
+          <tr><td>Indian Paradise Flycatcher</td><td>Mar – Oct</td></tr>
+          <tr><td>River Tern, Pied Kingfisher <em>(Narmada riverine)</em></td><td>Year-round</td></tr>
+        </tbody>
+      </table>
+      <div class="tip-box"><strong>⏱ Best Time to Visit</strong> — November to March (dry season, better forest access). The Narmada riverside habitat adds kingfishers, fish eagles, and river terns.</div>
+    </div>
+  </div>
+
+  <!-- LOC 15 -->
+  <div class="loc-card" id="loc15">
+    <div class="card-head">
+      <div class="card-num">15</div>
+      <div>
+        <div class="card-title">Jambughoda Wildlife Sanctuary</div>
+        <div class="card-district">Panchmahal &nbsp;·&nbsp; Area: 131 km²</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="meta-row">
+        <a href="https://maps.google.com/?q=Jambughoda+Wildlife+Sanctuary,+Panchmahal,+Gujarat" target="_blank" class="pill pill-maps">🗺 Google Maps</a>
+        <span class="pill pill-ramsar-no">🌿 Not a Ramsar Site</span>
+        <a href="https://ebird.org/hotspot/L19556768" target="_blank" class="pill pill-ebird">🐦 eBird Hotspot</a>
+      </div>
+      <p class="card-desc">Hilly, forested terrain near Vadodara. A good contrast to Gujarat's flat wetland birding and a great introduction to Gujarat's Eastern Hills species. Easy day-trip from Vadodara (~80 km).</p>
+      <span class="species-label">Key Species &amp; Best Months</span>
+      <table class="sp-table">
+        <thead><tr><th>Species</th><th>Best Months</th></tr></thead>
+        <tbody>
+          <tr><td>Painted Spurfowl</td><td>Year-round</td></tr>
+          <tr><td>White-eyed Buzzard</td><td>Oct – Mar</td></tr>
+          <tr><td>Crested Treeswift</td><td>Apr – Sep</td></tr>
+          <tr><td>Indian Grey Hornbill</td><td>Year-round</td></tr>
+          <tr><td>Indian Roller</td><td>Year-round</td></tr>
+          <tr><td>Eurasian Wryneck</td><td>Nov – Feb</td></tr>
+          <tr><td>Verditer Flycatcher</td><td>Nov – Feb</td></tr>
+          <tr><td>Bar-tailed Treecreeper <em>(winter visitor)</em></td><td>Nov – Feb</td></tr>
+        </tbody>
+      </table>
+      <div class="tip-box"><strong>⏱ Best Time to Visit</strong> — November to March.</div>
+    </div>
+  </div>
+
+</div><!-- /cards -->
+
+<!-- ── Summary sections ── -->
+<div class="summary">
+  <h2>Gujarat's <em>5 Ramsar Sites</em> — Quick Reference</h2>
+  <table class="sum-table">
+    <thead><tr><th>#</th><th>Site</th><th>Designated</th><th>Area</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Nal Sarovar Bird Sanctuary</td><td>24 Sep 2012</td><td>12,000 ha</td></tr>
+      <tr><td>2</td><td>Wadhvana Wetland</td><td>5 Apr 2021</td><td>630 ha</td></tr>
+      <tr><td>3</td><td>Thol Lake Wildlife Sanctuary</td><td>5 Apr 2021</td><td>699 ha</td></tr>
+      <tr><td>4</td><td>Khijadiya Wildlife Sanctuary</td><td>13 Apr 2021</td><td>512 ha</td></tr>
+      <tr><td>5</td><td>Chhari-Dhand Conservation Reserve</td><td>Jan 2026</td><td>8,000–22,700 ha</td></tr>
+    </tbody>
+  </table>
+
+  <h2 style="margin-top: 48px;">Gujarat Birding — <em>Month by Month</em></h2>
+  <table class="sum-table">
+    <thead><tr><th>Month</th><th>What's Happening</th></tr></thead>
+    <tbody>
+      <tr><td>Oct – Nov</td><td>Winter migrants arrive; flamingos, cranes, ducks flood wetlands</td></tr>
+      <tr><td>Dec – Jan</td><td>Peak winter birding — maximum species at all locations</td></tr>
+      <tr><td>Feb – Mar</td><td>Flamingo breeding at Flamingo City (GRK); waders on passage</td></tr>
+      <tr><td>Apr – May</td><td>Departing migrants; heat rising; reduced activity</td></tr>
+      <tr><td>Jun – Sep</td><td>Monsoon — forest birds active (Pitta, Nightjar, Flycatchers); most sanctuaries closed</td></tr>
+      <tr><td>Oct</td><td>Season reopens — best start for GRK, LRK, Velavadar</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ── Footer ── -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <h2 class="foot-brand">Ashit <em>Gandhi.</em></h2>
+      <p class="foot-loc">Vadodara, Gujarat — India</p>
+    </div>
+    <div class="foot-col">
+      <h4>Portfolio</h4>
+      <a href="https://blog.ashitgphotography.com/portfolio-birds" target="_blank" rel="noopener">Birds</a>
+      <a href="https://blog.ashitgphotography.com/portfolio-macro" target="_blank" rel="noopener">Macro</a>
+      <a href="https://blog.ashitgphotography.com/composite-images" target="_blank" rel="noopener">Composites</a>
+      <a href="https://blog.ashitgphotography.com/portfolio-landscape" target="_blank" rel="noopener">Landscape</a>
+    </div>
+    <div class="foot-col">
+      <h4>Editions</h4>
+      <a href="https://blog.ashitgphotography.com/yearbook-2024" target="_blank" rel="noopener">Yearbook 2024</a>
+      <a href="https://blog.ashitgphotography.com/yearbook-2023" target="_blank" rel="noopener">Yearbook 2023</a>
+      <a href="https://blog.ashitgphotography.com/calendars" target="_blank" rel="noopener">Calendars</a>
+      <a href="https://blog.ashitgphotography.com/photowalls" target="_blank" rel="noopener">Photo walls</a>
+    </div>
+    <div class="foot-col">
+      <h4>Elsewhere</h4>
+      <a href="https://instagram.com/ashitgandhi_" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/ashitgphotography" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.twitter.com/GandhiAshit" target="_blank" rel="noopener">X / Twitter</a>
+      <a href="/cdn-cgi/l/email-protection#5c3d2f3435283b722c343328333b2e3d2c34251c3b313d3530723f3331">Email</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2018–2026 Ashit Gandhi. All frames are mine.</span>
+    <div class="socials">
+      <a href="https://instagram.com/ashitgandhi_" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+      </a>
+      <a href="https://www.facebook.com/ashitgphotography" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8z"/></svg>
+      </a>
+      <a href="https://www.twitter.com/GandhiAshit" target="_blank" rel="noopener" aria-label="Twitter">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4l7.5 10L4.5 20H7l5.5-5L17 20h3l-7.7-10.4L19 4h-2.5l-5 5L8 4H4z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<button class="back-top" id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Nav scroll
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+    document.getElementById('back-top').classList.toggle('show', window.scrollY > 400);
+  }, { passive: true });
+
+  // Hide hero placeholder once image loads
+  const hero = document.querySelector('.hero');
+  const placeholder = document.getElementById('hero-placeholder');
+  const testImg = new Image();
+  testImg.onload = () => { if (placeholder) placeholder.style.display = 'none'; };
+  testImg.onerror = () => {};
+  testImg.src = 'assets/gujarat-birding-hero.jpg';
+
+  // Scroll reveal for cards
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.loc-card').forEach(c => observer.observe(c));
+</script>
+
+</body>
+</html>
