@@ -4,11 +4,16 @@
 <meta charset="utf-8" />
 <title>Redirecting — Ashit Gandhi Photography</title>
 <script>
-  // Redirect studio.ashitgphotography.com URLs to www.ashitgphotography.com
   (function() {
     var path = window.location.pathname;
-    var newUrl = 'https://www.ashitgphotography.com' + path;
-    window.location.replace(newUrl);
+    // Paths that live on the Wix blog subdomain
+    var wixPrefixes = ['/post/', '/portfolio-', '/yearbook-', '/calendars', '/photowalls', '/copy-of-calendars'];
+    var isWix = wixPrefixes.some(function(p) { return path.indexOf(p) === 0; });
+    if (isWix) {
+      window.location.replace('https://blog.ashitgphotography.com' + path + window.location.search);
+    } else {
+      window.location.replace('https://www.ashitgphotography.com' + path);
+    }
   })();
 </script>
 <meta http-equiv="refresh" content="0; url=https://www.ashitgphotography.com/" />
