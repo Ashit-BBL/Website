@@ -7,7 +7,9 @@
   (function() {
     var path = window.location.pathname;
     // Paths that live on the Wix blog subdomain
-    var wixPrefixes = ['/post/', '/portfolio-', '/yearbook-', '/calendars', '/photowalls', '/copy-of-calendars'];
+    var wixPrefixes = ['/post/', '/portfolio-', '/portfolio', '/yearbook-', '/calendars', '/photowalls', '/copy-of-calendars'];
+    // /home/ → root
+    if (path === '/home/' || path === '/home') { window.location.replace('https://www.ashitgphotography.com/'); return; }
     var isWix = wixPrefixes.some(function(p) { return path.indexOf(p) === 0; });
     if (isWix) {
       window.location.replace('https://blog.ashitgphotography.com' + path + window.location.search);
