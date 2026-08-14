@@ -6,11 +6,11 @@
 <title>EXIF Overlay Tool — Free EXIF Data &amp; Camera Settings Overlay for Photos | Lightroom Classic Plugin | Windows &amp; Mac</title>
 <meta name="description" content="Free tool to stamp EXIF data overlays on photos — camera model, lens, ISO, shutter speed, aperture, focal length &amp; more. Batch process folders. Standalone on Windows &amp; macOS or as a Lightroom Classic plugin. No subscription, no cloud." />
 <meta name="keywords" content="EXIF overlay tool, EXIF data overlay, stamp EXIF on photos, camera data overlay, EXIF watermark, EXIF stamp, photo metadata overlay, camera settings on photo, add EXIF to photo, Lightroom Classic EXIF plugin, Lightroom EXIF overlay, stamp EXIF without leaving Lightroom, ISO overlay photo, shutter speed overlay, aperture overlay photo, lens info on photo, focal length overlay, camera model on photo, batch EXIF overlay, bulk EXIF stamp, free EXIF tool, free photography tool, EXIF overlay Windows, EXIF overlay Mac, EXIF badge photo, shooting data on photo, show camera settings on photo, photo EXIF stamp free, photography metadata tool, EXIF overlay software" />
-<link rel="canonical" href="https://www.ashitgphotography.com/exif-tool.html" />
+<link rel="canonical" href="https://studio.ashitgphotography.com/exif-tool.html" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.ashitgphotography.com/exif-tool.html" />
+<meta property="og:url" content="https://studio.ashitgphotography.com/exif-tool.html" />
 <meta property="og:title" content="EXIF Overlay Tool — Stamp Camera Data on Your Photos, Free" />
 <meta property="og:description" content="Stamp EXIF overlays on photos without leaving Lightroom Classic. Free standalone tool for Windows &amp; macOS. Pick from 15 EXIF fields, batch process entire folders." />
 <meta property="og:site_name" content="ashitg Photography" />
@@ -39,7 +39,7 @@
   "author": {
     "@type": "Person",
     "name": "Ashit Gandhi",
-    "url": "https://www.ashitgphotography.com"
+    "url": "https://studio.ashitgphotography.com"
   },
   "keywords": "EXIF overlay, EXIF data, photo overlay, Lightroom plugin, camera data, photography tool"
 }
@@ -52,6 +52,8 @@
 <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet"></noscript>
 <!-- Preload LCP hero image -->
 <link rel="preload" as="image" href="assets/kingfisher_demo.png">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>(function(){ if (window.emailjs) emailjs.init({ publicKey: 'pUNlFSMnvRVkFpkmT' }); })();</script>
 <style>
   :root{
     --forest:        #2d3a25;
@@ -1716,7 +1718,7 @@
     <a href="#" class="nav-contact-email">Contact</a>
     <a href="#download" class="cta">Download Free &rarr;</a>
   </nav>
-  <div class="nav-mobile-foot">www.ashitgphotography.com</div>
+  <div class="nav-mobile-foot">studio.ashitgphotography.com</div>
 </div>
 
 <!-- ====== HERO ====== -->
@@ -1874,7 +1876,7 @@
         <p>A few photographer friends asked for it. So I'm putting it out for free &mdash; for anyone who finds it useful.</p>
 
         <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:24px; align-items:center;">
-          <a href="https://www.ashitgphotography.com" target="_blank" class="visit-link">
+          <a href="https://studio.ashitgphotography.com" target="_blank" class="visit-link">
             See my photography work <span class="arr">&rarr;</span>
           </a>
           <a href="#download" class="btn btn-coffee" style="font-size:13px; padding:11px 18px;">
@@ -1893,7 +1895,7 @@
             <img src="assets/logo-white.png" alt="ashitg Photography" loading="lazy">
             <div>
               <div class="name">Ashit Gandhi</div>
-              <div class="role">Photographer &middot; www.ashitgphotography.com</div>
+              <div class="role">Photographer &middot; studio.ashitgphotography.com</div>
             </div>
           </div>
         </div>
@@ -2304,7 +2306,7 @@
       <a href="#" class="foot-contact-email" style="color: var(--gold-soft); font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:0.08em; text-decoration:none; transition: color .2s ease;"></a>
     </div>
     <div style="display:flex; flex-direction:column; gap:8px; align-items:flex-end;">
-      <a href="https://www.ashitgphotography.com" target="_blank" style="color:#c8c4a8; font-size:13px; text-decoration:none; letter-spacing:0.06em; border-bottom:1px solid rgba(201,163,90,.3); padding-bottom:2px; transition: color .2s ease, border-color .2s ease;">studio.ashitgphotography.com &rarr;</a>
+      <a href="https://studio.ashitgphotography.com" target="_blank" style="color:#c8c4a8; font-size:13px; text-decoration:none; letter-spacing:0.06em; border-bottom:1px solid rgba(201,163,90,.3); padding-bottom:2px; transition: color .2s ease, border-color .2s ease;">studio.ashitgphotography.com &rarr;</a>
     </div>
   </div>
 </footer>
@@ -2443,6 +2445,12 @@
             name, comment,
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
           });
+          if (window.emailjs) {
+            emailjs.send('service_90vdc0x', 'template_igif47m', {
+              form_type: 'Feedback', from_name: name, from_email: '', message: comment,
+              version: 'v1.4', submitted_at: new Date().toLocaleString()
+            }).catch(()=>{});
+          }
           localStorage.setItem('exif_last_comment', String(Date.now()));
           form.reset();
           successEl.style.display = 'block';
@@ -2487,6 +2495,12 @@
               referrer: document.referrer || '',
               timestamp: firebase.firestore.FieldValue.serverTimestamp()
             });
+            if (window.emailjs) {
+              emailjs.send('service_90vdc0x', 'template_igif47m', {
+                form_type: 'Email Signup', from_name: '', from_email: email, message: '',
+                version: 'v1.4', submitted_at: new Date().toLocaleString()
+              }).catch(()=>{});
+            }
             localStorage.setItem('exif_last_subscribe', String(Date.now()));
             subForm.reset();
             setSubStatus('success', "Thanks! You're on the list - I'll email you when a new version is ready.");
@@ -2518,8 +2532,7 @@
   }
 
   // Only load Firebase on the real site &mdash; skip in preview/sandbox
-  const isLiveSite = location.hostname === 'www.ashitgphotography.com'
-                  || location.hostname === 'studio.ashitgphotography.com'
+  const isLiveSite = location.hostname === 'studio.ashitgphotography.com'
                   || location.hostname === 'ashitgphotography.com'
                   || location.hostname === 'localhost';
 
