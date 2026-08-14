@@ -2532,8 +2532,7 @@
   }
 
   // Only load Firebase on the real site &mdash; skip in preview/sandbox
-  const isLiveSite = location.hostname === 'studio.ashitgphotography.com'
-                  || location.hostname === 'ashitgphotography.com'
+  const isLiveSite = /(^|\.)ashitgphotography\.com$/.test(location.hostname)
                   || location.hostname === 'localhost';
 
   if (!isLiveSite) {
